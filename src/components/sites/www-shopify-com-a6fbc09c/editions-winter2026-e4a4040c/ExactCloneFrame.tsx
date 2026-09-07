@@ -36,10 +36,12 @@ export function ExactCloneFrame({ source }: ExactCloneFrameProps) {
 
   return (
     <main className={styles.root} aria-label={`${source.title} website clone`}>
-      <picture className={styles.fallback} aria-hidden="true">
-        <source media="(max-width: 640px)" srcSet={source.fallbackMobile} />
-        <img src={source.fallbackDesktop} alt="" />
-      </picture>
+      <div className={styles.fallback} aria-hidden="true">
+        <picture>
+          <source media="(max-width: 640px)" srcSet={source.fallbackMobile} />
+          <img src={source.fallbackDesktop} alt="" />
+        </picture>
+      </div>
 
       <iframe
         className={`${styles.frame} ${state.loaded ? styles.frameLoaded : ""}`}
