@@ -5,15 +5,15 @@
       "width": 1440,
       "height": 900
     },
-    "iframeUrl": "https://www.shopify.com/editions/winter2026",
-    "iframeTitle": "Shopify Editions Winter '26",
+    "pageUrl": "http://127.0.0.1:3000/editions/winter2026",
+    "pageTitle": "Shopify Editions | Winter '26",
     "hasEditions": true,
     "hasSidekick": true,
-    "hostDimensions": {
+    "dimensions": {
       "width": 1440,
       "height": 900,
       "scrollWidth": 1440,
-      "scrollHeight": 900
+      "scrollHeight": 54102
     },
     "scrollMoved": true,
     "pageErrors": []
@@ -24,15 +24,15 @@
       "width": 768,
       "height": 1024
     },
-    "iframeUrl": "https://www.shopify.com/editions/winter2026",
-    "iframeTitle": "Shopify Editions Winter '26",
+    "pageUrl": "http://127.0.0.1:3000/editions/winter2026",
+    "pageTitle": "Shopify Editions | Winter '26",
     "hasEditions": true,
     "hasSidekick": true,
-    "hostDimensions": {
+    "dimensions": {
       "width": 768,
       "height": 1024,
       "scrollWidth": 768,
-      "scrollHeight": 1024
+      "scrollHeight": 57322
     },
     "scrollMoved": true,
     "pageErrors": []
@@ -43,15 +43,15 @@
       "width": 390,
       "height": 844
     },
-    "iframeUrl": "https://www.shopify.com/editions/winter2026",
-    "iframeTitle": "Shopify Editions Winter '26",
+    "pageUrl": "http://127.0.0.1:3000/editions/winter2026",
+    "pageTitle": "Shopify Editions | Winter '26",
     "hasEditions": true,
     "hasSidekick": true,
-    "hostDimensions": {
+    "dimensions": {
       "width": 390,
       "height": 844,
       "scrollWidth": 390,
-      "scrollHeight": 844
+      "scrollHeight": 57897
     },
     "scrollMoved": true,
     "pageErrors": []

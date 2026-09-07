@@ -5,4 +5,4 @@
 - Desktop presents the Editions chooser; compact widths expose a Menu control.
 - Scroll reveals and pins full-bleed media alongside editorial copy.
 - Hover effects are restrained: color inversion, border emphasis, and media response.
-- A local fallback is visible during network startup. A polite status message appears only after a four-second delay and disappears when the source finishes loading.
+- Wheel, touch, Page Up/Down, Home/End, and scrollbar input act on the top-level local document rather than crossing an iframe boundary.

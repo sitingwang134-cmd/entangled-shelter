@@ -8,4 +8,4 @@
 - Chapter anchors update navigation context without replacing the document.
 - Reduced-motion behavior and keyboard semantics are inherited from the source experience.
 
-The clone frame intentionally keeps the source document as the scrolling context. This preserves WebGL, media, menu, focus, hover, and responsive behavior rather than approximating them.
+The local mirror is served as the top-level document. This preserves native scrolling plus the source WebGL, media, menu, focus, hover, and responsive behavior without a nested iframe scroll boundary.

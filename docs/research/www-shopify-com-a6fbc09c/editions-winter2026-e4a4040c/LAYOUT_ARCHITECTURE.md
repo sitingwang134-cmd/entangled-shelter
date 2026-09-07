@@ -1,5 +1,5 @@
 # Layout architecture
 
-`app/page.tsx` supplies an immutable source descriptor to `ExactCloneFrame`. The frame fills `100dvh`, paints a local responsive hero capture immediately, then crossfades in the live public source after its load event. The outer Next.js document does not scroll; the embedded document owns scrolling and all responsive layout.
+`app/page.tsx` redirects the root route to `/editions/winter2026`. A Next.js `beforeFiles` rewrite serves the captured Shopify source document from `public/sites/.../mirror-live.html` at that clean URL.
 
-This separation prevents duplicate scrollbars, removes cumulative layout shift, and lets the source keep its canvas/WebGL, sticky positioning, media queries, accessibility tree, and link behavior intact. The local evidence bundle supports visual QA and a recognizable offline first paint.
+The captured document is the top-level browsing context, so the browser owns one native scrollbar and wheel, touch, keyboard, sticky positioning, canvas/WebGL, media-query, and accessibility behavior all operate in the same document. This replaces the earlier cross-origin iframe shell, whose nested scroll context did not reliably receive wheel input in the in-app browser.

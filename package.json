@@ -32,6 +32,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "generate:mirror": "node scripts/generate-local-mirror-www-shopify-com-a6fbc09c-editions-winter2026-e4a4040c.mjs",
+    "qa:mirror": "node scripts/qa-www-shopify-com-a6fbc09c-editions-winter2026-e4a4040c.mjs",
     "check": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {

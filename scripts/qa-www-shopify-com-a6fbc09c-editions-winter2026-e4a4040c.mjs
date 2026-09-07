@@ -41,23 +41,12 @@ for (const viewport of viewports) {
   page.on("pageerror", (error) => errors.push(error.message));
 
   await page.goto(appUrl, { waitUntil: "domcontentloaded", timeout: 60_000 });
-  const frameElement = page.locator("iframe");
-  await frameElement.waitFor({ state: "visible", timeout: 20_000 });
-  const iframeHandle = await frameElement.elementHandle();
-  let frame = null;
-  for (let attempt = 0; attempt < 80; attempt += 1) {
-    frame = await iframeHandle?.contentFrame();
-    if (frame?.url().includes("/editions/winter2026")) break;
-    await page.waitForTimeout(250);
-  }
-  if (!frame?.url().includes("/editions/winter2026")) {
-    throw new Error(`Source frame did not attach for ${viewport.name}`);
-  }
-  await frame.waitForLoadState("domcontentloaded", { timeout: 60_000 });
-  await frame.locator("body").waitFor({ state: "visible", timeout: 30_000 });
-  await page.waitForTimeout(2_500);
+  await page.waitForURL("**/editions/winter2026", { timeout: 20_000 });
+  await page.locator("body").waitFor({ state: "visible", timeout: 30_000 });
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForTimeout(8_000);
 
-  const bodyText = await frame.locator("body").innerText();
+  const bodyText = await page.locator("body").innerText();
   const dimensions = await page.evaluate(() => ({
     width: document.documentElement.clientWidth,
     height: document.documentElement.clientHeight,
@@ -70,18 +59,19 @@ for (const viewport of viewports) {
     animations: "disabled",
   });
 
-  const beforeScroll = await frame.evaluate(() => window.scrollY);
-  await frame.evaluate(() => window.scrollTo(0, 1_500));
-  await frame.waitForTimeout(350);
-  const afterScroll = await frame.evaluate(() => window.scrollY);
+  const beforeScroll = await page.evaluate(() => window.scrollY);
+  await page.mouse.move(viewport.width / 2, viewport.height / 2);
+  await page.mouse.wheel(0, 1_200);
+  await page.waitForTimeout(500);
+  const afterScroll = await page.evaluate(() => window.scrollY);
 
   results.push({
     viewport,
-    iframeUrl: frame.url(),
-    iframeTitle: await frameElement.getAttribute("title"),
+    pageUrl: page.url(),
+    pageTitle: await page.title(),
     hasEditions: bodyText.includes("Editions"),
     hasSidekick: bodyText.includes("Sidekick"),
-    hostDimensions: dimensions,
+    dimensions,
     scrollMoved: afterScroll > beforeScroll,
     pageErrors: errors,
   });
@@ -95,3 +85,7 @@ await fs.writeFile(
   `${JSON.stringify(results, null, 2)}\n`,
 );
 console.log(JSON.stringify(results, null, 2));
+
+if (results.some((result) => !result.scrollMoved)) {
+  throw new Error("Native mouse-wheel scrolling failed in one or more viewports.");
+}
