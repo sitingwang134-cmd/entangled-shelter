@@ -6,6 +6,26 @@
   background: #0b0d0b;
 }
 
+.scrollRail {
+  position: fixed;
+  z-index: 70;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100svh;
+  background: rgba(242, 240, 229, 0.16);
+  pointer-events: none;
+}
+
+.scrollRail span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #c9ff38;
+  transform-origin: top center;
+  will-change: transform;
+}
+
 .header {
   position: fixed;
   z-index: 50;
@@ -78,12 +98,19 @@
   font-size: 12px;
 }
 
-.hero {
+.heroScroll {
   position: relative;
+  height: 190svh;
+  background: #0b0d0b;
+}
+
+.hero {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100svh;
+  height: 100svh;
   padding: 112px 24px 24px;
   overflow: hidden;
   isolation: isolate;
@@ -101,7 +128,7 @@
 .heroArt {
   background: url("/entangled/hero-placeholder.png") center / cover;
   transform: scale(1.08);
-  animation: drift 16s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .heroShade {
@@ -109,6 +136,79 @@
   background:
     linear-gradient(180deg, rgba(11, 13, 11, 0.12) 0%, rgba(11, 13, 11, 0.06) 40%, rgba(11, 13, 11, 0.9) 100%),
     linear-gradient(90deg, rgba(11, 13, 11, 0.68), transparent 55%);
+  will-change: opacity;
+}
+
+.heroOrbit {
+  position: absolute;
+  z-index: -1;
+  top: 40%;
+  left: 62%;
+  display: grid;
+  place-items: center;
+  width: clamp(130px, 18vw, 300px);
+  aspect-ratio: 1;
+  color: #c9ff38;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: rgba(201, 255, 56, 0.08);
+  box-shadow: 0 0 90px rgba(201, 255, 56, 0.28), inset 0 0 60px rgba(201, 255, 56, 0.1);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.heroOrbit i,
+.portalOrbit i {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.heroOrbit i:nth-child(2),
+.portalOrbit i:nth-child(3) {
+  inset: 28%;
+}
+
+.heroOrbit i:nth-child(3) {
+  inset: 44%;
+  background: currentColor;
+}
+
+.heroOrbit b {
+  font-family: var(--font-hw-cigars), Georgia, serif;
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: 400;
+}
+
+.floatingGlyphs {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: #c9ff38;
+  pointer-events: none;
+}
+
+.floatingGlyphs span {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  animation: float-glyph 5s ease-in-out infinite alternate;
+}
+
+.floatingGlyphs span:nth-child(1) { top: 24%; left: 9%; }
+.floatingGlyphs span:nth-child(2) { top: 18%; right: 17%; animation-delay: -1.7s; }
+.floatingGlyphs span:nth-child(3) { right: 8%; bottom: 22%; animation-delay: -3.1s; }
+
+.eyebrow,
+.heroTitleWrap,
+.heroFooter {
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow,
@@ -127,7 +227,7 @@
 
 .eyebrow {
   margin: 0;
-  animation: rise 900ms 120ms both;
+  will-change: transform, opacity;
 }
 
 .heroTitleWrap {
@@ -143,7 +243,10 @@
   line-height: 0.72;
   letter-spacing: -0.065em;
   text-transform: uppercase;
-  animation: rise 1s 180ms both;
+}
+
+.heroTitleWrap h1 > span {
+  will-change: transform, opacity;
 }
 
 .heroTitleWrap h1 span:last-child {
@@ -165,6 +268,7 @@
   font-family: var(--font-hw-cigars), Georgia, serif;
   font-size: clamp(1.25rem, 2vw, 2rem);
   line-height: 1.18;
+  will-change: transform, opacity;
 }
 
 .heroFooter {
@@ -211,9 +315,41 @@
   letter-spacing: -0.055em;
 }
 
-.manifesto h2 span {
+.manifestoLine {
+  display: block;
+  overflow: hidden;
+}
+
+.manifestoLine > span {
+  display: block;
+  will-change: transform, opacity;
+}
+
+.manifestoLine em {
   font-family: var(--font-hw-cigars), Georgia, serif;
+  font-style: normal;
   font-weight: 400;
+}
+
+.manifestoSignal {
+  position: relative;
+  grid-column: 2;
+  width: 100%;
+  height: 1px;
+  margin-top: 8vh;
+  background: var(--ink);
+  transform-origin: left center;
+}
+
+.manifestoSignal i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: translateY(-50%);
 }
 
 .manifestoCopy {
@@ -231,24 +367,32 @@
 .portal {
   --accent: #c9ff38;
   position: relative;
+  height: 155svh;
+  border-top: 1px solid rgba(242, 240, 229, 0.32);
+}
+
+.portalStage {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100svh;
+  height: 100svh;
   padding: 100px 24px 40px;
   overflow: hidden;
-  border-top: 1px solid rgba(242, 240, 229, 0.32);
   isolation: isolate;
+  will-change: clip-path;
 }
 
 .portalArt {
   background-position: center;
   background-size: cover;
-  transition: transform 900ms cubic-bezier(0.2, 0.75, 0.2, 1);
+  transition: filter 500ms ease;
+  will-change: transform;
 }
 
 .portal:hover .portalArt {
-  transform: scale(1.035);
+  filter: saturate(1.12) contrast(1.04);
 }
 
 .foodArt { background-image: url("/entangled/food-placeholder.png"); }
@@ -258,6 +402,30 @@
 .portalShade {
   z-index: -1;
   background: linear-gradient(90deg, rgba(6, 8, 7, 0.93) 0%, rgba(6, 8, 7, 0.48) 52%, rgba(6, 8, 7, 0.12) 100%);
+  will-change: opacity;
+}
+
+.portalOrbit {
+  position: absolute;
+  z-index: -1;
+  top: 18%;
+  right: 8%;
+  display: grid;
+  place-items: center;
+  width: clamp(210px, 34vw, 560px);
+  aspect-ratio: 1;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.portalOrbit span {
+  font-family: var(--font-hw-cigars), Georgia, serif;
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 1;
 }
 
 .portalTopline {
@@ -265,10 +433,12 @@
   justify-content: space-between;
   padding-bottom: 14px;
   border-bottom: 1px solid rgba(242, 240, 229, 0.45);
+  will-change: transform, opacity;
 }
 
 .portalBody {
   width: min(970px, 92vw);
+  will-change: transform, opacity;
 }
 
 .portalBody > p:first-child {
@@ -308,6 +478,13 @@
   border-radius: 999px;
   background: var(--accent);
   cursor: pointer;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.portalBody button:hover,
+.finalCta button:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.24);
 }
 
 .rules {
@@ -369,6 +546,7 @@
   text-align: center;
   background: #ff9bc7;
   color: var(--ink);
+  overflow: hidden;
 }
 
 .finalCta h2 {
@@ -401,6 +579,7 @@
   padding: 18px;
   background: rgba(6, 8, 7, 0.76);
   backdrop-filter: blur(12px);
+  animation: backdrop-in 350ms ease both;
 }
 
 .lab {
@@ -473,6 +652,10 @@
   padding: clamp(24px, 5vw, 64px);
 }
 
+.labPanel > * {
+  will-change: transform, opacity;
+}
+
 .labKicker {
   margin: 0 0 34px;
   color: rgba(242, 240, 229, 0.64);
@@ -502,6 +685,12 @@
   background: transparent;
   text-align: left;
   cursor: pointer;
+  transition: transform 180ms ease, color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.optionGrid button:hover,
+.guessGrid button:hover {
+  transform: translateX(5px);
 }
 
 .optionGrid button span,
@@ -630,6 +819,8 @@
   background: var(--accent);
   font-family: var(--font-hw-cigars), Georgia, serif;
   font-size: 58px;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
+  will-change: transform, opacity;
 }
 
 .deckPreview span:nth-child(1) { transform: translateX(-92%) rotate(-12deg); }
@@ -658,11 +849,13 @@
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
+  transition: transform 180ms ease, color 180ms ease, background 180ms ease;
 }
 
 .rpsGrid button:hover {
   color: var(--ink);
   background: var(--accent);
+  transform: scale(1.06) rotate(3deg);
 }
 
 .rpsGrid span {
@@ -706,6 +899,7 @@
   font-size: clamp(4rem, 10vw, 9rem);
   line-height: 0.9;
   letter-spacing: -0.06em;
+  will-change: transform, opacity;
 }
 
 .resultNote {
@@ -742,14 +936,14 @@
   margin: 0;
 }
 
-@keyframes drift {
-  from { transform: scale(1.08) translate3d(-1%, -1%, 0); }
-  to { transform: scale(1.13) translate3d(1.5%, 1%, 0); }
+@keyframes float-glyph {
+  from { transform: translate3d(-8px, -10px, 0) rotate(-8deg); }
+  to { transform: translate3d(12px, 14px, 0) rotate(12deg); }
 }
 
-@keyframes rise {
-  from { opacity: 0; transform: translateY(28px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes backdrop-in {
+  from { opacity: 0; backdrop-filter: blur(0); }
+  to { opacity: 1; backdrop-filter: blur(12px); }
 }
 
 @media (max-width: 800px) {
@@ -766,6 +960,19 @@
 
   .hero {
     padding: 90px 12px 18px;
+  }
+
+  .heroScroll {
+    height: 155svh;
+  }
+
+  .heroOrbit {
+    top: 43%;
+    left: 56%;
+  }
+
+  .floatingGlyphs span:nth-child(2) {
+    display: none;
   }
 
   .heroTitleWrap h1 {
@@ -798,13 +1005,21 @@
     font-size: clamp(3.4rem, 16vw, 6rem);
   }
 
+  .manifestoSignal {
+    margin-top: 70px;
+  }
+
   .manifestoCopy {
     display: block;
     margin-top: 100px;
   }
 
   .portal {
-    min-height: 88svh;
+    height: 132svh;
+  }
+
+  .portalStage {
+    height: 100svh;
     padding: 86px 12px 24px;
   }
 
@@ -814,6 +1029,12 @@
 
   .portalBody h2 {
     font-size: clamp(4.2rem, 20vw, 7.4rem);
+  }
+
+  .portalOrbit {
+    top: 18%;
+    right: -24%;
+    width: 82vw;
   }
 
   .rules {
@@ -926,14 +1147,31 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .heroScroll,
+  .portal {
+    height: auto;
+  }
+
+  .hero,
+  .portalStage {
+    position: relative;
+  }
+
   .heroArt,
   .eyebrow,
-  .heroTitleWrap h1 {
+  .heroTitleWrap h1,
+  .floatingGlyphs span,
+  .modalBackdrop {
     animation: none;
   }
 
   .portalArt,
-  .modeGrid button {
+  .modeGrid button,
+  .optionGrid button,
+  .guessGrid button,
+  .rpsGrid button,
+  .portalBody button,
+  .finalCta button {
     transition: none;
   }
 }

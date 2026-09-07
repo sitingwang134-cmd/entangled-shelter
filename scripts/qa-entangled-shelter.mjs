@@ -33,6 +33,7 @@ for (const viewport of viewports) {
   page.on("pageerror", (error) => errors.push(error.message));
 
   await page.goto(appUrl, { waitUntil: "networkidle", timeout: 60_000 });
+  await page.waitForTimeout(1_400);
   await page.screenshot({
     path: path.join(outputDir, `${viewport.name}-home.png`),
     animations: "disabled",
@@ -44,10 +45,16 @@ for (const viewport of viewports) {
     scrollHeight: document.documentElement.scrollHeight,
     before: window.scrollY,
   }));
+  const motionBefore = await page.locator('[data-motion="hero-art"]').evaluate(
+    (element) => getComputedStyle(element).transform,
+  );
   await page.mouse.move(viewport.width / 2, viewport.height / 2);
   await page.mouse.wheel(0, 800);
-  await page.waitForTimeout(250);
+  await page.waitForTimeout(1_200);
   const afterScroll = await page.evaluate(() => window.scrollY);
+  const motionAfter = await page.locator('[data-motion="hero-art"]').evaluate(
+    (element) => getComputedStyle(element).transform,
+  );
   await page.evaluate(() => window.scrollTo(0, 0));
 
   await page.getByRole("button", { name: /打开选择器/ }).first().click();
@@ -76,6 +83,7 @@ for (const viewport of viewports) {
   await page.locator('button[aria-pressed="false"]').first().click();
   await page.getByRole("button", { name: /先猜后抽/ }).click();
   const guessResult = await page.locator('[role="dialog"] strong').innerText();
+  await page.waitForTimeout(900);
 
   await page.screenshot({
     path: path.join(outputDir, `${viewport.name}-result.png`),
@@ -89,6 +97,7 @@ for (const viewport of viewports) {
     hasBrand: pageTitle.includes("Entangled Shelter"),
     noHorizontalOverflow: dimensions.scrollWidth === dimensions.clientWidth,
     scrollMoved: afterScroll > dimensions.before,
+    heroMotionChanged: motionBefore !== motionAfter,
     flows: {
       poker: pokerResult,
       rockPaperScissors: rpsResult,
@@ -114,6 +123,7 @@ if (
       !result.hasBrand ||
       !result.noHorizontalOverflow ||
       !result.scrollMoved ||
+      !result.heroMotionChanged ||
       result.pageErrors.length > 0,
   )
 ) {

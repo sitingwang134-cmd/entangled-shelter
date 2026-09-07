@@ -9,6 +9,7 @@
     "hasBrand": true,
     "noHorizontalOverflow": true,
     "scrollMoved": true,
+    "heroMotionChanged": true,
     "flows": {
       "poker": "沸腾火锅",
       "rockPaperScissors": "一盘寿司",
@@ -26,10 +27,11 @@
     "hasBrand": true,
     "noHorizontalOverflow": true,
     "scrollMoved": true,
+    "heroMotionChanged": true,
     "flows": {
-      "poker": "沸腾火锅",
-      "rockPaperScissors": "沸腾火锅",
-      "guessThenDraw": "沸腾火锅"
+      "poker": "一盘寿司",
+      "rockPaperScissors": "一盘寿司",
+      "guessThenDraw": "一盘寿司"
     },
     "pageErrors": []
   }
