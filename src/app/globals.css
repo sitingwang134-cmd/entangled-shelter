@@ -12,11 +12,10 @@
 
 :root {
   color-scheme: dark;
-  --shopify-ink: #292919;
-  --shopify-paper: #f7f7ee;
-  --shopify-muted: #dcdcd0;
-  --shopify-green: #95bf47;
-  --shopify-purple: #5433eb;
+  --ink: #10120f;
+  --paper: #f2f0e5;
+  --acid: #c9ff38;
+  --line: rgba(242, 240, 229, 0.28);
 }
 
 * {
@@ -28,15 +27,33 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0;
-  overflow: hidden;
-  background: #000;
+  background: #0b0d0b;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-neue-montreal), Arial, sans-serif;
+  color: var(--paper);
+  overflow-x: hidden;
 }
 
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--acid);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--acid);
 }

@@ -24,20 +24,15 @@ const hwCigars = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Shopify Editions | Winter '26",
+  title: "Entangled Shelter — 选择困难症避难所",
   description:
-    "Explore 150+ product updates that make running your business easier and more powerful.",
-  icons: {
-    icon: "/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/002-favicon_256-d66c3413d0.png",
-    apple:
-      "/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/001-fav-180-32a238a06c.png",
-  },
+    "一个帮助选择困难症做决定的 vibe coding 实验：美食、穿搭、旅行，交给扑克、剪刀石头布和先猜后抽。",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
+  themeColor: "#0b0d0b",
 };
 
 export default function RootLayout({
@@ -45,7 +40,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="zh-CN"
       className={`${neueMontreal.variable} ${imperialScript.variable} ${hwCigars.variable}`}
     >
       <body>{children}</body>
