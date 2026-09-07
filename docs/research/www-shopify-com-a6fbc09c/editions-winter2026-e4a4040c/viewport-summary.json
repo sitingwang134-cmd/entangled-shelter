@@ -1,0 +1,56 @@
+{
+  "desktop-1440": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1440,
+      "height": 54102,
+      "htmlClasses": "lenis",
+      "bodyClasses": "place-items-end"
+    },
+    "sectionCount": 31,
+    "imageCount": 345,
+    "videoCount": 12,
+    "backgroundImageCount": 11,
+    "inlineSvgCount": 124,
+    "interactiveCount": 366
+  },
+  "tablet-768": {
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "document": {
+      "width": 768,
+      "height": 57322,
+      "htmlClasses": "lenis",
+      "bodyClasses": "place-items-end"
+    },
+    "sectionCount": 77,
+    "imageCount": 345,
+    "videoCount": 12,
+    "backgroundImageCount": 11,
+    "inlineSvgCount": 124,
+    "interactiveCount": 359
+  },
+  "mobile-390": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 390,
+      "height": 57897,
+      "htmlClasses": "lenis",
+      "bodyClasses": "place-items-end"
+    },
+    "sectionCount": 77,
+    "imageCount": 345,
+    "videoCount": 12,
+    "backgroundImageCount": 11,
+    "inlineSvgCount": 124,
+    "interactiveCount": 359
+  }
+}

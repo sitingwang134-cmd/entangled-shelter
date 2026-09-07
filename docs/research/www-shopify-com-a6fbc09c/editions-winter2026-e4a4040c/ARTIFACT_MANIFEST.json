@@ -1,0 +1,955 @@
+{
+  "sourceUrl": "https://www.shopify.com/editions/winter2026",
+  "generatedAt": "2026-09-07T02:03:24.810Z",
+  "requested": 135,
+  "downloaded": 135,
+  "failed": 0,
+  "totalBytes": 48362588,
+  "assets": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0647/5176/3550/files/fav-180.png?v=1780498479",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/001-fav-180-32a238a06c.png",
+      "contentType": "image/png",
+      "bytes": 12365,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/favicon_256.png?v=1760634627",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/002-favicon_256-d66c3413d0.png",
+      "contentType": "image/png",
+      "bytes": 62871,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0921/8919/6588/files/Summer2025.svg?v=1760667315",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/003-Summer2025-91706f571c.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 2959,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0702/3204/7829/files/Editions-Winter-25-compressed.svg?v=1733331674",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/004-Editions-Winter-25-compressed-67f716decc.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 2538,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/preview_images/620a0d8735da4d97b040b1cd98693898.thumbnail.0000000000.jpg?v=1765339098&width=500&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/005-620a0d8735da4d97b040b1cd98693898-thumbnail-0000000000-7a08ff9904.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 24214,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/compressed-pulseDesktopPoster-desktop.webp?v=1765345989&width=600&height=312&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/006-compressed-pulseDesktopPoster-desktop-8d67270406.webp",
+      "contentType": "image/png",
+      "bytes": 136703,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/apps-bg-image.png?v=1763934791&width=1200&height=521&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/007-apps-bg-image-60b354adaa.png",
+      "contentType": "image/png",
+      "bytes": 106083,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/Rectangle_240654805.png?v=1763642972",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/008-Rectangle_240654805-2fb6b6a76a.png",
+      "contentType": "image/png",
+      "bytes": 296681,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/default_abdd996f-1b4e-44a5-bfcc-8addca857894.png?v=1765164459&width=600&height=590&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/009-default_abdd996f-1b4e-44a5-bfcc-8addca857894-0acb954376.png",
+      "contentType": "image/png",
+      "bytes": 97801,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/en_4608c98d-d4f7-4d35-8b94-e83258e20e54.png?v=1765309078&width=600&height=495&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/010-en_4608c98d-d4f7-4d35-8b94-e83258e20e54-cf6cf99665.png",
+      "contentType": "image/png",
+      "bytes": 396807,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/compressed-u2poster_12_9.webp?v=1765315033&width=600&height=495&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/011-compressed-u2poster_12_9-dfee9f6861.webp",
+      "contentType": "image/jpeg",
+      "bytes": 39442,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/default_ee658e76-0d9b-46c9-b479-5baab424fb97.png?v=1765164617&width=600&height=527&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/012-default_ee658e76-0d9b-46c9-b479-5baab424fb97-e3fdd0fa35.png",
+      "contentType": "image/png",
+      "bytes": 244399,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/compressed-u8poster_12_9.webp?v=1765315279&width=600&height=460&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/013-compressed-u8poster_12_9-cab677d2d3.webp",
+      "contentType": "image/png",
+      "bytes": 315073,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/en_3a493a1f-2575-43b6-9e6e-22033556b139.png?v=1765309833&width=400&height=692&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/014-en_3a493a1f-2575-43b6-9e6e-22033556b139-9df0ad6e62.png",
+      "contentType": "image/png",
+      "bytes": 285459,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/u16poster_desktop.webp?v=1765308291&width=400&height=691&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/015-u16poster_desktop-a4c6ffccef.webp",
+      "contentType": "image/png",
+      "bytes": 244604,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji3.png?v=1764108967&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/016-emoji3-147f8d5c26.png",
+      "contentType": "image/png",
+      "bytes": 12943,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji6.png?v=1764108966&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/017-emoji6-5d1a652c68.png",
+      "contentType": "image/png",
+      "bytes": 12643,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji2.png?v=1764108966&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/018-emoji2-713049ec59.png",
+      "contentType": "image/png",
+      "bytes": 10774,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji1.png?v=1764108966&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/019-emoji1-29405458a9.png",
+      "contentType": "image/png",
+      "bytes": 15127,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji5.png?v=1764108966&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/020-emoji5-73dc64e4b1.png",
+      "contentType": "image/png",
+      "bytes": 12290,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji4.png?v=1764108966&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/021-emoji4-b1ffa89119.png",
+      "contentType": "image/png",
+      "bytes": 15696,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/emoji7.png?v=1764108966&width=80",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/022-emoji7-468d394340.png",
+      "contentType": "image/png",
+      "bytes": 10559,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/ren-anton.png?v=1765166301&width=16&height=16&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/023-ren-anton-69d7d015bf.png",
+      "contentType": "image/png",
+      "bytes": 1476,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/en_a158fbbf-7e97-4014-9008-9eb7a719f84a.png?v=1765311013&width=600&height=471&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/024-en_a158fbbf-7e97-4014-9008-9eb7a719f84a-a8c835a78d.png",
+      "contentType": "image/png",
+      "bytes": 404073,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/default_be7aaa86-31c5-433d-aae2-5b361372ccc6.png?v=1765310847&width=600&height=384&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/025-default_be7aaa86-31c5-433d-aae2-5b361372ccc6-03377176c8.png",
+      "contentType": "image/png",
+      "bytes": 290162,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/chatgptdesktopposter_12_10.webp?v=1765374017&width=600&height=580&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/026-chatgptdesktopposter_12_10-2a6fe61738.webp",
+      "contentType": "image/png",
+      "bytes": 361642,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/preview_images/5aa1f17e22044052af94fde4bb1d052c.thumbnail.0000000000.jpg?v=1765338996&width=1300&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/027-5aa1f17e22044052af94fde4bb1d052c-thumbnail-0000000000-bc51c18be6.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 46370,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/BG-B1.png?v=1762365507&width=700&height=467&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/028-BG-B1-6995b3436d.png",
+      "contentType": "image/png",
+      "bytes": 777367,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U37_Integrated_theme_editor.png?v=1765297197&width=700&height=521&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/029-U37_Integrated_theme_editor-3cc8ac1b34.png",
+      "contentType": "image/png",
+      "bytes": 446094,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/BG-3.png?v=1762367060&width=300&height=200&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/030-BG-3-914c23cda7.png",
+      "contentType": "image/png",
+      "bytes": 123409,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U47_Theme_index_on_mobile.png?v=1762380331&width=300&height=519&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/031-U47_Theme_index_on_mobile-3ce9945251.png",
+      "contentType": "image/png",
+      "bytes": 148385,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/BG-Y.png?v=1762366719&width=700&height=467&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/032-BG-Y-b9fccb1ff4.png",
+      "contentType": "image/png",
+      "bytes": 462234,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U230_Wordpress.png?v=1765139225&width=300&height=348&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/033-U230_Wordpress-ce5da3e141.png",
+      "contentType": "image/png",
+      "bytes": 74956,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/texture-src-90.jpg",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/034-texture-src-90-64a2ee6e18.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 24622,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/preview_images/0dfe781a187d48cfa581ed2b1ad6a5ed.thumbnail.0000000000.jpg?v=1765339266&width=500&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/035-0dfe781a187d48cfa581ed2b1ad6a5ed-thumbnail-0000000000-5ed7ad4ce7.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 14229,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/mfi.svg?v=1764886245",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/036-mfi-b37a38a07f.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 520,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/Frame_2085655178.svg?v=1762809585",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/037-Frame_2085655178-92249758cf.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 1742,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/health.svg?v=1764886194",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/038-health-34d93d0ea3.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 391,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/cloud.svg?v=1762209241",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/039-cloud-55ce132cd3.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 813,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/connectivity_15bc343f-0942-4223-b315-d760c4e83562.svg?v=1764886483",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/040-connectivity_15bc343f-0942-4223-b315-d760c4e83562-b0b2b207f0.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 1450,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/BG-G.png?v=1761951092&width=700&height=467&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/041-BG-G-dff84c0a73.png",
+      "contentType": "image/png",
+      "bytes": 249193,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U254_Scanner_support.png?v=1765339280&width=700&height=547&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/042-U254_Scanner_support-cf724931b7.png",
+      "contentType": "image/png",
+      "bytes": 77630,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U49_Sell_subscriptions_POS.png?v=1765380241&width=700&height=539&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/043-U49_Sell_subscriptions_POS-549e80009a.png",
+      "contentType": "image/png",
+      "bytes": 251454,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U53_Quick_count_POS_extension.png?v=1764032681&width=300&height=475&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/044-U53_Quick_count_POS_extension-3bee2a2cf7.png",
+      "contentType": "image/png",
+      "bytes": 149535,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/6f0d7e6128d962253121b3aec1527854.png?width=700&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/045-6f0d7e6128d962253121b3aec1527854-71b92a178f.png",
+      "contentType": "image/png",
+      "bytes": 188188,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/flowerbg-2.png?v=1760937117&width=300&height=225&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/046-flowerbg-2-d11f73c45f.png",
+      "contentType": "image/png",
+      "bytes": 141404,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U62_Uber_Direct_POS_local.png?v=1764806213&width=300&height=475&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/047-U62_Uber_Direct_POS_local-22c1d27b62.png",
+      "contentType": "image/png",
+      "bytes": 239835,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/preview_images/2ace8284aebc4d22901886b2323bb20d.thumbnail.0000000000.jpg?v=1765339222&width=500&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/048-2ace8284aebc4d22901886b2323bb20d-thumbnail-0000000000-2a4253eb8d.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 20887,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/228361bfc05b3d2c5260a542aa8c61c6.png?width=700&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/049-228361bfc05b3d2c5260a542aa8c61c6-5b8ae07e89.png",
+      "contentType": "image/png",
+      "bytes": 399320,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/BG-R.png?v=1761935402&width=700&height=467&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/050-BG-R-3912c896ca.png",
+      "contentType": "image/png",
+      "bytes": 300060,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U105_Shopify_Email_SMS_marketing.png?v=1764621466&width=700&height=671&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/051-U105_Shopify_Email_SMS_marketing-3236b6c028.png",
+      "contentType": "image/png",
+      "bytes": 485814,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U109_Forms_translations.png?v=1764622031&width=700&height=509&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/052-U109_Forms_translations-97918bd630.png",
+      "contentType": "image/png",
+      "bytes": 254568,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/BG-B2.png?v=1762366299&width=700&height=467&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/053-BG-B2-daa3e9d547.png",
+      "contentType": "image/png",
+      "bytes": 389934,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U98_Search_and_filter_segmentation_templates.png?v=1764787420&width=700&height=410&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/054-U98_Search_and_filter_segmentation_templates-689fa4ed5f.png",
+      "contentType": "image/png",
+      "bytes": 239807,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/03cf615f7c023dd5afc16904b8e4b619.png?width=700&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/055-03cf615f7c023dd5afc16904b8e4b619-3e59645281.png",
+      "contentType": "image/png",
+      "bytes": 455432,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U94_Markets_in_the_Checkout.png?v=1764964356&width=700&height=411&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/056-U94_Markets_in_the_Checkout-6a1db346f5.png",
+      "contentType": "image/png",
+      "bytes": 214863,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/B4.png?v=1761090303&width=700&height=357&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/057-B4-18b6da1ed2.png",
+      "contentType": "image/png",
+      "bytes": 347373,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U143_Flexible_inventory_transfers.png?v=1764805200&width=500&height=460&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/058-U143_Flexible_inventory_transfers-a36e2f7ea9.png",
+      "contentType": "image/png",
+      "bytes": 226258,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/26605fc719dba38d9d2a5da83312810f.png?width=500&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/059-26605fc719dba38d9d2a5da83312810f-6889d3fdf8.png",
+      "contentType": "image/png",
+      "bytes": 581206,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U133_Apple_watch_app_redesign.png?v=1764791708&width=500&height=559&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/060-U133_Apple_watch_app_redesign-c3c9af5a2b.png",
+      "contentType": "image/png",
+      "bytes": 246712,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U153_Offers_in_Shop.png?v=1764703001&width=500&height=747&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/061-U153_Offers_in_Shop-e11d9976d1.png",
+      "contentType": "image/png",
+      "bytes": 336529,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/preview_images/def37b82d2b5486a87cbf297a896f7d4.thumbnail.0000000000.jpg?v=1765208029&width=500&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/062-def37b82d2b5486a87cbf297a896f7d4-thumbnail-0000000000-1ed86df32a.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 73081,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U71_Shopify_Collective_globally_available.png?v=1765381201&width=700&height=532&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/063-U71_Shopify_Collective_globally_available-c9564b1319.png",
+      "contentType": "image/png",
+      "bytes": 464191,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U75_b2b_ACH_payments.png?v=1764042485&width=700&height=532&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/064-U75_b2b_ACH_payments-f2b6cd98fa.png",
+      "contentType": "image/png",
+      "bytes": 192661,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/786dd1f1b8096bb6116dcbf0fe12893a.png?width=700&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/065-786dd1f1b8096bb6116dcbf0fe12893a-382676b043.png",
+      "contentType": "image/png",
+      "bytes": 335477,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U79_Send_payment_requests_per_fulfillment.png?v=1765380307&width=700&height=478&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/066-U79_Send_payment_requests_per_fulfillment-341a721456.png",
+      "contentType": "image/png",
+      "bytes": 427506,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/1bf084da109bb3fe83016948c3c88b1f.png?width=700&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/067-1bf084da109bb3fe83016948c3c88b1f-2d48830101.png",
+      "contentType": "image/png",
+      "bytes": 454686,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U158_Automated_transfers_for_Shopify_Balance_payouts.png?v=1764976228&width=300&height=355&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/068-U158_Automated_transfers_for_Shopify_Balance_payouts-50a03030d5.png",
+      "contentType": "image/png",
+      "bytes": 119358,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/Rectangle_240657548.jpg?v=1760629924&width=300&height=209&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/069-Rectangle_240657548-e58c249356.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 20073,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U163_Spend_controls_secondary_cardholders_for_Balance.png?v=1762888832&width=300&height=461&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/070-U163_Spend_controls_secondary_cardholders_for_Balance-d10a2eeaf0.png",
+      "contentType": "image/png",
+      "bytes": 104585,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U117_FedEx_One_Rate_Return_Labels_6-col.png?v=1765246018&width=700&height=516&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/071-U117_FedEx_One_Rate_Return_Labels_6-col-6e313156c7.png",
+      "contentType": "image/png",
+      "bytes": 351213,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U122_Variant_default_packaging.png?v=1765168583&width=700&height=516&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/072-U122_Variant_default_packaging-6e057c88c2.png",
+      "contentType": "image/png",
+      "bytes": 276232,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U271_Checkout_MCP.png?v=1764963709&width=700&height=599&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/073-U271_Checkout_MCP-9409c87540.png",
+      "contentType": "image/png",
+      "bytes": 657156,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U183_Checkout_for_web_f222b0b3-24d2-4ee2-aff2-ebf8ffb4a766.png?v=1765120160&width=700&height=599&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/074-U183_Checkout_for_web_f222b0b3-24d2-4ee2-aff2-ebf8ffb4a766-118c945c5b.png",
+      "contentType": "image/png",
+      "bytes": 810118,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U226__Sidekick_app_discovery_6b57593c-579c-4a91-84af-7173ff60da83.png?v=1764892648&width=700&height=533&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/075-U226__Sidekick_app_discovery_6b57593c-579c-4a91-84af-7173ff60da83-db07bd3e4a.png",
+      "contentType": "image/png",
+      "bytes": 463638,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U253_-_App_intents_for_Sidekick.png?v=1765246170&width=700&height=533&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/076-U253_-_App_intents_for_Sidekick-b474e694a6.png",
+      "contentType": "image/png",
+      "bytes": 439284,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/preview_images/f880db5d8462441482ecbc2437cacf5d.thumbnail.0000000000.jpg?v=1765379387&width=1300&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/077-f880db5d8462441482ecbc2437cacf5d-thumbnail-0000000000-2b8212e4f3.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 115593,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U229_Admin_Intents_API.png?v=1764976432&width=700&height=527&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/078-U229_Admin_Intents_API-1082f426ca.png",
+      "contentType": "image/png",
+      "bytes": 410898,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U191_Faster_bulk_data_imports.png?v=1764969366&width=700&height=649&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/079-U191_Faster_bulk_data_imports-7306c2e2ac.png",
+      "contentType": "image/png",
+      "bytes": 683848,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U223_upgrades_for_metafields.png?v=1765245773&width=700&height=494&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/080-U223_upgrades_for_metafields-5990477bfe.png",
+      "contentType": "image/png",
+      "bytes": 484873,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U267_Tangle.png?v=1764976717&width=700&height=597&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/081-U267_Tangle-104de308cc.png",
+      "contentType": "image/png",
+      "bytes": 457383,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/c9c913c72ba45ce34cb2521bcaaefd07.png?width=700&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/082-c9c913c72ba45ce34cb2521bcaaefd07-01ac1a516c.png",
+      "contentType": "image/png",
+      "bytes": 538733,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/U190_pos_extension_storage_dark.png?v=1763597323&width=700&height=706&crop=center",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/083-U190_pos_extension_storage_dark-28f59cc77c.png",
+      "contentType": "image/png",
+      "bytes": 700527,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/Line_Grid.svg?v=1761231862",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/084-Line_Grid-2d2485d902.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 1974,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/videos/c/o/v/b201bb23d69f4a748de0ad9a500f4d4c.mp4",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/085-b201bb23d69f4a748de0ad9a500f4d4c-b37df36f2d.mp4",
+      "contentType": "video/mp4",
+      "bytes": 873628,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/favicon_16.png?v=1760634627",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/086-favicon_16-a0a01eb0e4.png",
+      "contentType": "image/png",
+      "bytes": 978,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/favicon_32.png?v=1760634627",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/087-favicon_32-1b0bd0caa7.png",
+      "contentType": "image/png",
+      "bytes": 2603,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/oxygen-v2/47215/49013/102837/4351350/assets/tailwind-G-N6aznT.css",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/088-tailwind-G-N6aznT-6fa1776930.css",
+      "contentType": "text/css",
+      "bytes": 129725,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/oxygen-v2/47215/49013/102837/4351350/assets/fonts-latin-CzfLCQn_.css",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/089-fonts-latin-CzfLCQn_-4f21cf2b9d.css",
+      "contentType": "text/css",
+      "bytes": 1055,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/3ee238256136fcfdfca35decbd44d0d4.woff2",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/090-3ee238256136fcfdfca35decbd44d0d4-2547e9731c.woff2",
+      "contentType": "application/octet-stream",
+      "bytes": 24792,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/389d4f8566b3b9cbe083b682c7fabf06.woff2",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/091-389d4f8566b3b9cbe083b682c7fabf06-036d035b7e.woff2",
+      "contentType": "application/octet-stream",
+      "bytes": 15572,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/49a57a6e59f6a50f0627418abeb58fec.woff2",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/092-49a57a6e59f6a50f0627418abeb58fec-059a2b05df.woff2",
+      "contentType": "application/octet-stream",
+      "bytes": 30440,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/mud_normal.webp?v=1762463320",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/093-mud_normal-a763ca6326.webp",
+      "contentType": "image/jpeg",
+      "bytes": 100285,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/620a0d8735da4d97b040b1cd98693898/620a0d8735da4d97b040b1cd98693898.HD-1080p-2.5Mbps-64843815.mp4",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/094-620a0d8735da4d97b040b1cd98693898-HD-1080p-2-5Mbps-64843815-2bb8e79c04.mp4",
+      "contentType": "video/mp4",
+      "bytes": 2130935,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/5aa1f17e22044052af94fde4bb1d052c/5aa1f17e22044052af94fde4bb1d052c.HD-1080p-2.5Mbps-64843660.mp4",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/095-5aa1f17e22044052af94fde4bb1d052c-HD-1080p-2-5Mbps-64843660-71aec70476.mp4",
+      "contentType": "video/mp4",
+      "bytes": 4958040,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/videos/c/o/v/87f637ea1e5944d888a5c1e6e4f97c0b.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/096-87f637ea1e5944d888a5c1e6e4f97c0b-bcbafec7f4.webm",
+      "contentType": "video/webm",
+      "bytes": 398320,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_3-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/097-rive_rollouts_3-desktop-13268e909d.webp",
+      "contentType": "image/png",
+      "bytes": 29967,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_7-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/098-rive_rollouts_7-desktop-0110600448.webp",
+      "contentType": "image/png",
+      "bytes": 12331,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_1-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/099-rive_rollouts_1-desktop-225786632b.webp",
+      "contentType": "image/jpeg",
+      "bytes": 158298,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_2-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/100-rive_rollouts_2-desktop-60fc2db29b.webp",
+      "contentType": "image/png",
+      "bytes": 28899,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_8-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/101-rive_rollouts_8-desktop-c4553fcacc.webp",
+      "contentType": "image/png",
+      "bytes": 34017,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_4-desktop.webp?v=1765304311&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/102-rive_rollouts_4-desktop-b51215253c.webp",
+      "contentType": "image/png",
+      "bytes": 38226,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_5-desktop.png?v=1763712954&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/103-rive_rollouts_5-desktop-4e376d8369.png",
+      "contentType": "image/png",
+      "bytes": 27504,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_12-desktop.webp?v=1763712954&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/104-rive_rollouts_12-desktop-ae7e7f6770.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6210,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_9-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/105-rive_rollouts_9-desktop-4883ac2251.webp",
+      "contentType": "image/png",
+      "bytes": 37167,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_11-desktop.webp?v=1763712954&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/106-rive_rollouts_11-desktop-138c6885a7.webp",
+      "contentType": "image/jpeg",
+      "bytes": 217315,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_10-desktop.webp?v=1763712954&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/107-rive_rollouts_10-desktop-33a7c33ede.webp",
+      "contentType": "image/png",
+      "bytes": 533326,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_6-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/108-rive_rollouts_6-desktop-08594fc220.webp",
+      "contentType": "image/png",
+      "bytes": 24713,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_13-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/109-rive_rollouts_13-desktop-b514132fb6.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6473,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_rollouts_14-desktop.webp?v=1763712953&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/110-rive_rollouts_14-desktop-d237d9a9ce.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6080,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_8-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/111-rive_simGym_8-desktop-775be02fb6.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6052,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_11-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/112-rive_simGym_11-desktop-8e444afc74.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6460,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_2-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/113-rive_simGym_2-desktop-1ef952f8ec.webp",
+      "contentType": "image/jpeg",
+      "bytes": 37470,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_6-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/114-rive_simGym_6-desktop-3f2c41970b.webp",
+      "contentType": "image/jpeg",
+      "bytes": 5875,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_12-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/115-rive_simGym_12-desktop-7b479ae31b.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6615,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_9-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/116-rive_simGym_9-desktop-7fcda006de.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6888,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_10-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/117-rive_simGym_10-desktop-81f7305759.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6768,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_7-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/118-rive_simGym_7-desktop-aeeb8930d7.webp",
+      "contentType": "image/jpeg",
+      "bytes": 7183,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_4-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/119-rive_simGym_4-desktop-f4ebb9b0f0.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6355,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_1-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/120-rive_simGym_1-desktop-f184c5141b.webp",
+      "contentType": "image/png",
+      "bytes": 397280,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_3-desktop.webp?v=1764178733&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/121-rive_simGym_3-desktop-1792d0da7a.webp",
+      "contentType": "image/png",
+      "bytes": 40127,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_simGym_5-desktop.webp?v=1764178734&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/122-rive_simGym_5-desktop-14b86d10b3.webp",
+      "contentType": "image/jpeg",
+      "bytes": 6580,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/videos/c/o/v/0dc403e5d86b4e09bde292e2db6ac573.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/123-0dc403e5d86b4e09bde292e2db6ac573-d43d3d8af0.webm",
+      "contentType": "video/webm",
+      "bytes": 1044917,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/0dfe781a187d48cfa581ed2b1ad6a5ed/0dfe781a187d48cfa581ed2b1ad6a5ed.HD-1080p-2.5Mbps-64844032.mp4",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/124-0dfe781a187d48cfa581ed2b1ad6a5ed-HD-1080p-2-5Mbps-64844032-8032ad9311.mp4",
+      "contentType": "video/mp4",
+      "bytes": 3269715,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/videos/c/o/v/ed8e777bc20f4f0d8e5591ec84e5432b.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/125-ed8e777bc20f4f0d8e5591ec84e5432b-00266f626d.webm",
+      "contentType": "video/webm",
+      "bytes": 537458,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/deb94092d05eef867322115bd88720aa.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/126-deb94092d05eef867322115bd88720aa-dbbf4f0404.webm",
+      "contentType": "application/octet-stream",
+      "bytes": 131489,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/2ace8284aebc4d22901886b2323bb20d/2ace8284aebc4d22901886b2323bb20d.HD-1080p-2.5Mbps-64843973.mp4",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/127-2ace8284aebc4d22901886b2323bb20d-HD-1080p-2-5Mbps-64843973-07008dd823.mp4",
+      "contentType": "video/mp4",
+      "bytes": 6981443,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/4db3219bcc8e0eff0766af51145dbe00.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/128-4db3219bcc8e0eff0766af51145dbe00-b272b0cea7.webm",
+      "contentType": "application/octet-stream",
+      "bytes": 158123,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/36c19199093173f378c64fa38090c7c2.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/129-36c19199093173f378c64fa38090c7c2-17cf862efa.webm",
+      "contentType": "application/octet-stream",
+      "bytes": 79823,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/b/shopify-brochure2-assets/2608aba5b58194e499ad1fff0d06eb3c.webm",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/130-2608aba5b58194e499ad1fff0d06eb3c-262ee1ad15.webm",
+      "contentType": "application/octet-stream",
+      "bytes": 282759,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/equirectangular_map.webp?v=1764887157",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/131-equirectangular_map-598d48d637.webp",
+      "contentType": "image/jpeg",
+      "bytes": 135008,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/def37b82d2b5486a87cbf297a896f7d4/def37b82d2b5486a87cbf297a896f7d4.HD-1080p-7.2Mbps-64727252.mp4",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/132-def37b82d2b5486a87cbf297a896f7d4-HD-1080p-7-2Mbps-64727252-2f4610572f.mp4",
+      "contentType": "video/mp4",
+      "bytes": 5262730,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_u151_7-desktop.webp?v=1765230370&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/133-rive_u151_7-desktop-74711281ad.webp",
+      "contentType": "image/png",
+      "bytes": 165962,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_u151_16-desktop.webp?v=1763762799&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/134-rive_u151_16-desktop-9f5dff113d.webp",
+      "contentType": "image/png",
+      "bytes": 33764,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0951/3130/4218/files/rive_u151_3-desktop.webp?v=1763762800&width=1800",
+      "path": "public/sites/www-shopify-com-a6fbc09c/editions-winter2026-e4a4040c/media/135-rive_u151_3-desktop-3a9b0bde14.webp",
+      "contentType": "image/jpeg",
+      "bytes": 1789,
+      "status": "downloaded"
+    }
+  ]
+}
