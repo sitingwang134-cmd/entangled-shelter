@@ -12,13 +12,13 @@ for (const category of Object.values(choiceCategories)) {
   check(() => assert.equal(category.options.length, 20));
   check(() => assert.equal(new Set(category.options.map((option) => option.id)).size, 20));
   const before = JSON.stringify(category.options);
-  const first = getChoiceBatch(category.options, "全部", 0);
-  const second = getChoiceBatch(category.options, "全部", 1);
+  const first = getChoiceBatch(category.options, "All", 0);
+  const second = getChoiceBatch(category.options, "All", 1);
   check(() => assert.equal(first.length, 10));
   check(() => assert.equal(second.length, 10));
   check(() => assert.equal(new Set([...first, ...second].map(item => item.id)).size, 20));
-  check(() => assert.deepEqual(getChoiceBatch(category.options, "全部", 2), first));
-  check(() => assert.deepEqual(getChoiceBatch(category.options, "全部", -1), second));
+  check(() => assert.deepEqual(getChoiceBatch(category.options, "All", 2), first));
+  check(() => assert.deepEqual(getChoiceBatch(category.options, "All", -1), second));
   check(() => assert.deepEqual(getChoiceBatch(category.options, "not-a-group", 0), []));
   check(() => assert.equal(JSON.stringify(category.options), before));
   for (const group of category.groups) {
@@ -26,9 +26,9 @@ for (const category of Object.values(choiceCategories)) {
     check(() => assert.equal(getChoiceBatch(category.options, group, 0).length, 5));
     check(() => assert.ok(getChoiceBatch(category.options, group, 1).every(item => item.group === group)));
   }
-  const extended = [...category.options, { id: 'custom-test', name: '自定义', detail: '我的想法', group: '我的候选', custom: true }];
-  check(() => assert.equal(getChoiceBatch(extended, '全部', 2).length, 1));
-  check(() => assert.equal(getChoiceBatch(extended, '我的候选', 0)[0].id, 'custom-test'));
+  const extended = [...category.options, { id: 'custom-test', name: 'Personal', detail: 'My own idea', group: 'My Possibilities', custom: true }];
+  check(() => assert.equal(getChoiceBatch(extended, 'All', 2).length, 1));
+  check(() => assert.equal(getChoiceBatch(extended, 'My Possibilities', 0)[0].id, 'custom-test'));
   for (const option of category.options) {
     check(() => assert.ok(option.name.length > 0 && option.detail.length > 0));
     check(() => assert.equal(option.image, `/entangled/choices-v4/${option.id}.webp`));

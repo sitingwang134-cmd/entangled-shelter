@@ -7,15 +7,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { DepthScene } from "./DepthScene";
 import { ChoiceLab, type CategoryId } from "./ChoiceLab";
+import { TravelPorthole } from "./TravelPorthole";
 import { useSiteMotion } from "./site-motion";
 import styles from "./EntangledShelter.module.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const chapters = [
-  { id: "food" as const, number: "I", name: "美食", title: "Taste", subtitle: "把今晚，交给食欲。", description: "火锅还是拉面？想吃的太多，不如给偶然留一个座位。", image: "room", focus: .64, detail: "doorway", detailTitle: "夜晚很长，别只用来纠结。", detailCopy: "从热气腾腾到清爽简单。挑几个真正想吃的，先猜，再揭晓。", labels: ["热辣一顿", "深夜食堂", "清爽轻食", "甜品自由"], note: "FEED YOUR CURIOSITY", symbol: "♥" },
-  { id: "style" as const, number: "II", name: "穿搭", title: "Style", subtitle: "今天，不止一种你。", description: "衣橱里的每一种可能，都值得一次出场。让直觉先走一步。", image: "levitate", focus: .53, detail: "atelier", detailTitle: "风格没有标准答案，只有今天的心情。", detailCopy: "从黑白极简，到松弛复古。选好你的候选风格，赢下一次说走就走。", labels: ["黑白极简", "美式复古", "松弛通勤", "户外机能"], note: "DRESS FOR THE POSSIBILITY", symbol: "♠" },
-  { id: "travel" as const, number: "III", name: "旅行", title: "Wander", subtitle: "下一站，让偶然领路。", description: "计划可以晚一点，出发不用。山野、海边，或一座没去过的小城。", image: "salt", focus: .68, detail: "car", detailTitle: "把路线留给地图，把心动留给自己。", detailCopy: "不必先决定整个世界。从这个周末开始，让一张牌把你带远一点。", labels: ["山野徒步", "海边发呆", "城市漫游", "古镇慢行"], note: "TAKE THE SCENIC ROUTE", symbol: "♦" },
+  { id: "food" as const, number: "I", name: "Taste", title: "Taste", subtitle: "Give the evening to appetite.", description: "Hot pot or ramen? When everything tempts you, leave one seat at the table for chance.", image: "room", focus: .64, detail: "doorway", detailTitle: "The night is too long to spend in indecision.", detailCopy: "From fragrant steam to something crisp and bright: gather what you truly crave, make your wager, then reveal the answer.", labels: ["A Fiery Supper", "After-Hours Table", "Garden Lightness", "A Sweet Finale"], note: "FEED YOUR CURIOSITY", symbol: "♥" },
+  { id: "style" as const, number: "II", name: "Style", title: "Style", subtitle: "There is more than one way to be you.", description: "Every possibility in the wardrobe deserves its entrance. Let instinct take the first step.", image: "levitate", focus: .53, detail: "atelier", detailTitle: "Style has no final answer—only the mood of this moment.", detailCopy: "From quiet monochrome to easy vintage: choose the silhouettes calling to you and let play settle the matter.", labels: ["Quiet Monochrome", "American Vintage", "Relaxed Tailoring", "Outdoor Utility"], note: "DRESS FOR THE POSSIBILITY", symbol: "♠" },
+  { id: "travel" as const, number: "III", name: "Wander", title: "Wander", subtitle: "Let chance name the next horizon.", description: "The itinerary may wait; departure need not. Mountains, shoreline, or a small city you have never met.", image: "salt", focus: .68, detail: "car", detailTitle: "Leave the route to the map, and the longing to yourself.", detailCopy: "You need not decide the whole world. Begin with one weekend and let a single card carry you farther.", labels: ["Highland Footpath", "A Day by the Sea", "City Drift", "Old-Town Reverie"], note: "TAKE THE SCENIC ROUTE", symbol: "♦" },
 ];
 
 function Geometry({ className = "" }: { className?: string }) {
@@ -119,45 +120,45 @@ export function EntangledShelter() {
   function open(id: CategoryId) { setMenu(false); setCategory(id); }
 
   return <div className={styles.page} ref={root} data-theme="dark" data-active-section={active} data-motion={motion}>
-    <a className={styles.skip} href="#chapters">跳到选择场景</a>
+    <a className={styles.skip} href="#chapters">Skip to the decision rooms</a>
     <header className={styles.header} data-entrance="header">
-      <a href="#top" className={styles.brand} aria-label="Entangled Shelter 首页"><span className={styles.brandSymbol}>✳</span> Entangled Shelter <span className={styles.edition}>THE INDECISION EDITION</span></a>
-      <nav className={styles.headerNav} aria-label="主要导航">{chapters.map((item) => <a href={`#${item.id}`} key={item.id} aria-current={active === item.id ? "location" : undefined}>{item.name}</a>)}<a href="#ritual">玩法</a><a href="/history">档案</a></nav>
-      <button className={styles.headerCta} onClick={() => open("food")}>替我决定 <span>↗</span></button>
-      <button className={styles.menuButton} aria-label={menu ? "关闭菜单" : "打开菜单"} aria-expanded={menu} aria-controls="chapter-menu" onClick={() => setMenu(!menu)}>{menu ? "×" : "☰"}</button>
+      <a href="#top" className={styles.brand} aria-label="Entangled Shelter home"><span className={styles.brandSymbol}>✳</span> Entangled Shelter <span className={styles.edition}>THE INDECISION EDITION</span></a>
+      <nav className={styles.headerNav} aria-label="Primary navigation">{chapters.map((item) => <a href={`#${item.id}`} key={item.id} aria-current={active === item.id ? "location" : undefined}>{item.name}</a>)}<a href="#ritual">The Ritual</a><a href="/history">Archive</a></nav>
+      <button className={styles.headerCta} onClick={() => open("food")}>DECIDE FOR ME <span>↗</span></button>
+      <button className={styles.menuButton} aria-label={menu ? "Close menu" : "Open menu"} aria-expanded={menu} aria-controls="chapter-menu" onClick={() => setMenu(!menu)}>{menu ? "×" : "☰"}</button>
       <span className={styles.progress} data-scroll-progress aria-hidden="true" />
     </header>
-    {menu && <nav id="chapter-menu" className={styles.mobileMenu} aria-label="章节菜单">{chapters.map((item) => <a href={`#${item.id}`} key={item.id} onClick={() => setMenu(false)}><span>{item.number}</span>{item.name}<i>{item.title}</i></a>)}<a href="#ritual" onClick={() => setMenu(false)}>怎么玩？ <i>The ritual</i></a><a href="/history"><span>V</span>选择档案 <i>The archive</i></a></nav>}
-    <aside className={`${styles.sidebar} ${active !== "top" && active !== "intro" ? styles.sidebarVisible : ""}`} aria-label="章节导航">
+    {menu && <nav id="chapter-menu" className={styles.mobileMenu} aria-label="Chapter menu">{chapters.map((item) => <a href={`#${item.id}`} key={item.id} onClick={() => setMenu(false)}><span>{item.number}</span>{item.name}</a>)}<a href="#ritual" onClick={() => setMenu(false)}>How it works <i>The ritual</i></a><a href="/history"><span>V</span>Decision Archive <i>The archive</i></a></nav>}
+    <aside className={`${styles.sidebar} ${active !== "top" && active !== "intro" ? styles.sidebarVisible : ""}`} aria-label="Chapter navigation">
       <a className={styles.sidebarTitle} href="#top">The<br /><em>Indecision</em><br />Edition</a>
-      <div className={styles.sidebarLinks}>{chapters.map((item) => <a href={`#${item.id}`} key={item.id} aria-current={active === item.id ? "location" : undefined}><span>{item.name}<small>{item.title}</small></span><i>{item.number}</i></a>)}<a href="#ritual" aria-current={active === "ritual" ? "location" : undefined}><span>游戏规则<small>The ritual</small></span><i>IV</i></a><a href="/history"><span>选择档案<small>The archive</small></span><i>V</i></a></div>
+      <div className={styles.sidebarLinks}>{chapters.map((item) => <a href={`#${item.id}`} key={item.id} aria-current={active === item.id ? "location" : undefined}><span>{item.name}</span><i>{item.number}</i></a>)}<a href="#ritual" aria-current={active === "ritual" ? "location" : undefined}><span>The Rules<small>The ritual</small></span><i>IV</i></a><a href="/history"><span>Decisions<small>The archive</small></span><i>V</i></a></div>
       <span className={styles.sidebarFoot}>LESS OVERTHINKING.<br />MORE LIVING.<br /><br />© ENTANGLED SHELTER 2026</span>
     </aside>
     <main>
       <section id="top" className={styles.heroScroll} data-nav-section data-depth-section data-theme="dark">
         <div className={styles.hero}>
-          <div className={styles.heroImage} data-hero-image><Art id="station" alt="古典油画中的站台人物与悬浮绿色游戏机" focus={.67} priority /></div>
+          <div className={styles.heroImage} data-hero-image><Art id="station" alt="Figures and a floating green console in a classical railway painting" focus={.67} priority /></div>
           <div className={styles.heroShade} />
           <Geometry className={styles.heroGeometry} /><div className={styles.heroGeometryMotion} data-hero-geometry><Geometry /></div>
           <div className={styles.heroCopy} data-hero-title>
             <p className={styles.eyebrow} data-entrance="detail">A LITTLE CHANCE. A LITTLE COURAGE.</p>
             <h1><span className={styles.titleLine}><span data-entrance="title">Entangled</span></span><span className={styles.titleLine}><em data-entrance="title">Shelter</em></span></h1>
-            <div className={styles.heroDescription} data-entrance="detail"><span>给选择困难症的<br />一间避难所。</span><p>不必想好所有答案。<br />先猜，后抽。猜对了，就选它。</p></div>
-            <a className={styles.heroLink} href="#chapters" data-entrance="detail">让偶然开始 <span>↓</span></a>
+            <div className={styles.heroDescription} data-entrance="detail"><span>A refuge for the<br />beautifully undecided.</span><p>You need not know every answer.<br />First wager, then draw. If instinct prevails, choose it.</p></div>
+            <a className={styles.heroLink} href="#chapters" data-entrance="detail">LET CHANCE BEGIN <span>↓</span></a>
           </div>
           <div className={styles.heroCards} aria-hidden="true">{["♥", "♠", "♦"].map((suit, index) => <div className={styles.heroCard} key={suit} data-hero-card><small>{index === 1 ? "Q" : "A"}<br />{suit}</small><b>{suit}</b><span>ES</span></div>)}</div>
-          <div className={styles.heroBottom} data-hero-note data-entrance="detail"><span>VIBE CODING FOR THE BEAUTIFULLY UNDECIDED</span><span>向下滚动，进入另一种可能 <b>↓</b></span><span>01 — 04</span></div>
+          <div className={styles.heroBottom} data-hero-note data-entrance="detail"><span>VIBE CODING FOR THE BEAUTIFULLY UNDECIDED</span><span>SCROLL INTO ANOTHER POSSIBILITY <b>↓</b></span><span>01 — 04</span></div>
         </div>
       </section>
       <section className={styles.intro} id="intro" data-nav-section data-theme="light">
-        <div className={styles.introLabel} data-reveal><span>WELCOME TO THE SHELTER</span><span>没有正确答案，也没关系。</span></div>
-        <h2 data-reveal>所有可能，<br />都值得<em>一次偶然。</em></h2>
-        <div className={styles.introBottom} data-reveal><p>晚饭、衣橱、下一站。<br />把那些都不错的选项放在一起，<br />让一场小小的游戏，结束漫长的比较。</p><a href="#chapters">三个入口，一个答案 <span>↘</span></a><span className={styles.introStar} aria-hidden="true">✳</span></div>
+        <div className={styles.introLabel} data-reveal><span>WELCOME TO THE SHELTER</span><span>There need not be a perfect answer.</span></div>
+        <h2 data-reveal>Every possibility<br />deserves <em>a little chance.</em></h2>
+        <div className={styles.introBottom} data-reveal><p>Supper, wardrobe, the next horizon.<br />Gather the choices that already feel right,<br />then let a small game end the long comparison.</p><a href="#chapters">THREE DOORS, ONE ANSWER <span>↘</span></a><span className={styles.introStar} aria-hidden="true">✳</span></div>
       </section>
       <div id="chapters" className={styles.chapters}>
         {chapters.map((chapter) => <section id={chapter.id} className={styles.chapter} key={chapter.id} data-nav-section data-depth-section data-theme="dark" data-category={chapter.id}>
           <div className={styles.chapterBackdrop} data-scene-mask>
-            <div className={styles.chapterImage} data-chapter-image><Art id={chapter.image} alt={`${chapter.name}章节的${chapter.image === "room" ? "蓝色飞纸房间" : chapter.image === "levitate" ? "空中漂浮人物" : "盐湖家庭与风筝"}`} focus={chapter.focus} /></div>
+            <div className={styles.chapterImage} data-chapter-image><Art id={chapter.image} alt={chapter.image === "room" ? "A blue room alive with flying papers" : chapter.image === "levitate" ? "A figure floating through an impossible sky" : "A family and kite beside a salt lake"} focus={chapter.focus} /></div>
             <div className={styles.chapterShade} data-chapter-shade />
             <div className={styles.chapterGeometry} data-chapter-geometry><Geometry /></div>
           </div>
@@ -165,23 +166,23 @@ export function EntangledShelter() {
             <div className={styles.chapterHeading}>
               <div className={styles.chapterOverline}><span>CHAPTER {chapter.number}</span><span>{chapter.note}</span></div>
               <div data-chapter-title><h2>{chapter.title}<sup>{chapter.number}</sup></h2><p className={styles.chapterSubtitle}>{chapter.subtitle}</p></div>
-              <div className={styles.chapterLead}><p>{chapter.description}</p><button className={styles.roundCta} onClick={() => open(chapter.id)} data-choice-category={chapter.id} aria-label={`打开${chapter.name}选择器`}>开始选择 <span>↗</span></button></div>
+              <div className={styles.chapterLead}><p>{chapter.description}</p><button className={styles.roundCta} onClick={() => open(chapter.id)} data-choice-category={chapter.id} aria-label={`Open the ${chapter.name} selector`}>BEGIN THE CHOICE <span>↗</span></button></div>
             </div>
             <div className={styles.chapterDetails}>
               <article className={styles.storyCard} data-reveal>
-                {chapter.id === "food" ? <div className={styles.foodFilm}><video controls autoPlay muted loop playsInline preload="metadata" poster="/entangled/food-film-v10.webp" aria-label="美食章节视频"><source src="/entangled/food-film-v10.mp4" type="video/mp4" />你的浏览器暂不支持视频播放。</video></div> : <button className={styles.storyVisual} onClick={() => open(chapter.id)} aria-label={`进入${chapter.name}具体样式`} data-depth-section><Art id={chapter.detail} alt={chapter.detail === "atelier" ? "奶油色房间里的白裙穿搭" : "车内沐浴阳光的旅行人物"} focus={chapter.detail === "atelier" ? .28 : .6} /><span>EXPLORE {chapter.title.toUpperCase()} ↗</span></button>}
-                <div className={styles.storyCopy}><span className={styles.tinyLabel}>A DIFFERENT WAY TO DECIDE</span><h3>{chapter.detailTitle}</h3><p>{chapter.detailCopy}</p><button className={styles.textButton} onClick={() => open(chapter.id)}>进入{chapter.name}选择器 <span>↗</span></button></div>
+                {chapter.id === "food" ? <div className={styles.foodFilm}><video controls autoPlay muted loop playsInline preload="metadata" poster="/entangled/food-film-v10.webp" aria-label="Taste chapter film"><source src="/entangled/food-film-v10.mp4" type="video/mp4" />Your browser cannot play this film.</video></div> : chapter.id === "travel" ? <TravelPorthole onExplore={() => open("travel")} /> : <button className={styles.storyVisual} onClick={() => open(chapter.id)} aria-label={`Enter the ${chapter.name} edit`} data-depth-section><Art id={chapter.detail} alt="An ivory dress in a cream atelier" focus={.28} /><span>EXPLORE {chapter.title.toUpperCase()} ↗</span></button>}
+                <div className={styles.storyCopy}><span className={styles.tinyLabel}>A DIFFERENT WAY TO DECIDE</span><h3>{chapter.detailTitle}</h3><p>{chapter.detailCopy}</p><button className={styles.textButton} onClick={() => open(chapter.id)}>ENTER THE {chapter.name.toUpperCase()} SELECTOR <span>↗</span></button></div>
               </article>
               <div className={styles.choiceColumn}>
                 <article className={styles.pickCard} data-reveal data-chapter-entry={chapter.id}>
                   <div className={styles.pickHeading}><span className={styles.tinyLabel}>THE {chapter.title.toUpperCase()} EDIT / {chapter.number}</span><span className={styles.pickEdition}>20 POSSIBILITIES</span></div>
                   <span className={styles.pickTitle} aria-hidden="true">{chapter.title}<i>↗</i></span>
                   <h3>{chapter.subtitle}</h3>
-                  <p className={styles.pickIntro}>留几个心动的选项，让偶然替你揭晓。</p>
+                  <p className={styles.pickIntro}>Keep a few possibilities close; let chance unveil the one.</p>
                   <div className={styles.styleLabels}>{chapter.labels.map((label, index) => <button onClick={() => open(chapter.id)} key={label}><small>0{index + 1}</small><span>{label}</span><i aria-hidden="true">↗</i></button>)}</div>
-                  <button className={styles.pickAction} onClick={() => open(chapter.id)}>探索全部{chapter.name}灵感 <span aria-hidden="true">↗</span></button>
+                  <button className={styles.pickAction} onClick={() => open(chapter.id)}>EXPLORE ALL {chapter.name.toUpperCase()} POSSIBILITIES <span aria-hidden="true">↗</span></button>
                 </article>
-                <div className={styles.chapterNote} data-reveal><span>THE RULE IS SIMPLE</span><p>猜对了，就选它。<br />没猜对，再给直觉一次机会。</p><span>NO PROFILE. NO PRESSURE.</span></div>
+                <div className={styles.chapterNote} data-reveal><span>THE RULE IS SIMPLE</span><p>If your instinct is right, choose it.<br />If not, grant it another chance.</p><span>NO PROFILE. NO PRESSURE.</span></div>
               </div>
             </div>
           </div>
@@ -190,19 +191,19 @@ export function EntangledShelter() {
       <section id="ritual" className={styles.ritual} data-nav-section data-theme="light">
         <div className={styles.ritualContent}>
           <p className={styles.tinyLabel} data-reveal>IV / THE ART OF LETTING GO</p>
-          <h2 data-ritual-title>一点游戏，<br /><em>一点勇气。</em></h2>
-          <p className={styles.ritualIntro} data-reveal>不让随机替你思考。先说出偏爱，再给偶然一个机会。</p>
+          <h2 data-ritual-title>A little play,<br /><em>a little courage.</em></h2>
+          <p className={styles.ritualIntro} data-reveal>Chance does not think for you. Name your desire first, then give the unknown a turn.</p>
           <div className={styles.ritualCards}>
-            {[{ n: "01", title: "命运扑克", suit: "♥", copy: "押一个候选，猜红还是黑。翻牌猜对，答案生效。" }, { n: "02", title: "剪刀石头布", suit: "✌︎", copy: "先选心里的答案，再出拳。赢过系统，就选它。" }, { n: "03", title: "先猜后抽", suit: "?", copy: "猜哪一个会被抽中。猜对才确认，没中可以再来。" }].map((rule) => <button className={styles.ritualCard} key={rule.n} data-ritual-card onClick={() => open("food")}><span>{rule.n}<i>↗</i></span><b>{rule.suit}</b><h3>{rule.title}</h3><p>{rule.copy}</p></button>)}
+            {[{ n: "01", title: "The Fortune Deck", suit: "♥", copy: "Wager on a possibility, then call red or black. If the card agrees, the answer is yours." }, { n: "02", title: "A Fair Fight", suit: "✌︎", copy: "Choose the answer in your heart, then throw your hand. Win the duel and honour it." }, { n: "03", title: "Trust Your Hunch", suit: "?", copy: "Predict which answer chance will draw. A match settles it; a miss earns another turn." }].map((rule) => <button className={styles.ritualCard} key={rule.n} data-ritual-card onClick={() => open("food")}><span>{rule.n}<i>↗</i></span><b>{rule.suit}</b><h3>{rule.title}</h3><p>{rule.copy}</p></button>)}
           </div>
           <div className={styles.artInterlude} data-reveal>
-            <div className={styles.interludeImage} data-depth-section><Art id="angels" alt="相依的古典天使群像" /></div><div><p className={styles.tinyLabel}>A SOFTER PLACE TO LAND</p><h3>不必每次，<br />都做最好的选择。</h3><p>有时，选一个喜欢的，<br />然后好好生活，就够了。</p></div>
+            <div className={styles.interludeImage} data-depth-section><Art id="angels" alt="A tender group of classical angels" /></div><div><p className={styles.tinyLabel}>A SOFTER PLACE TO LAND</p><h3>You need not make<br />the finest choice every time.</h3><p>Sometimes it is enough to choose what you love,<br />and live it beautifully.</p></div>
           </div>
         </div>
       </section>
       <section id="ending" className={styles.ending} data-nav-section data-theme="dark" data-depth-section>
-        <div className={styles.endingArt}><Art id="hands" alt="两只彼此靠近的古典油画手掌" /></div>
-        <div className={styles.endingCopy} data-reveal><p className={styles.tinyLabel}>YOUR NEXT POSSIBILITY IS WAITING</p><h2>别再想了。<br /><em>Let&apos;s play.</em></h2><div className={styles.endingActions}>{chapters.map((item) => <button onClick={() => open(item.id)} key={item.id}>{item.name} <span>↗</span></button>)}<a className={styles.archiveAction} href="/history">翻阅选择档案 <span>↗</span></a></div></div>
+        <div className={styles.endingArt}><Art id="hands" alt="Two hands nearing one another in a classical painting" /></div>
+        <div className={styles.endingCopy} data-reveal><p className={styles.tinyLabel}>YOUR NEXT POSSIBILITY IS WAITING</p><h2>Enough thinking.<br /><em>Let&apos;s play.</em></h2><div className={styles.endingActions}>{chapters.map((item) => <button onClick={() => open(item.id)} key={item.id}>{item.name} <span>↗</span></button>)}<a className={styles.archiveAction} href="/history">OPEN THE DECISION ARCHIVE <span>↗</span></a></div></div>
         <footer className={styles.footer}><a href="#top">Entangled Shelter ↑</a><span>BUILT FOR BEAUTIFUL INDECISION · 2026</span></footer>
       </section>
     </main>

@@ -15,7 +15,7 @@
 - Added a persistent choice archive reading `entangled-shelter:decisions:v1`. Each receipt prints the accepted result, detail, category, game mode, and full local timestamp. It never seeds, clears, or rewrites history.
 - The archive adapts the inspected paper-roll interaction: inertial auto-roll, vertical pointer steering, horizontal reel yaw, drag and wheel control, and short-click pause/resume. The visual system stays within Entangled Shelter's olive, ivory, burgundy, Chinese editorial and classical-image direction.
 - Original archive background generated with built-in image generation: `/entangled/history-press.webp`; prompt/provenance record in `docs/research/paper-roll-nine-vercel-app/history-roll/OUTPUT_PLAN.md`.
-- Food video now uses the user's corrected `C:/Users/admin/Desktop/9月9日 (1).mp4`, re-encoded directly from source as cache-safe `/entangled/food-film-v10.mp4`: H.264 High Level 4.1, yuv420p, 1920×1080, 30fps, AAC, fixed two-second keyframes and fast-start. Full decode and representative frame checks passed.
+- Food video now uses the user's corrected second source clip, re-encoded directly as cache-safe `/entangled/food-film-v10.mp4`: H.264 High Level 4.1, yuv420p, 1920×1080, 30fps, AAC, fixed two-second keyframes and fast-start. Full decode and representative frame checks passed.
 - Static build ID: `VrZLyAjRdXddN5QmsO1DS`. Lint, TypeScript, static export, 672 choice assertions, history-roll structure checks, chapter-entry checks, Nginx configuration, HTTP 200 and byte-level comparison of both HTML pages plus 129 assets passed.
 - Backup: `/vol2/entangled-shelter/backups/before-20260909-history-v10`.
 - Archive: `/home/zzp/20260909-history-v10.tar.gz`; SHA-256 `9a5dd85edfb8c874deef8042395c7449646d962398ef68359d050e112378831e`.
@@ -23,7 +23,7 @@
 
 ## Previous release — Corrected Source Video V9 (2026-09-09)
 
-- Source: `C:/Users/admin/Desktop/9月9日 (1).mp4`. Sampled 7.5–10 seconds at 4fps: previously corrupted pepper-grinder shot now appears intact. Full software decode passed. No shots removed.
+- Source: the corrected second desktop clip. Sampled 7.5–10 seconds at 4fps: the previously corrupted pepper-grinder shot now appears intact. Full software decode passed. No shots removed.
 - Delivery uses the same compatible 1080p/30fps Baseline encoding as V8; new `/entangled/food-film-v9.mp4` and matching poster. Controls/audio/layout unchanged. Original file untouched.
 - Backup: `/vol2/entangled-shelter/backups/before-20260909-video-v9`.
 - Archive: `/home/zzp/entangled-shelter-20260909-video-v9.tar.gz`; SHA-256 `8d263d21a424d41a8451123b1713a590141c31ec78b55d873a1c42d4a285ae7a`.
@@ -40,7 +40,7 @@
 
 ## Previous release — Food Video V7 (2026-09-09)
 
-- Replaced food video with user-supplied `C:/Users/admin/Desktop/9月9日.mp4`: 2560×1440 H.264/AAC, approximately 20 seconds. Stream-copy fast-start delivery, no quality reduction; source untouched.
+- Replaced the food video with the first user-supplied desktop clip: 2560×1440 H.264/AAC, approximately 20 seconds. Stream-copy fast-start delivery, no quality reduction; source untouched.
 - New cache-safe paths: `/entangled/food-film-v7.mp4` and `/entangled/food-film-v7.webp`. Same player, muted looping autoplay, controls and aspect ratio.
 - Backup: `/vol2/entangled-shelter/backups/before-20260909-video-v7`.
 - Archive: `/home/zzp/entangled-shelter-20260909-video-v7.tar.gz`; SHA-256 `96527d39d50682c05acee35e4dacaaaf2b59d0a0b982aafd825dc2f44e1c752b`.

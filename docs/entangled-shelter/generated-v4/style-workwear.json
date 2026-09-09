@@ -1,1 +1,10 @@
-{"id":"style-workwear","name":"工装旧时光","detail":"军绿外套 + 原色牛仔 + 皮靴","category":"style","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. An elegant flat-lay arrangement of this EXACT outfit on warm ivory linen, all listed garments and shoes/accessories visible, correct listed colors and materials, no people, no food. Subject: 工装旧时光. Required details: 军绿外套 + 原色牛仔 + 皮靴. Asset ID: style-workwear. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-457ceb16-cf16-4f77-9db8-978912711d9e.png","localPath":"public/entangled/choices-v4/style-workwear.png","generator":"built-in image_gen"}
+{
+  "id": "style-workwear",
+  "name": "Workwear Memory",
+  "detail": "Olive chore jacket + raw denim + leather boots",
+  "category": "style",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: Workwear Memory. Required details: Olive chore jacket + raw denim + leather boots. Asset ID: style-workwear. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-457ceb16-cf16-4f77-9db8-978912711d9e.png",
+  "localPath": "public/entangled/choices-v4/style-workwear.png",
+  "generator": "built-in image_gen"
+}

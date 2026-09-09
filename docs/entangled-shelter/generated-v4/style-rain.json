@@ -1,1 +1,10 @@
-{"id":"style-rain","name":"雨天漫步","detail":"轻薄风衣 + 防水短靴 + 长柄伞","category":"style","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. An elegant flat-lay arrangement of this EXACT outfit on warm ivory linen, all listed garments and shoes/accessories visible, correct listed colors and materials, no people, no food. Subject: 雨天漫步. Required details: 轻薄风衣 + 防水短靴 + 长柄伞. Asset ID: style-rain. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-640a89bd-7c20-482f-b15c-8d9d35fe830c.png","localPath":"public/entangled/choices-v4/style-rain.png","generator":"built-in image_gen"}
+{
+  "id": "style-rain",
+  "name": "A Walk in Rain",
+  "detail": "Weightless trench + waterproof boots + long umbrella",
+  "category": "style",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: A Walk in Rain. Required details: Weightless trench + waterproof boots + long umbrella. Asset ID: style-rain. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-640a89bd-7c20-482f-b15c-8d9d35fe830c.png",
+  "localPath": "public/entangled/choices-v4/style-rain.png",
+  "generator": "built-in image_gen"
+}

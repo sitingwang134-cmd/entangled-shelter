@@ -25,9 +25,9 @@ const { ChoiceLab } = await import(pathToFileURL(path.join(output, 'ChoiceLab.mj
 for (const categoryId of ['food', 'style', 'travel']) {
   const html = renderToStaticMarkup(React.createElement(ChoiceLab, { categoryId, onClose() {} }));
   assert.equal((html.match(/data-option-card="true"/g) ?? []).length, 10, `${categoryId}: ten cards rendered`);
-  assert.ok(html.includes('换一批'));
+  assert.ok(html.includes('ANOTHER EDIT'));
   assert.ok(html.includes('galleryEdition'));
-  assert.ok(html.includes('ON YOUR TABLE / 已选 4 个'));
+  assert.ok(html.includes('ON YOUR TABLE / 4 CHOSEN'));
   assert.ok(!html.includes('data-motion-toggle'));
   assert.ok(html.includes('data-motion="full"'));
   console.log(`${categoryId}: SSR renders 10 image cards, batch button, selected tray and full-motion gallery.`);

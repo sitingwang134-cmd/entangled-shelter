@@ -210,5 +210,3 @@ Each script regenerates the platform-specific copies automatically. Agents that 
 ## License
 
 MIT
-
-<sub>Translations: <a href="README.ja.md">日本語</a> · <a href="README.zh-CN.md">Simplified Chinese</a></sub>

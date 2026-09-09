@@ -3,7 +3,7 @@
 ## Route
 
 - `/history/` — a full-screen archive of accepted decisions stored under `entangled-shelter:decisions:v1`.
-- `/` — gains restrained “选择档案” entry points in the existing navigation and closing section.
+- `/` — gains restrained “Decision Archive” entry points in the existing navigation and closing section.
 
 ## Reference behavior translated from paper-roll-nine.vercel.app
 
@@ -27,4 +27,3 @@
 - Static-export build, including `/history/index.html`.
 - Video decode/probe and representative-frame checks.
 - NAS response and asset checks after release.
-

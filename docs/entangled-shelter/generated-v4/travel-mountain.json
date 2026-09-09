@@ -1,1 +1,10 @@
-{"id":"travel-mountain","name":"山野徒步","detail":"晨间出发 · 山顶野餐 · 日落回程","category":"travel","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. One coherent landscape/scene illustrating this EXACT travel activity, emphasizing the named place/activity; no collage or unrelated destination. Subject: 山野徒步. Required details: 晨间出发 · 山顶野餐 · 日落回程. Asset ID: travel-mountain. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-bb153399-25f9-4184-b704-7bb8ca51210a.png","localPath":"public/entangled/choices-v4/travel-mountain.png","generator":"built-in image_gen"}
+{
+  "id": "travel-mountain",
+  "name": "Highland Footpath",
+  "detail": "Morning departure · summit picnic · sunset return",
+  "category": "travel",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: Highland Footpath. Required details: Morning departure · summit picnic · sunset return. Asset ID: travel-mountain. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-bb153399-25f9-4184-b704-7bb8ca51210a.png",
+  "localPath": "public/entangled/choices-v4/travel-mountain.png",
+  "generator": "built-in image_gen"
+}

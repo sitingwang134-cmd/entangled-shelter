@@ -1,1 +1,10 @@
-{"id":"style-film","name":"旧电影主角","detail":"棕色夹克 + 格纹 + 短靴","category":"style","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. An elegant flat-lay arrangement of this EXACT outfit on warm ivory linen, all listed garments and shoes/accessories visible, correct listed colors and materials, no people, no food. Subject: 旧电影主角. Required details: 棕色夹克 + 格纹 + 短靴. Asset ID: style-film. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-7bf96924-3ee1-4b6a-9f9e-8052cd658b39.png","localPath":"public/entangled/choices-v4/style-film.png","generator":"built-in image_gen"}
+{
+  "id": "style-film",
+  "name": "Old-Film Protagonist",
+  "detail": "Tobacco jacket + check wool + ankle boots",
+  "category": "style",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: Old-Film Protagonist. Required details: Tobacco jacket + check wool + ankle boots. Asset ID: style-film. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-7bf96924-3ee1-4b6a-9f9e-8052cd658b39.png",
+  "localPath": "public/entangled/choices-v4/style-film.png",
+  "generator": "built-in image_gen"
+}

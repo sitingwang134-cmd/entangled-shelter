@@ -18,7 +18,7 @@ const historyResponse = await fetch(`${origin}/history`, { signal: AbortSignal.t
 assert.equal(historyResponse.status, 200);
 const deployedHistory = await historyResponse.text();
 assert.equal(hash(deployedHistory), hash(historyHtml), "NAS must serve the exact history export");
-assert.ok(deployedHistory.includes("选择档案"));
+assert.ok(deployedHistory.includes("The Decision Archive"));
 
 const assets = new Set([...html.matchAll(/(?:src|href)="([^"?#]+)"/g)]
   .map((match) => match[1]).filter((url) => url.startsWith("/_next/static/")));

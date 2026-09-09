@@ -6,7 +6,7 @@ import vm from 'node:vm';
 const three = await fs.readFile('public/entangled/paper-roll/three-r128.min.js', 'utf8');
 const original = await fs.readFile('docs/research/paper-roll-nine-vercel-app/original/index.html', 'utf8');
 const restored = await fs.readFile('public/entangled/paper-roll/index.html', 'utf8');
-const records = Array.from({length:24},(_,i)=>({id:String(i),categoryId:'food',mode:'poker',option:{name:'结果'+i,detail:'内容'+i},decidedAt:'2026-09-09T08:01:02Z'}));
+const records = Array.from({length:24},(_,i)=>({id:String(i),categoryId:'food',mode:'poker',option:{name:'Result '+i,detail:'Detail '+i},decidedAt:'2026-09-09T08:01:02Z'}));
 
 function createWorld(html, data = records, blocked = false) {
   let now = 0, frame;
@@ -39,7 +39,7 @@ clone.emit('pointerdown',{clientX:400,clientY:400});clone.emit('pointerup',{clie
 const paused=clone.snapshot();clone.tick(60);assert.deepEqual(clone.snapshot().position,paused.position,'Paused roll stops');
 assert.equal(clone.elements.get('recordList').children.length,24);
 clone.elements.get('bankButton').listeners.click();clone.elements.get('bankButton').listeners.click();
-assert.ok(clone.painted.includes('结果23'),'Last history bank appears on the physical atlas');
+assert.ok(clone.painted.includes('Result 23'),'Last history bank appears on the physical atlas');
 assert.ok(clone.elements.get('recordList').children[23].children.some(n=>n.dateTime==='2026-09-09T08:01:02Z'));
 createWorld(restored,[]);createWorld(restored,[],true);
 console.log('PASS: original vs restored geometry/UV, steering, idle camera, pause; 24 real records, last bank, timestamps, empty/blocked storage. GPU visuals left for user acceptance.');

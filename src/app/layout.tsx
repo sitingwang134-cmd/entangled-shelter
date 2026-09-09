@@ -24,10 +24,10 @@ const hwCigars = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Entangled Shelter — 选择困难症避难所",
+  title: "Entangled Shelter — A Refuge for the Beautifully Undecided",
   icons: { icon: "/entangled/icon.svg" },
   description:
-    "一个帮助选择困难症做决定的 vibe coding 实验：美食、穿搭、旅行，交给扑克、剪刀石头布和先猜后抽。",
+    "An interactive refuge where appetite, style, and travel are entrusted to instinct, a little play, and a little chance.",
 };
 
 export const viewport: Viewport = {
@@ -41,7 +41,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="zh-CN"
+      lang="en"
       className={`${neueMontreal.variable} ${imperialScript.variable} ${hwCigars.variable}`}
     >
       <body>{children}</body>

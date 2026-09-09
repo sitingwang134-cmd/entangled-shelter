@@ -5,21 +5,17 @@ import assert from 'node:assert/strict';
 let html = await fs.readFile('docs/research/paper-roll-nine-vercel-app/original/index.html', 'utf8');
 const original = html;
 const replace = (from, to) => { assert.ok(html.includes(from), `Missing source anchor: ${from.slice(0, 80)}`); html = html.replace(from, to); };
-replace('lang="en"', 'lang="zh-CN"');
-replace('VX — The Printing Roll', '选择档案 — Entangled Shelter');
+replace('VX — The Printing Roll', 'The Decision Archive — Entangled Shelter');
 replace('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', './three-r128.min.js');
 replace('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', './gsap.min.js');
-html = html.replaceAll('#eaeaec', '#f2efe4').replaceAll('0xeaeaec', '0xf2efe4').replaceAll('0xe7e7ea', '0xf2efe4');
-replace('vec3(0.905, 0.905, 0.912)', 'vec3(0.949, 0.937, 0.894)');
+html = html.replaceAll('#eaeaec', '#354d43').replaceAll('0xeaeaec', '0x354d43').replaceAll('0xe7e7ea', '0x354d43');
+replace('vec3(0.905, 0.905, 0.912)', 'vec3(0.208, 0.302, 0.263)');
 replace('<div class="mark">VX<sup>&reg;</sup></div>', '<div class="mark">ES<sup>✳</sup></div>');
 replace('Press Division', 'Entangled Shelter');
-replace('Selected works<br /><b>Edition 2019 &mdash; 2026</b>', '选择留下的痕迹<br /><b>The Decision Archive</b>');
-replace('Pages printed', '张纸已铺展');
-replace('Move to steer &mdash; click to pause', '移动指针引导滚轴 — 点击暂停');
-replace('Paused &mdash; click anywhere to resume', '已暂停 — 点击画面继续');
-replace('Rolling &mdash; click to pause', '正在滚动 — 点击画面暂停');
+replace('Selected works<br /><b>Edition 2019 &mdash; 2026</b>', 'Traces of decisions<br /><b>The Living Ledger</b>');
+replace('Pages printed', 'Leaves unfurled');
 replace('</style>', `
-      .hud { color: #243029; }
+      .hud { color: #f1ecdf; }
       #brand .mark { font-family: Georgia, serif; }
       #edition { top: 100px; }
       #actions { position:fixed; top:30px; right:40px; z-index:30; display:flex; gap:8px; }
@@ -36,9 +32,9 @@ replace('</style>', `
       #hint { letter-spacing:.08em; }
       @media(max-width:720px) { #brand .sub { display:none; } #actions { top:20px; right:16px; gap:5px; } #actions a,#actions button { font-size:10px; padding:8px 10px; } #edition { top:80px; right:22px; font-size:8px; } #hint { font-size:9px; max-width:60%; } #records { right:20px; } }
     </style>`);
-replace('<canvas id="stage"></canvas>', `<canvas id="stage" aria-label="三维滚轴"></canvas>
-    <nav id="actions" aria-label="档案操作"><a href="/" target="_top">回到避难所 ↖</a><button id="listToggle" aria-expanded="false" aria-controls="records">选择记录</button><button id="bankButton">下一组纸面</button></nav>
-    <section id="records" hidden aria-label="历史选择明细"><h1>选择档案</h1><p id="recordCount"></p><ol id="recordList"></ol></section>`);
+replace('<canvas id="stage"></canvas>', `<canvas id="stage" aria-label="Three-dimensional paper roll"></canvas>
+    <nav id="actions" aria-label="Archive controls"><a href="/" target="_top">Return to shelter ↖</a><button id="listToggle" aria-expanded="false" aria-controls="records">Decision index</button><button id="bankButton">Next folio</button></nav>
+    <section id="records" hidden aria-label="Decision history"><h1>The Decision Archive</h1><p id="recordCount"></p><ol id="recordList"></ol></section>`);
 
 const atlasStart = html.indexOf('        function buildAtlas() {');
 const atlasEnd = html.indexOf('        // Spiral cap:', atlasStart);
@@ -60,7 +56,7 @@ for (const [start, end] of [
   ['        function updateTarget(t, dt) {', '        // HUD'],
   ['        (function preroll() {', '        // Main loop'],
 ]) {
-  const block = original.slice(original.indexOf(start), original.indexOf(end, original.indexOf(start))).replace('vec3(0.905, 0.905, 0.912)', 'vec3(0.949, 0.937, 0.894)');
+  const block = original.slice(original.indexOf(start), original.indexOf(end, original.indexOf(start))).replace('vec3(0.905, 0.905, 0.912)', 'vec3(0.208, 0.302, 0.263)');
   assert.ok(block.length > 80 && html.includes(block), `Original roll core changed: ${start}`);
 }
 await fs.writeFile('public/entangled/paper-roll/index.html', html);

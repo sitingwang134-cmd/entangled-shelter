@@ -25,84 +25,84 @@ export type Category = {
 
 export const choiceCategories: Record<CategoryId, Category> = {
   food: {
-    id: "food", label: "美食", english: "THE APPETITE", question: "今晚，吃什么？",
-    intro: "把想吃的都放上桌。最后留下一份，就足够了。",
-    groups: ["热气腾腾", "轻盈一点", "好好约会", "深夜快乐"],
+    id: "food", label: "Taste", english: "THE APPETITE", question: "What shall the evening taste like?",
+    intro: "Bring every appetite to the table. One answer at the end is quite enough.",
+    groups: ["Steaming Comfort", "Light & Bright", "A Proper Date", "After-Hours Joy"],
     options: [
-      { id: "food-hotpot", name: "沸腾火锅", detail: "一锅红汤 · 藕片与毛肚", group: "热气腾腾" },
-      { id: "food-noodles", name: "热汤拉面", detail: "豚骨浓汤 · 溏心蛋", group: "热气腾腾" },
-      { id: "food-salad", name: "地中海沙拉", detail: "牛油果 · 谷物 · 橄榄油", group: "轻盈一点" },
-      { id: "food-sushi", name: "一盘寿司", detail: "三文鱼握寿司 · 味噌汤", group: "轻盈一点" },
-      { id: "food-pasta", name: "意式烛光", detail: "番茄海鲜意面 · 气泡水", group: "好好约会" },
-      { id: "food-bistro", name: "街角小馆", detail: "煎牛排 · 奶油土豆泥", group: "好好约会" },
-      { id: "food-burger", name: "罪恶汉堡", detail: "双层芝士 · 热薯条", group: "深夜快乐" },
-      { id: "food-bbq", name: "烟火烧烤", detail: "炭烤肉串 · 冰镇汽水", group: "深夜快乐" },
-      { id: "food-dumplings", name: "一笼小笼包", detail: "薄皮汤汁 · 姜丝香醋 · 热豆浆", group: "热气腾腾" },
-      { id: "food-claypot", name: "广式煲仔饭", detail: "腊味双拼 · 锅巴 · 一碟青菜", group: "热气腾腾" },
-      { id: "food-curry", name: "日式咖喱饭", detail: "土豆胡萝卜 · 温泉蛋 · 浓香咖喱", group: "热气腾腾" },
-      { id: "food-poke", name: "夏日波奇碗", detail: "金枪鱼 · 毛豆 · 柑橘酱汁", group: "轻盈一点" },
-      { id: "food-wrap", name: "鸡肉全麦卷", detail: "烤鸡胸 · 生菜 · 酸奶酱", group: "轻盈一点" },
-      { id: "food-soba", name: "荞麦冷面", detail: "海苔碎 · 山葵 · 清爽蘸汁", group: "轻盈一点" },
-      { id: "food-pizza", name: "窑烤披萨", detail: "水牛芝士 · 罗勒 · 焦香薄底", group: "好好约会" },
-      { id: "food-thai", name: "泰式小约会", detail: "冬阴功 · 青咖喱 · 芒果糯米饭", group: "好好约会" },
-      { id: "food-tapas", name: "西班牙小食", detail: "蒜香虾 · 土豆蛋饼 · 分享一桌", group: "好好约会" },
-      { id: "food-chicken", name: "韩式炸鸡", detail: "甜辣酱 · 蜂蜜芥末 · 萝卜块", group: "深夜快乐" },
-      { id: "food-wonton", name: "巷口小馄饨", detail: "紫菜虾皮 · 鲜肉馄饨 · 一口热汤", group: "深夜快乐" },
-      { id: "food-dessert", name: "甜品收尾", detail: "巴斯克蛋糕 · 香草冰淇淋 · 热可可", group: "深夜快乐" },
+      { id: "food-hotpot", name: "Crimson Hot Pot", detail: "Scarlet broth · lotus root · crisp tripe", group: "Steaming Comfort" },
+      { id: "food-noodles", name: "Tonkotsu Ramen", detail: "Silken pork broth · jammy egg", group: "Steaming Comfort" },
+      { id: "food-salad", name: "Mediterranean Garden", detail: "Avocado · ancient grains · olive oil", group: "Light & Bright" },
+      { id: "food-sushi", name: "Sushi for One", detail: "Salmon nigiri · miso broth", group: "Light & Bright" },
+      { id: "food-pasta", name: "Candlelit Pasta", detail: "Tomato seafood linguine · sparkling water", group: "A Proper Date" },
+      { id: "food-bistro", name: "The Corner Bistro", detail: "Seared steak · pommes purée", group: "A Proper Date" },
+      { id: "food-burger", name: "Midnight Double", detail: "Double cheese · sea-salted fries", group: "After-Hours Joy" },
+      { id: "food-bbq", name: "Ember-Grilled Skewers", detail: "Charred skewers · ice-cold soda", group: "After-Hours Joy" },
+      { id: "food-dumplings", name: "Bamboo-Basket Dumplings", detail: "Delicate wrappers · ginger vinegar · warm soy milk", group: "Steaming Comfort" },
+      { id: "food-claypot", name: "Cantonese Claypot Rice", detail: "Cured meats · golden rice crust · market greens", group: "Steaming Comfort" },
+      { id: "food-curry", name: "Japanese Curry", detail: "Root vegetables · onsen egg · fragrant curry", group: "Steaming Comfort" },
+      { id: "food-poke", name: "Summer Poke Bowl", detail: "Tuna · edamame · citrus dressing", group: "Light & Bright" },
+      { id: "food-wrap", name: "Wholegrain Chicken Wrap", detail: "Grilled chicken · crisp leaves · yoghurt dressing", group: "Light & Bright" },
+      { id: "food-soba", name: "Chilled Soba", detail: "Nori · wasabi · clear dipping broth", group: "Light & Bright" },
+      { id: "food-pizza", name: "Wood-Fired Pizza", detail: "Buffalo mozzarella · basil · blistered crust", group: "A Proper Date" },
+      { id: "food-thai", name: "A Thai Supper", detail: "Tom yum · green curry · mango sticky rice", group: "A Proper Date" },
+      { id: "food-tapas", name: "The Spanish Table", detail: "Garlic prawns · tortilla · everything shared", group: "A Proper Date" },
+      { id: "food-chicken", name: "Korean Fried Chicken", detail: "Sweet chilli · honey mustard · pickled radish", group: "After-Hours Joy" },
+      { id: "food-wonton", name: "Laneway Wontons", detail: "Seaweed · shrimp · pork wontons in clear broth", group: "After-Hours Joy" },
+      { id: "food-dessert", name: "A Sweet Finale", detail: "Basque cheesecake · vanilla ice cream · hot cocoa", group: "After-Hours Joy" },
     ],
   },
   style: {
-    id: "style", label: "穿搭", english: "THE PERSONA", question: "今天，穿什么？",
-    intro: "风格不是考试。选一套，让今天的自己先出门。",
-    groups: ["松弛通勤", "复古角色", "出门约会", "城市漫游"],
+    id: "style", label: "Style", english: "THE PERSONA", question: "Who shall you be today?",
+    intro: "Style is no examination. Choose a silhouette and let today step outside.",
+    groups: ["Quiet Tailoring", "Vintage Character", "Dressed for Romance", "City Wander"],
     options: [
-      { id: "style-minimal", name: "黑白极简", detail: "白衬衫 + 黑西裤 + 乐福鞋", group: "松弛通勤" },
-      { id: "style-soft", name: "柔软中性色", detail: "燕麦针织 + 米色阔腿裤", group: "松弛通勤" },
-      { id: "style-denim", name: "美式复古", detail: "做旧牛仔 + 白 T + 皮带", group: "复古角色" },
-      { id: "style-film", name: "旧电影主角", detail: "棕色夹克 + 格纹 + 短靴", group: "复古角色" },
-      { id: "style-romantic", name: "法式浪漫", detail: "奶油长裙 + 细带鞋 + 金饰", group: "出门约会" },
-      { id: "style-night", name: "午夜丝绒", detail: "黑色套装 + 亮色耳饰", group: "出门约会" },
-      { id: "style-outdoor", name: "户外机能", detail: "防风外套 + 工装裤 + 越野鞋", group: "城市漫游" },
-      { id: "style-sport", name: "周末运动", detail: "宽松卫衣 + 短裤 + 棒球帽", group: "城市漫游" },
-      { id: "style-linen", name: "亚麻微风", detail: "亚麻衬衫 + 直筒裤 + 帆布包", group: "松弛通勤" },
-      { id: "style-navy", name: "海军蓝日常", detail: "藏蓝针织 + 白裤 + 德训鞋", group: "松弛通勤" },
-      { id: "style-suit", name: "轻量西装", detail: "宽肩西装 + 素 T + 九分裤", group: "松弛通勤" },
-      { id: "style-college", name: "常春藤校园", detail: "菱格背心 + 牛津衬衫 + 乐福鞋", group: "复古角色" },
-      { id: "style-workwear", name: "工装旧时光", detail: "军绿外套 + 原色牛仔 + 皮靴", group: "复古角色" },
-      { id: "style-stripes", name: "条纹水手", detail: "蓝白条纹 + 高腰裤 + 红色方巾", group: "复古角色" },
-      { id: "style-floral", name: "花园来信", detail: "碎花裙 + 短开衫 + 芭蕾鞋", group: "出门约会" },
-      { id: "style-satin", name: "香槟光泽", detail: "缎面衬衫 + 深色长裤 + 银饰", group: "出门约会" },
-      { id: "style-date", name: "落日约会", detail: "酒红上衣 + 奶油半裙 + 小皮包", group: "出门约会" },
-      { id: "style-monochrome", name: "一身大地色", detail: "卡其外套 + 棕色长裤 + 麂皮鞋", group: "城市漫游" },
-      { id: "style-rain", name: "雨天漫步", detail: "轻薄风衣 + 防水短靴 + 长柄伞", group: "城市漫游" },
-      { id: "style-color", name: "一点亮色", detail: "白色打底 + 钴蓝外套 + 运动鞋", group: "城市漫游" },
+      { id: "style-minimal", name: "Black & White", detail: "White shirt + black trousers + loafers", group: "Quiet Tailoring" },
+      { id: "style-soft", name: "Soft Neutrals", detail: "Oatmeal knit + ivory wide-leg trousers", group: "Quiet Tailoring" },
+      { id: "style-denim", name: "American Vintage", detail: "Faded denim + white tee + leather belt", group: "Vintage Character" },
+      { id: "style-film", name: "Old-Film Protagonist", detail: "Tobacco jacket + check wool + ankle boots", group: "Vintage Character" },
+      { id: "style-romantic", name: "French Romance", detail: "Cream column dress + slender straps + gold", group: "Dressed for Romance" },
+      { id: "style-night", name: "Midnight Velvet", detail: "Black tailoring + brilliant earrings", group: "Dressed for Romance" },
+      { id: "style-outdoor", name: "Outdoor Utility", detail: "Shell jacket + cargo trousers + trail shoes", group: "City Wander" },
+      { id: "style-sport", name: "Weekend Athletics", detail: "Generous sweatshirt + shorts + baseball cap", group: "City Wander" },
+      { id: "style-linen", name: "A Linen Breeze", detail: "Linen shirt + straight trousers + canvas tote", group: "Quiet Tailoring" },
+      { id: "style-navy", name: "Everyday Navy", detail: "Navy knit + white trousers + court shoes", group: "Quiet Tailoring" },
+      { id: "style-suit", name: "Featherlight Suiting", detail: "Broad-shouldered blazer + plain tee + cropped trousers", group: "Quiet Tailoring" },
+      { id: "style-college", name: "The Ivy Walk", detail: "Argyle vest + Oxford shirt + loafers", group: "Vintage Character" },
+      { id: "style-workwear", name: "Workwear Memory", detail: "Olive chore jacket + raw denim + leather boots", group: "Vintage Character" },
+      { id: "style-stripes", name: "The Striped Mariner", detail: "Breton stripe + high waist + scarlet scarf", group: "Vintage Character" },
+      { id: "style-floral", name: "A Letter from the Garden", detail: "Floral dress + cropped cardigan + ballet flats", group: "Dressed for Romance" },
+      { id: "style-satin", name: "Champagne Lustre", detail: "Satin shirt + dark trousers + silver jewellery", group: "Dressed for Romance" },
+      { id: "style-date", name: "Sunset Rendezvous", detail: "Burgundy top + cream skirt + petite leather bag", group: "Dressed for Romance" },
+      { id: "style-monochrome", name: "Earth in Monochrome", detail: "Khaki coat + brown trousers + suede shoes", group: "City Wander" },
+      { id: "style-rain", name: "A Walk in Rain", detail: "Weightless trench + waterproof boots + long umbrella", group: "City Wander" },
+      { id: "style-color", name: "One Brilliant Note", detail: "White base + cobalt coat + trainers", group: "City Wander" },
     ],
   },
   travel: {
-    id: "travel", label: "旅行", english: "THE ELSEWHERE", question: "下一站，去哪里？",
-    intro: "不必找到最完美的目的地。先给出发一个理由。",
-    groups: ["自然充电", "慢慢生活", "城市灵感", "一点冒险"],
+    id: "travel", label: "Wander", english: "THE ELSEWHERE", question: "Where shall the next horizon be?",
+    intro: "The destination need not be perfect. Begin by giving departure a reason.",
+    groups: ["Nature Restored", "The Slow Life", "Urban Inspiration", "A Touch of Adventure"],
     options: [
-      { id: "travel-mountain", name: "山野徒步", detail: "晨间出发 · 山顶野餐 · 日落回程", group: "自然充电" },
-      { id: "travel-sea", name: "海边发呆", detail: "沿海散步 · 看潮汐 · 喝椰子水", group: "自然充电" },
-      { id: "travel-village", name: "古镇慢行", detail: "石板小巷 · 茶馆 · 住一晚老屋", group: "慢慢生活" },
-      { id: "travel-country", name: "乡间小住", detail: "田野骑行 · 当季食材 · 睡到自然醒", group: "慢慢生活" },
-      { id: "travel-city", name: "城市漫游", detail: "街角咖啡 · 独立书店 · 随意走走", group: "城市灵感" },
-      { id: "travel-art", name: "美术馆一日", detail: "看一个展 · 买张明信片 · 写给自己", group: "城市灵感" },
-      { id: "travel-camp", name: "星空露营", detail: "搭帐篷 · 煮一壶茶 · 数星星", group: "一点冒险" },
-      { id: "travel-train", name: "短途火车", detail: "选一座邻城 · 靠窗坐 · 当日往返", group: "一点冒险" },
-      { id: "travel-forest", name: "森林吸氧", detail: "走林间小径 · 听鸟鸣 · 拍一束光", group: "自然充电" },
-      { id: "travel-lake", name: "湖畔骑行", detail: "租一辆车 · 环湖慢骑 · 草地休息", group: "自然充电" },
-      { id: "travel-waterfall", name: "寻一处瀑布", detail: "沿溪而上 · 听水声 · 带走清凉", group: "自然充电" },
-      { id: "travel-tea", name: "茶山半日", detail: "看茶垄 · 喝新茶 · 坐到云散", group: "慢慢生活" },
-      { id: "travel-hotspring", name: "温泉小假期", detail: "泡一池暖汤 · 吃一顿晚餐 · 早睡", group: "慢慢生活" },
-      { id: "travel-island", name: "小岛来信", detail: "坐渡轮 · 逛渔村 · 给朋友寄明信片", group: "慢慢生活" },
-      { id: "travel-market", name: "周末市集", detail: "淘一件旧物 · 尝小吃 · 听街头音乐", group: "城市灵感" },
-      { id: "travel-architecture", name: "建筑散步", detail: "找三栋老楼 · 看窗与门 · 拍下细节", group: "城市灵感" },
-      { id: "travel-night", name: "城市夜游", detail: "看一场演出 · 沿江散步 · 吃夜宵", group: "城市灵感" },
-      { id: "travel-kayak", name: "水上划行", detail: "预约教练 · 穿好救生衣 · 体验皮划艇", group: "一点冒险" },
-      { id: "travel-road", name: "沿海自驾", detail: "挑一段海岸线 · 停两个观景台 · 看日落", group: "一点冒险" },
-      { id: "travel-sunrise", name: "追一次日出", detail: "提前看天气 · 备好头灯 · 等天亮", group: "一点冒险" },
+      { id: "travel-mountain", name: "Highland Footpath", detail: "Morning departure · summit picnic · sunset return", group: "Nature Restored" },
+      { id: "travel-sea", name: "A Day by the Sea", detail: "Coastal walk · changing tides · cold coconut water", group: "Nature Restored" },
+      { id: "travel-village", name: "Old-Town Reverie", detail: "Stone lanes · a quiet tea room · one night in an old house", group: "The Slow Life" },
+      { id: "travel-country", name: "A Country Interlude", detail: "Field bicycles · seasonal cooking · waking without an alarm", group: "The Slow Life" },
+      { id: "travel-city", name: "City Drift", detail: "Corner coffee · independent books · no fixed direction", group: "Urban Inspiration" },
+      { id: "travel-art", name: "A Day of Pictures", detail: "One exhibition · one postcard · a note to yourself", group: "Urban Inspiration" },
+      { id: "travel-camp", name: "Beneath the Stars", detail: "Pitch a tent · brew tea · count constellations", group: "A Touch of Adventure" },
+      { id: "travel-train", name: "The Short Railway", detail: "Choose a neighbouring city · take the window seat · return by dusk", group: "A Touch of Adventure" },
+      { id: "travel-forest", name: "Forest Air", detail: "Woodland path · birdsong · one shaft of light", group: "Nature Restored" },
+      { id: "travel-lake", name: "Along the Lake", detail: "Hire a bicycle · trace the shore · rest in the grass", group: "Nature Restored" },
+      { id: "travel-waterfall", name: "In Search of Water", detail: "Follow the stream · hear the cascade · bring home the cool", group: "Nature Restored" },
+      { id: "travel-tea", name: "An Afternoon in Tea Country", detail: "Rows of tea · the first infusion · clouds slowly parting", group: "The Slow Life" },
+      { id: "travel-hotspring", name: "The Warm-Water Holiday", detail: "A mineral bath · an unhurried supper · an early night", group: "The Slow Life" },
+      { id: "travel-island", name: "A Letter from an Island", detail: "The ferry crossing · a fishing village · a postcard sent", group: "The Slow Life" },
+      { id: "travel-market", name: "The Weekend Market", detail: "One old treasure · street delicacies · music in the square", group: "Urban Inspiration" },
+      { id: "travel-architecture", name: "An Architectural Walk", detail: "Three old façades · windows and doors · details worth keeping", group: "Urban Inspiration" },
+      { id: "travel-night", name: "The City After Dark", detail: "A performance · a riverside walk · supper after midnight", group: "Urban Inspiration" },
+      { id: "travel-kayak", name: "Across the Water", detail: "Meet an instructor · fasten the life vest · take the kayak out", group: "A Touch of Adventure" },
+      { id: "travel-road", name: "The Coastal Road", detail: "One stretch of coast · two overlooks · sunset at the wheel", group: "A Touch of Adventure" },
+      { id: "travel-sunrise", name: "In Pursuit of Dawn", detail: "Read the weather · pack a headlamp · wait for first light", group: "A Touch of Adventure" },
     ],
   },
 };
@@ -118,29 +118,29 @@ export const choiceBatchSize = 10;
 
 /** Decorative scan only: the unbiased game result is drawn before animation. */
 export function createLotterySequence(length: number, winnerIndex: number): number[] {
-  if (!Number.isInteger(length) || length < 2 || !Number.isInteger(winnerIndex) || winnerIndex < 0 || winnerIndex >= length) throw new Error("抽签结果不在候选池中。");
+  if (!Number.isInteger(length) || length < 2 || !Number.isInteger(winnerIndex) || winnerIndex < 0 || winnerIndex >= length) throw new Error("The draw fell outside the candidate pool.");
   const steps = Math.max(18, length + 5);
   return Array.from({ length: steps }, (_, step) => ((winnerIndex - steps + 1 + step) % length + length) % length);
 }
 
 /** A full cycle covers every candidate once; changing a batch never mutates selections. */
 export function getChoiceBatch(options: readonly ChoiceOption[], filter: string, batch: number): ChoiceOption[] {
-  const pool = options.filter((option) => filter === "全部" || option.group === filter);
+  const pool = options.filter((option) => filter === "All" || option.group === filter);
   const pages = Math.max(1, Math.ceil(pool.length / choiceBatchSize));
   const page = ((Math.trunc(batch) % pages) + pages) % pages;
   return pool.slice(page * choiceBatchSize, (page + 1) * choiceBatchSize);
 }
 
 export const gameModes: { id: GameMode; name: string; english: string; symbol: string; rule: string }[] = [
-  { id: "poker", name: "命运扑克", english: "A LITTLE GAMBLE", symbol: "♠", rule: "先押一个候选，再猜红或黑。猜中牌色，就选你押的那个。" },
-  { id: "rps", name: "剪刀石头布", english: "A FAIR FIGHT", symbol: "✌", rule: "先押一个候选，再选你的手势。赢过牌桌，这个答案才生效。" },
-  { id: "guess", name: "先猜后抽", english: "TRUST YOUR HUNCH", symbol: "?", rule: "先猜一个候选，再从整池随机抽取。抽中你猜的那个，就选它。" },
+  { id: "poker", name: "Fortune Deck", english: "A LITTLE GAMBLE", symbol: "♠", rule: "Wager on a possibility, then call red or black. If the colour agrees, honour your choice." },
+  { id: "rps", name: "A Fair Fight", english: "ONE HONEST DUEL", symbol: "✌", rule: "Choose your answer, then choose your hand. Defeat the table and let the answer stand." },
+  { id: "guess", name: "Trust Your Hunch", english: "A LETTER FROM CHANCE", symbol: "?", rule: "Name your hunch, then draw from the full pool. If instinct and chance meet, choose it." },
 ];
 
 export const gestures: { id: Gesture; name: string; symbol: string }[] = [
-  { id: "rock", name: "石头", symbol: "✊" },
-  { id: "scissors", name: "剪刀", symbol: "✌" },
-  { id: "paper", name: "布", symbol: "✋" },
+  { id: "rock", name: "Rock", symbol: "✊" },
+  { id: "scissors", name: "Scissors", symbol: "✌" },
+  { id: "paper", name: "Paper", symbol: "✋" },
 ];
 
 /** Uses a browser/Node Web Crypto source. Tests may inject deterministic samples. */
@@ -159,9 +159,9 @@ export function createChoiceId(): string {
 }
 
 export function randomIndex(length: number, random: RandomSource = cryptoRandom): number {
-  if (!Number.isSafeInteger(length) || length < 1) throw new Error("候选池不能为空。");
+  if (!Number.isSafeInteger(length) || length < 1) throw new Error("The candidate pool cannot be empty.");
   const sample = random();
-  if (!Number.isFinite(sample) || sample < 0 || sample >= 1) throw new Error("随机数必须在 [0, 1) 内。");
+  if (!Number.isFinite(sample) || sample < 0 || sample >= 1) throw new Error("The random sample must fall within [0, 1).");
   return Math.floor(sample * length);
 }
 
@@ -196,12 +196,12 @@ export type RoundResult = {
 export function playRound(request: RoundRequest, random: RandomSource = cryptoRandom): RoundResult {
   const { mode, options, betId, color, gesture } = request;
   if (options.length < 2 || new Set(options.map((option) => option.id)).size !== options.length) {
-    throw new Error("请放入至少两个不同的候选。");
+    throw new Error("Place at least two distinct possibilities on the table.");
   }
   const bet = options.find((option) => option.id === betId);
-  if (!bet) throw new Error("先选一个你想押的答案。");
+  if (!bet) throw new Error("Choose the answer you wish to wager on first.");
   if (mode === "poker") {
-    if (color !== "red" && color !== "black") throw new Error("先猜红牌还是黑牌。");
+    if (color !== "red" && color !== "black") throw new Error("Call red or black before the card is drawn.");
     const card = randomIndex(52, random);
     const suitIndex = Math.floor(card / 13);
     const drawnColor: CardColor = suitIndex < 2 ? "red" : "black";
@@ -209,12 +209,12 @@ export function playRound(request: RoundRequest, random: RandomSource = cryptoRa
       suit: ["♥", "♦", "♠", "♣"][suitIndex], rank: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"][card % 13] };
   }
   if (mode === "rps") {
-    if (!gestures.some((item) => item.id === gesture)) throw new Error("先选你的手势。");
+    if (!gestures.some((item) => item.id === gesture)) throw new Error("Choose your hand before the duel begins.");
     const player = gesture as Gesture;
     const opponent = gestures[randomIndex(gestures.length, random)].id;
     return { mode, bet, drawn: bet, outcome: compareGestures(player, opponent), player, opponent };
   }
-  if (mode !== "guess") throw new Error("请选择一个有效的玩法。");
+  if (mode !== "guess") throw new Error("Choose a valid game.");
   const drawn = options[randomIndex(options.length, random)];
   return { mode, bet, drawn, outcome: drawn.id === bet.id ? "win" : "lose" };
 }
@@ -223,7 +223,7 @@ export const decisionHistoryKey = "entangled-shelter:decisions:v1";
 export type Decision = { id: string; categoryId: CategoryId; mode: GameMode; option: ChoiceOption; decidedAt: string };
 
 export function createDecision(categoryId: CategoryId, round: RoundResult, now = new Date()): Decision {
-  if (round.outcome !== "win") throw new Error("只有猜对或赢得本局，才能接受结果。");
+  if (round.outcome !== "win") throw new Error("Only a correct hunch or a won round may be accepted.");
   return { id: createChoiceId(), categoryId, mode: round.mode, option: round.bet, decidedAt: now.toISOString() };
 }
 

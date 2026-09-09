@@ -34,7 +34,7 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   const [stage, setStage] = useState<Stage>("options");
   const [options, setOptions] = useState<ChoiceOption[]>(category.options);
   const [selectedIds, setSelectedIds] = useState<string[]>(category.options.slice(0, 4).map((option) => option.id));
-  const [filter, setFilter] = useState("全部");
+  const [filter, setFilter] = useState("All");
   const [batch, setBatch] = useState(0);
   const [roundCount, setRoundCount] = useState(0);
   const [countdown, setCountdown] = useState<number | null>(null);
@@ -53,7 +53,7 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   const selected = useMemo(() => options.filter((option) => selectedIds.includes(option.id)), [options, selectedIds]);
   const bet = selected.find((option) => option.id === betId);
   const visibleOptions = useMemo(() => getChoiceBatch(options, filter, batch), [options, filter, batch]);
-  const filteredCount = options.filter((option) => filter === "全部" || option.group === filter).length;
+  const filteredCount = options.filter((option) => filter === "All" || option.group === filter).length;
   const batchCount = Math.max(1, Math.ceil(filteredCount / choiceBatchSize));
   const scene = categoryId === "food" ? "room" : categoryId === "style" ? "levitate" : "salt";
   const chapterTitle = categoryId === "food" ? "Taste" : categoryId === "style" ? "Style" : "Wander";
@@ -148,18 +148,18 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   function addCustom(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const name = custom.trim();
-    if (!name) { setError("写下一个具体的候选，再放上桌。"); return; }
+    if (!name) { setError("Write a particular possibility before placing it on the table."); return; }
     if (options.some((option) => option.name.toLocaleLowerCase() === name.toLocaleLowerCase())) {
-      setError("这个候选已经在桌上了，直接选中它就好。"); return;
+      setError("That possibility is already on the table; simply choose it there."); return;
     }
     if (options.filter((option) => option.custom).length >= 8) {
-      setError("这一桌最多再放 8 个自定义候选。先让这些答案来一局吧。"); return;
+      setError("The table can hold eight personal possibilities. Let these answers play first."); return;
     }
-    const option: ChoiceOption = { id: `custom-${createChoiceId()}`, name, detail: "你亲手写下的可能", group: "我的候选", custom: true };
+    const option: ChoiceOption = { id: `custom-${createChoiceId()}`, name, detail: "A possibility written in your own hand", group: "My Possibilities", custom: true };
     setOptions((previous) => [...previous, option]);
     setSelectedIds((previous) => [...previous, option.id]);
     setCustom("");
-    changeFilter("我的候选");
+    changeFilter("My Possibilities");
     setError("");
   }
 
@@ -187,7 +187,7 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
       let nextRound: RoundResult;
       try {
         nextRound = playRound({ mode, options: selected, betId, color: color ?? undefined, gesture: gesture ?? undefined });
-      } catch (cause) { setError(cause instanceof Error ? cause.message : "没能发出这张牌，请再试一次。"); return; }
+      } catch (cause) { setError(cause instanceof Error ? cause.message : "The card could not be dealt. Please try once more."); return; }
       busyRef.current = true;
       setBusy(true);
       setRoundCount((count) => count + 1);
@@ -252,14 +252,14 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
       setStage("accepted");
     } catch (cause) {
       acceptedRef.current = false;
-      setError(cause instanceof Error ? cause.message : "请完成这一局，再接受答案。");
+      setError(cause instanceof Error ? cause.message : "Complete the round before accepting its answer.");
     }
   }
 
-  const resultCopy = !completed ? "" : round.outcome === "win" ? "这一次，偶然站在你这边。" : round.outcome === "draw" ? "平局。再出一次拳，让答案揭晓。" : mode === "guess" ? `抽到了「${round.drawn.name}」。和你的预感差一点。` : mode === "rps" ? "这一局，偶然赢了。换个手势，再挑战一次。" : "没猜中也没关系，你的偏爱还在。";
+  const resultCopy = !completed ? "" : round.outcome === "win" ? "This time, chance stands beside you." : round.outcome === "draw" ? "A draw. Offer one more hand and let the answer emerge." : mode === "guess" ? `Chance drew “${round.drawn.name}”—a breath away from your hunch.` : mode === "rps" ? "Chance won this duel. Change your hand and challenge it once more." : "A missed call changes nothing: your desire remains.";
   const resultPanel = <>
-    <div className={styles.roundStatus} role="status" aria-live="polite" aria-atomic="true">{completed && <><span className={styles.outcome}>{round.outcome === "win" ? mode === "rps" ? "YOU WON / 你赢了" : "IT’S A MATCH / 猜中了" : round.outcome === "draw" ? "ONE MORE / 平局" : "NOT THIS TIME / 再试一次"}</span><p>{resultCopy}</p>{mode === "rps" && <small>你：{gestures.find((item) => item.id === round.player)?.name} · 偶然：{gestures.find((item) => item.id === round.opponent)?.name}</small>}</>}</div>
-    {completed && <div className={styles.roundActions}>{round.outcome === "win" && <button type="button" className={styles.drawButton} onClick={accept}>就选「{round.bet.name}」 <span aria-hidden="true">↗</span></button>}<button type="button" className={styles.retry} onClick={resetRound}>{round.outcome === "win" ? "再想一想，重来一局" : "再来一局 / 可以换个猜测"}<span aria-hidden="true">↺</span></button></div>}
+    <div className={styles.roundStatus} role="status" aria-live="polite" aria-atomic="true">{completed && <><span className={styles.outcome}>{round.outcome === "win" ? mode === "rps" ? "YOU WON" : "IT’S A MATCH" : round.outcome === "draw" ? "ONE MORE" : "NOT THIS TIME"}</span><p>{resultCopy}</p>{mode === "rps" && <small>YOU: {gestures.find((item) => item.id === round.player)?.name} · CHANCE: {gestures.find((item) => item.id === round.opponent)?.name}</small>}</>}</div>
+    {completed && <div className={styles.roundActions}>{round.outcome === "win" && <button type="button" className={styles.drawButton} onClick={accept}>CHOOSE “{round.bet.name}” <span aria-hidden="true">↗</span></button>}<button type="button" className={styles.retry} onClick={resetRound}>{round.outcome === "win" ? "THINK AGAIN, PLAY ANOTHER" : "ANOTHER ROUND / CHANGE YOUR HUNCH"}<span aria-hidden="true">↺</span></button></div>}
     {completed && round.outcome === "win" && <div key={roundCount} className={styles.celebration} aria-hidden="true">{["✦", "✧", "✦", "✧"].map((symbol, index) => <span key={index}>{symbol}</span>)}</div>}
   </>;
 
@@ -269,42 +269,42 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
         <header className={styles.header}>
           <span className={styles.wordmark}>Entangled <i>Shelter</i><span>THE CHOICE ROOM</span></span>
           <span className={styles.edition}>NO. {categoryId === "food" ? "01" : categoryId === "style" ? "02" : "03"} / {category.english}</span>
-          <button ref={closeRef} type="button" className={styles.close} onClick={onClose} aria-label="关闭选择实验室"><span aria-hidden="true">×</span></button>
+          <button ref={closeRef} type="button" className={styles.close} onClick={onClose} aria-label="Close the choice room"><span aria-hidden="true">×</span></button>
         </header>
 
         <div className={styles.body}>
           <aside className={styles.introduction}>
             <div className={styles.introPainting} aria-hidden="true"><Image src={`/entangled/${scene}.webp`} alt="" fill sizes="(max-width: 760px) 100vw, 35vw" unoptimized /><ChoiceOrbit className={styles.introOrbit} /></div>
             <span className={styles.chapterWord} aria-hidden="true">{chapterTitle}</span>
-            <p className={styles.eyebrow} data-lab-entrance>一点偶然，一点心动。 / {category.label}</p>
-            <h2 id="choice-lab-title" data-lab-entrance>{stage === "accepted" ? <>就这么<br /><i>决定了。</i></> : <>允许自己<br /><i>选一个。</i></>}</h2>
-            <p id="choice-lab-description" className={styles.description} data-lab-entrance>{stage === "accepted" ? "选择的意义，不是排除所有后悔。是让此刻，终于开始。" : category.intro}</p>
-            <ol className={styles.steps} aria-label="决策步骤" data-lab-entrance>
-              {["把候选放上桌", "先猜，再让偶然回答", "猜对了，就选它"].map((label, index) => <li key={label} data-active={(stage === "options" ? 0 : stage === "play" ? 1 : 2) === index} aria-current={(stage === "options" ? 0 : stage === "play" ? 1 : 2) === index ? "step" : undefined}><span>0{index + 1}</span>{label}</li>)}
+            <p className={styles.eyebrow} data-lab-entrance>A LITTLE CHANCE, A LITTLE DESIRE / {category.label}</p>
+            <h2 id="choice-lab-title" data-lab-entrance>{stage === "accepted" ? <>Then it is<br /><i>decided.</i></> : <>Allow yourself<br /><i>one answer.</i></>}</h2>
+            <p id="choice-lab-description" className={styles.description} data-lab-entrance>{stage === "accepted" ? "Choosing does not banish every regret. It simply allows this moment to begin." : category.intro}</p>
+            <ol className={styles.steps} aria-label="Decision steps" data-lab-entrance>
+              {["Bring possibilities to the table", "Name a hunch, then ask chance", "If instinct prevails, choose it"].map((label, index) => <li key={label} data-active={(stage === "options" ? 0 : stage === "play" ? 1 : 2) === index} aria-current={(stage === "options" ? 0 : stage === "play" ? 1 : 2) === index ? "step" : undefined}><span>0{index + 1}</span>{label}</li>)}
             </ol>
-            <div className={styles.marginNote} data-lab-entrance><span aria-hidden="true">✳</span><p>这不是命运的指令。<br />只是一个开始行动的小仪式。</p></div>
+            <div className={styles.marginNote} data-lab-entrance><span aria-hidden="true">✳</span><p>This is no decree from fate.<br />Only a small ritual for beginning.</p></div>
           </aside>
 
           <main className={styles.workspace}>
-            {stage === "options" && <section className={styles.optionsStage} aria-label="选择候选">
-              <div className={styles.sectionHeading} data-lab-entrance><div><p className={styles.eyebrow}>01 / MAKE ROOM FOR POSSIBILITY</p><h3 tabIndex={-1} data-stage-heading>{category.question}</h3></div><span className={styles.counter}>{selected.length}<small>个候选</small></span></div>
-              <p className={styles.help} data-lab-entrance>至少选两个你愿意接受的答案。也可以写下自己的想法。</p>
-              <div className={styles.filters} aria-label="筛选具体样式" data-lab-entrance>{["全部", ...category.groups, ...(options.some((option) => option.custom) ? ["我的候选"] : [])].map((group) => <button type="button" key={group} aria-pressed={filter === group} onClick={() => changeFilter(group)}>{group}</button>)}</div>
-              <div className={styles.batchBar}><span role="status" aria-live="polite">{filteredCount} 个灵感 · 本批 {visibleOptions.length} 个 <small>{batch + 1} / {batchCount}</small></span><button type="button" className={styles.batchButton} disabled={batchCount < 2} onClick={() => setBatch((value) => (value + 1) % batchCount)}><span aria-hidden="true">↻</span> 换一批</button></div>
+            {stage === "options" && <section className={styles.optionsStage} aria-label="Choose possibilities">
+              <div className={styles.sectionHeading} data-lab-entrance><div><p className={styles.eyebrow}>01 / MAKE ROOM FOR POSSIBILITY</p><h3 tabIndex={-1} data-stage-heading>{category.question}</h3></div><span className={styles.counter}>{selected.length}<small>CHOSEN</small></span></div>
+              <p className={styles.help} data-lab-entrance>Choose at least two answers you would gladly accept—or write one of your own.</p>
+              <div className={styles.filters} aria-label="Filter possibilities" data-lab-entrance>{["All", ...category.groups, ...(options.some((option) => option.custom) ? ["My Possibilities"] : [])].map((group) => <button type="button" key={group} aria-pressed={filter === group} onClick={() => changeFilter(group)}>{group}</button>)}</div>
+              <div className={styles.batchBar}><span role="status" aria-live="polite">{filteredCount} POSSIBILITIES · {visibleOptions.length} ON VIEW <small>{batch + 1} / {batchCount}</small></span><button type="button" className={styles.batchButton} disabled={batchCount < 2} onClick={() => setBatch((value) => (value + 1) % batchCount)}><span aria-hidden="true">↻</span> ANOTHER EDIT</button></div>
               <div className={styles.optionsGrid}>{visibleOptions.map((option) => <button type="button" key={option.id} className={styles.option} data-option-card aria-pressed={selectedIds.includes(option.id)} onClick={() => toggleOption(option.id)}>
-                <span className={styles.optionPhoto}>{option.image ? <Image src={option.image} alt={option.name} width={800} height={800} sizes="(max-width: 640px) 45vw, 20vw" unoptimized /> : <span className={styles.customArt}>✳<small>你的想法</small></span>}<span className={styles.photoCaption}>NO. {option.custom ? "YOUR IDEA" : String(category.options.findIndex((item) => item.id === option.id) + 1).padStart(2, "0")}</span></span>
+                <span className={styles.optionPhoto}>{option.image ? <Image src={option.image} alt={option.name} width={800} height={800} sizes="(max-width: 640px) 45vw, 20vw" unoptimized /> : <span className={styles.customArt}>✳<small>YOUR IDEA</small></span>}<span className={styles.photoCaption}>NO. {option.custom ? "YOUR IDEA" : String(category.options.findIndex((item) => item.id === option.id) + 1).padStart(2, "0")}</span></span>
                 <span className={styles.optionCopy}><span className={styles.optionTop}><small>{option.group}</small><span className={styles.check} aria-hidden="true">{selectedIds.includes(option.id) ? "✓" : "+"}</span></span><strong>{option.name}</strong><span className={styles.optionDetail}>{option.detail}</span></span>
               </button>)}</div>
-              <div className={styles.selectedTray} aria-label="已选候选"><div><span>ON YOUR TABLE / 已选 {selected.length} 个</span><button type="button" disabled={!selected.length} onClick={() => setSelectedIds([])}>清空</button></div>{selected.length ? <ul>{selected.map((option) => <li key={option.id}><button type="button" onClick={() => toggleOption(option.id)} aria-label={`移除${option.name}`}>{option.name}<span aria-hidden="true">×</span></button></li>)}</ul> : <p>轻点上方图片，把心动的选项留在桌上。</p>}<small>换批不清空已选项 · 每个预设选项均有独立 AI 绘制插画</small></div>
-              <form onSubmit={addCustom} className={styles.customForm} data-lab-entrance><label htmlFor="choice-custom">或者，写下你的候选</label><div><input id="choice-custom" value={custom} onChange={(event) => setCustom(event.target.value)} maxLength={36} placeholder={categoryId === "food" ? "比如：楼下那家馄饨店" : categoryId === "style" ? "比如：蓝衬衫 + 今天的新鞋" : "比如：周末去苏州看园林"} /><button type="submit" aria-label="加入自定义候选">放上桌 <span aria-hidden="true">↗</span></button></div></form>
-              <div className={styles.bottomBar} data-lab-entrance><span>{selected.length < 2 ? "还需要至少两个候选" : `已放好 ${selected.length} 个可能`}</span><button type="button" className={styles.primary} disabled={selected.length < 2} onClick={() => { setError(""); setStage("play"); }}>选好了，玩一局 <span aria-hidden="true">↗</span></button></div>
+              <div className={styles.selectedTray} aria-label="Chosen possibilities"><div><span>ON YOUR TABLE / {selected.length} CHOSEN</span><button type="button" disabled={!selected.length} onClick={() => setSelectedIds([])}>CLEAR</button></div>{selected.length ? <ul>{selected.map((option) => <li key={option.id}><button type="button" onClick={() => toggleOption(option.id)} aria-label={`Remove ${option.name}`}>{option.name}<span aria-hidden="true">×</span></button></li>)}</ul> : <p>Touch an image above to keep that possibility on the table.</p>}<small>Changing the edit preserves your choices · each preset has its own original illustration</small></div>
+              <form onSubmit={addCustom} className={styles.customForm} data-lab-entrance><label htmlFor="choice-custom">Or write a possibility of your own</label><div><input id="choice-custom" value={custom} onChange={(event) => setCustom(event.target.value)} maxLength={36} placeholder={categoryId === "food" ? "Perhaps: wontons from the place downstairs" : categoryId === "style" ? "Perhaps: a blue shirt and new shoes" : "Perhaps: a weekend among old gardens"} /><button type="submit" aria-label="Add a personal possibility">PLACE ON TABLE <span aria-hidden="true">↗</span></button></div></form>
+              <div className={styles.bottomBar} data-lab-entrance><span>{selected.length < 2 ? "AT LEAST TWO POSSIBILITIES ARE NEEDED" : `${selected.length} POSSIBILITIES ARE READY`}</span><button type="button" className={styles.primary} disabled={selected.length < 2} onClick={() => { setError(""); setStage("play"); }}>PLAY THE ROUND <span aria-hidden="true">↗</span></button></div>
             </section>}
 
-            {stage === "play" && <section className={styles.playStage} aria-label="猜测与抽取">
-              <div className={styles.sectionHeading} data-lab-entrance><div><p className={styles.eyebrow}>02 / LET CHANCE ANSWER</p><h3 tabIndex={-1} data-stage-heading>先把偏爱说出来。</h3></div><button type="button" className={styles.textButton} disabled={busy} onClick={() => { resetRound(); setBetId(null); setStage("options"); }}>修改候选 ↗</button></div>
-              <div className={styles.modeTabs} role="group" aria-label="选择玩法" data-lab-entrance>{gameModes.map((item) => <button key={item.id} type="button" aria-pressed={mode === item.id} disabled={busy} onClick={() => changeMode(item.id)}><span aria-hidden="true">{item.id === "rps" ? <HandGlyph gesture="scissors" /> : item.symbol}</span><strong>{item.name}</strong><small>{item.english}</small></button>)}</div>
+            {stage === "play" && <section className={styles.playStage} aria-label="Wager and reveal">
+              <div className={styles.sectionHeading} data-lab-entrance><div><p className={styles.eyebrow}>02 / LET CHANCE ANSWER</p><h3 tabIndex={-1} data-stage-heading>Name your desire first.</h3></div><button type="button" className={styles.textButton} disabled={busy} onClick={() => { resetRound(); setBetId(null); setStage("options"); }}>REVISE POSSIBILITIES ↗</button></div>
+              <div className={styles.modeTabs} role="group" aria-label="Choose a game" data-lab-entrance>{gameModes.map((item) => <button key={item.id} type="button" aria-pressed={mode === item.id} disabled={busy} onClick={() => changeMode(item.id)}><span aria-hidden="true">{item.id === "rps" ? <HandGlyph gesture="scissors" /> : item.symbol}</span><strong>{item.name}</strong><small>{item.english}</small></button>)}</div>
               <p className={styles.rule} data-lab-entrance>{chosenMode.rule}</p>
-              <fieldset className={styles.betField} disabled={busy} data-lab-entrance><legend>你押哪一个？ <span>一定要先选，再抽。</span></legend><div>{selected.map((option) => <button type="button" key={option.id} aria-pressed={betId === option.id} onClick={() => selectBet(option.id)}><span aria-hidden="true">{betId === option.id ? "●" : "○"}</span> {option.name}</button>)}</div></fieldset>
+              <fieldset className={styles.betField} disabled={busy} data-lab-entrance><legend>Where will you place your wager? <span>Desire must speak before chance.</span></legend><div>{selected.map((option) => <button type="button" key={option.id} aria-pressed={betId === option.id} onClick={() => selectBet(option.id)}><span aria-hidden="true">{betId === option.id ? "●" : "○"}</span> {option.name}</button>)}</div></fieldset>
 
               <div className={styles.gameRoom} key={mode} data-lab-entrance>
                 {mode === "poker" && <PokerTable bet={bet} round={round} revealed={isRevealed} busy={busy} canDraw={canDraw} onDraw={draw} cardRef={cardRef} color={color} onColor={setColor}>{resultPanel}</PokerTable>}
@@ -313,18 +313,18 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
               </div>
             </section>}
 
-            {stage === "accepted" && round && <section className={styles.acceptedStage} aria-label="已确认的选择">
+            {stage === "accepted" && round && <section className={styles.acceptedStage} aria-label="Accepted decision">
               <p className={styles.eyebrow} data-lab-entrance>03 / THE POSSIBILITY BECOMES REAL</p>
-              <div className={styles.answerPhoto} data-lab-entrance>{round.bet.image ? <Image src={round.bet.image} alt={round.bet.name} width={800} height={800} unoptimized /> : <div className={styles.customArt}>✳<small>你的想法</small></div>}<span>{chapterTitle} / DECIDED</span></div>
-              <div className={styles.receipt} data-lab-entrance><span className={styles.receiptTop}>ENTANGLED SHELTER <span>♥</span></span><p>今日唯一答案</p><h3 tabIndex={-1} data-stage-heading>{round.bet.name}</h3><p className={styles.receiptDetail}>{round.bet.detail}</p><div className={styles.receiptMeta}><span>{category.label} / {chosenMode.name}</span><span>YOU CHOSE. THAT’S ENOUGH.</span></div><div className={styles.receiptSeal} aria-hidden="true">DECIDED<br />✳</div></div>
-              <div className={styles.acceptedNote} role="status" data-lab-entrance><strong>恭喜，纠结可以到此为止了。</strong><p>{saved ? "这次选择已保存在这台设备的浏览器里。现在，去把它变成真实的一天。" : "选择已经确定。浏览器暂时无法保存记录，你仍然可以带着这个答案出发。"}</p></div>
-              <div className={styles.acceptedActions} data-lab-entrance><button type="button" className={styles.primary} onClick={onClose}>带着答案出发 <span aria-hidden="true">↗</span></button><button type="button" className={styles.textButton} onClick={() => { resetRound(); setBetId(null); setStage("options"); }}>再决定一件小事</button></div>
-              {history.length > 1 && <div className={styles.history} data-lab-entrance><p className={styles.eyebrow}>RECENT LITTLE DECISIONS / 最近的选择</p>{history.slice(1, 4).map((item) => <div key={item.id}><span>{choiceCategories[item.categoryId].label}</span><strong>{item.option.name}</strong><time dateTime={item.decidedAt}>{new Date(item.decidedAt).toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })}</time></div>)}</div>}
+              <div className={styles.answerPhoto} data-lab-entrance>{round.bet.image ? <Image src={round.bet.image} alt={round.bet.name} width={800} height={800} unoptimized /> : <div className={styles.customArt}>✳<small>YOUR IDEA</small></div>}<span>{chapterTitle} / DECIDED</span></div>
+              <div className={styles.receipt} data-lab-entrance><span className={styles.receiptTop}>ENTANGLED SHELTER <span>♥</span></span><p>THE ANSWER FOR TODAY</p><h3 tabIndex={-1} data-stage-heading>{round.bet.name}</h3><p className={styles.receiptDetail}>{round.bet.detail}</p><div className={styles.receiptMeta}><span>{category.label} / {chosenMode.name}</span><span>YOU CHOSE. THAT’S ENOUGH.</span></div><div className={styles.receiptSeal} aria-hidden="true">DECIDED<br />✳</div></div>
+              <div className={styles.acceptedNote} role="status" data-lab-entrance><strong>Beautiful. Indecision may end here.</strong><p>{saved ? "This decision is preserved in this browser. Now go and make it a day worth remembering." : "The answer is settled. This browser could not preserve the record, but the decision is yours to carry."}</p></div>
+              <div className={styles.acceptedActions} data-lab-entrance><button type="button" className={styles.primary} onClick={onClose}>GO WITH THE ANSWER <span aria-hidden="true">↗</span></button><button type="button" className={styles.textButton} onClick={() => { resetRound(); setBetId(null); setStage("options"); }}>DECIDE ONE MORE SMALL THING</button></div>
+              {history.length > 1 && <div className={styles.history} data-lab-entrance><p className={styles.eyebrow}>RECENT LITTLE DECISIONS</p>{history.slice(1, 4).map((item) => <div key={item.id}><span>{choiceCategories[item.categoryId].label}</span><strong>{item.option.name}</strong><time dateTime={item.decidedAt}>{new Date(item.decidedAt).toLocaleDateString("en-GB", { month: "short", day: "2-digit" })}</time></div>)}</div>}
             </section>}
             <p className={styles.error} role="alert">{error}</p>
           </main>
         </div>
-        <footer className={styles.footer}><span>LESS OVERTHINKING. MORE LIVING.</span><span>没有最优解，也可以有好答案。 ↗</span></footer>
+        <footer className={styles.footer}><span>LESS OVERTHINKING. MORE LIVING.</span><span>NO PERFECT ANSWER. STILL, A BEAUTIFUL ONE. ↗</span></footer>
       </div>
     </dialog>
   );

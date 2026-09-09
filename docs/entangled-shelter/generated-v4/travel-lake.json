@@ -1,1 +1,10 @@
-{"id":"travel-lake","name":"湖畔骑行","detail":"租一辆车 · 环湖慢骑 · 草地休息","category":"travel","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. One coherent landscape/scene illustrating this EXACT travel activity, emphasizing the named place/activity; no collage or unrelated destination. Subject: 湖畔骑行. Required details: 租一辆车 · 环湖慢骑 · 草地休息. Asset ID: travel-lake. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-a2b0f0b0-77bf-4a46-aa22-5a274fc75075.png","localPath":"public/entangled/choices-v4/travel-lake.png","generator":"built-in image_gen"}
+{
+  "id": "travel-lake",
+  "name": "Along the Lake",
+  "detail": "Hire a bicycle · trace the shore · rest in the grass",
+  "category": "travel",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: Along the Lake. Required details: Hire a bicycle · trace the shore · rest in the grass. Asset ID: travel-lake. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-a2b0f0b0-77bf-4a46-aa22-5a274fc75075.png",
+  "localPath": "public/entangled/choices-v4/travel-lake.png",
+  "generator": "built-in image_gen"
+}

@@ -1,8 +1,8 @@
         var archiveRecords = [];
         var archiveBank = 0;
         var archiveKey = 'entangled-shelter:decisions:v1';
-        var labels = {food:'美食',style:'穿搭',travel:'旅行'};
-        var modeLabels = {poker:'命运扑克',rps:'剪刀石头布',guess:'先猜后抽'};
+        var labels = {food:'TASTE',style:'STYLE',travel:'WANDER'};
+        var modeLabels = {poker:'FORTUNE DECK',rps:'A FAIR FIGHT',guess:'TRUST YOUR HUNCH'};
         function readArchive() {
           try {
             var data = JSON.parse(localStorage.getItem(archiveKey) || '[]');
@@ -15,7 +15,7 @@
           archiveBank = Math.min(archiveBank, Math.max(0, Math.ceil(archiveRecords.length / 8) - 1));
         }
         function fullTime(value) {
-          return new Date(value).toLocaleString('zh-CN', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+          return new Date(value).toLocaleString('en-GB', {year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
         }
         readArchive();
         function buildAtlas() {
@@ -33,7 +33,7 @@
           var bank = archiveRecords.slice(archiveBank * 8, archiveBank * 8 + 8);
           function line(text,x,y,width,font) {
             g.font=font; var size=parseInt(font,10);
-            while(g.measureText(text).width > width && size > 13) { size--; g.font=size+'px Georgia, SimSun, serif'; }
+            while(g.measureText(text).width > width && size > 13) { size--; g.font=size+'px Georgia, serif'; }
             g.fillText(text,x,y,width);
           }
           for(var c=0;c<ATLAS_N;c++) {
@@ -42,14 +42,14 @@
             g.fillStyle='#243029';
             line('ES / ENTANGLED SHELTER',x+48,64,410,'17px Georgia, serif');
             g.fillRect(x+48,83,416,2);
-            line(r ? labels[r.categoryId]+' / '+modeLabels[r.mode] : 'THE INDECISION EDITION',x+48,116,410,'17px Georgia, SimSun, serif');
+            line(r ? labels[r.categoryId]+' / '+modeLabels[r.mode] : 'THE INDECISION EDITION',x+48,116,410,'17px Georgia, serif');
             g.fillStyle=r && r.categoryId==='food' ? '#863b31' : '#334a39';
             line(r ? {food:'♥',style:'♠',travel:'♦'}[r.categoryId] : '✳',x+50,215,90,'80px Georgia, serif');
             g.fillStyle='#243029';
-            line(r ? r.option.name : '留给下一次心动',x+48,280,416,'44px Georgia, SimSun, serif');
-            line(r ? r.option.detail : '先做一次选择，再把答案印在这里。',x+48,325,416,'18px Georgia, SimSun, serif');
+            line(r ? r.option.name : 'RESERVED FOR YOUR NEXT DELIGHT',x+48,280,416,'44px Georgia, serif');
+            line(r ? r.option.detail : 'Make one choice, then let the answer leave its trace.',x+48,325,416,'18px Georgia, serif');
             g.fillRect(x+48,370,416,1);
-            line(r ? fullTime(r.decidedAt) : '还没有选择记录',x+48,407,416,'19px Georgia, SimSun, serif');
+            line(r ? fullTime(r.decidedAt) : 'NO DECISIONS PRESERVED YET',x+48,407,416,'19px Georgia, serif');
             line(r ? 'DECISION '+String(archiveBank*8+c%bank.length+1).padStart(4,'0') : 'A LITTLE CHANCE. A LITTLE COURAGE.',x+48,455,416,'13px Georgia, serif');
           }
           var tex=new THREE.CanvasTexture(cv);
@@ -70,18 +70,18 @@
             barrelTex.image=nextTexture.image; barrelTex.needsUpdate=true;
             nextTexture.dispose();
             next.hidden=archiveRecords.length<=8;
-            next.textContent='纸面 '+(archiveBank+1)+' / '+Math.max(1,Math.ceil(archiveRecords.length/8))+' ↻';
+            next.textContent='FOLIO '+(archiveBank+1)+' / '+Math.max(1,Math.ceil(archiveRecords.length/8))+' ↻';
           }
           function renderList() {
             list.replaceChildren();
-            document.getElementById('recordCount').textContent=archiveRecords.length ? '共 '+archiveRecords.length+' 次选择 · 最近的记录在前' : '还没有选择记录。回到避难所，接受一次游戏结果就会留下记录。';
+            document.getElementById('recordCount').textContent=archiveRecords.length ? archiveRecords.length+' decisions preserved · newest first' : 'No decisions yet. Return to the shelter and accept a result to leave your first trace.';
             archiveRecords.forEach(function(r,index) {
               var li=document.createElement('li');
               var category=document.createElement('p'); category.textContent=labels[r.categoryId]+' · '+modeLabels[r.mode];
               var name=document.createElement('strong'); name.textContent=r.option.name;
               var detail=document.createElement('p'); detail.textContent=r.option.detail;
               var time=document.createElement('time'); time.dateTime=r.decidedAt; time.textContent=fullTime(r.decidedAt);
-              var view=document.createElement('button'); view.textContent='印到滚轴上 ↗';
+              var view=document.createElement('button'); view.textContent='Print on the roll ↗';
               view.addEventListener('click',function(){archiveBank=Math.floor(index/8);refreshTexture();panel.hidden=true;toggle.setAttribute('aria-expanded','false');setPaused(false);toggle.focus();});
               li.append(category,name,detail,time,view);list.append(li);
             });
@@ -90,6 +90,6 @@
           next.addEventListener('click',function(){archiveBank=(archiveBank+1)%Math.max(1,Math.ceil(archiveRecords.length/8));refreshTexture();});
           window.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden){panel.hidden=true;toggle.setAttribute('aria-expanded','false');setPaused(false);toggle.focus();}else if(e.code==='Space' && e.target===document.body){e.preventDefault();setPaused(!paused);}});
           window.addEventListener('storage',function(e){if(e.key===archiveKey||e.key===null){readArchive();refreshTexture();renderList();}});
-          document.getElementById('stage').addEventListener('webglcontextlost',function(e){e.preventDefault();document.getElementById('hintText').textContent='画面暂时中断，可刷新恢复；选择记录仍可查看。';});
+          document.getElementById('stage').addEventListener('webglcontextlost',function(e){e.preventDefault();document.getElementById('hintText').textContent='The scene paused unexpectedly. Refresh to restore it; your decisions remain available.';});
           refreshTexture();renderList();
         }

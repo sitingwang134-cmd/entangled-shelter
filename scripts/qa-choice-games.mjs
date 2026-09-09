@@ -38,7 +38,7 @@ for (const mode of ['poker', 'rps', 'guess']) {
         assert.equal(html.includes('data-open-letter'), revealed);
         assert.equal((html.match(/data-winner="true"/g) || []).length, revealed ? 1 : 0);
       }
-      if (mode === 'rps' && !revealed) assert.ok(html.includes('3，准备'));
+      if (mode === 'rps' && !revealed) assert.ok(html.includes('3, ready'));
       assertions += 4;
     }
   }

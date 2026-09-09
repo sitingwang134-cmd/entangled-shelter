@@ -1,1 +1,10 @@
-{"id":"travel-sea","name":"海边发呆","detail":"沿海散步 · 看潮汐 · 喝椰子水","category":"travel","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. One coherent landscape/scene illustrating this EXACT travel activity, emphasizing the named place/activity; no collage or unrelated destination. Subject: 海边发呆. Required details: 沿海散步 · 看潮汐 · 喝椰子水. Asset ID: travel-sea. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-473eaf8e-f048-4699-83c5-89b4696b6419.png","localPath":"public/entangled/choices-v4/travel-sea.png","generator":"built-in image_gen"}
+{
+  "id": "travel-sea",
+  "name": "A Day by the Sea",
+  "detail": "Coastal walk · changing tides · cold coconut water",
+  "category": "travel",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: A Day by the Sea. Required details: Coastal walk · changing tides · cold coconut water. Asset ID: travel-sea. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-473eaf8e-f048-4699-83c5-89b4696b6419.png",
+  "localPath": "public/entangled/choices-v4/travel-sea.png",
+  "generator": "built-in image_gen"
+}

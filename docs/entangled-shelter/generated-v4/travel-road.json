@@ -1,1 +1,10 @@
-{"id":"travel-road","name":"沿海自驾","detail":"挑一段海岸线 · 停两个观景台 · 看日落","category":"travel","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. One coherent landscape/scene illustrating this EXACT travel activity, emphasizing the named place/activity; no collage or unrelated destination. Subject: 沿海自驾. Required details: 挑一段海岸线 · 停两个观景台 · 看日落. Asset ID: travel-road. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-29437b6e-673c-409d-99bf-af474411f0a0.png","localPath":"public/entangled/choices-v4/travel-road.png","generator":"built-in image_gen"}
+{
+  "id": "travel-road",
+  "name": "The Coastal Road",
+  "detail": "One stretch of coast · two overlooks · sunset at the wheel",
+  "category": "travel",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: The Coastal Road. Required details: One stretch of coast · two overlooks · sunset at the wheel. Asset ID: travel-road. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-29437b6e-673c-409d-99bf-af474411f0a0.png",
+  "localPath": "public/entangled/choices-v4/travel-road.png",
+  "generator": "built-in image_gen"
+}

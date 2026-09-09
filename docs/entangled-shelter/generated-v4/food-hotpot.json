@@ -1,1 +1,10 @@
-{"id":"food-hotpot","name":"沸腾火锅","detail":"一锅红汤 · 藕片与毛肚","category":"food","generator":"built-in image_gen","originalPath":"C:/Users/admin/.codex/generated_images/01a07c43-6c58-7033-8324-908100b4e3b7/exec-c0dd5011-f7e9-46ee-baa9-7e4e9110c07f.png","localPath":"assets/generated-v4/food-hotpot.png","prompt":"Use case: stylized-concept. Generate ONE finished square editorial oil-painting illustration for a Chinese lifestyle choice website, no text, no lettering, no border, no collage. Subject precisely: 沸腾火锅 — a round Chinese hotpot of bubbling RED spicy broth, lotus-root slices and beef tripe visibly arranged inside, a few chopsticks and simple ceramic side dishes. Close three-quarter overhead view, food clearly legible. Unified series art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory linen background, muted olive shadows, ochre highlights, natural warm window light, tasteful subdued colors, uncluttered composition, no photorealistic stock-photo look, no cartoon, no neon, no watermark. Main subject occupies central 75% with safe edges for thumbnail crop. This will be asset food-hotpot; only this dish, not salad or other unrelated dishes."}
+{
+  "id": "food-hotpot",
+  "name": "Crimson Hot Pot",
+  "detail": "Scarlet broth · lotus root · crisp tripe",
+  "category": "food",
+  "generator": "built-in image_gen",
+  "originalPath": "C:/Users/admin/.codex/generated_images/01a07c43-6c58-7033-8324-908100b4e3b7/exec-c0dd5011-f7e9-46ee-baa9-7e4e9110c07f.png",
+  "localPath": "assets/generated-v4/food-hotpot.png",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: Crimson Hot Pot. Required details: Scarlet broth · lotus root · crisp tripe. Asset ID: food-hotpot. Render only this subject."
+}

@@ -64,12 +64,12 @@ try {
       }
     }
     if (width < 641) {
-      await page.getByRole("button", { name: "打开菜单", exact: true }).click();
-      await page.getByRole("navigation", { name: "章节菜单" }).getByRole("link", { name: /美食/ }).click();
+      await page.getByRole("button", { name: "Open menu", exact: true }).click();
+      await page.getByRole("navigation", { name: "Chapter menu" }).getByRole("link", { name: /Taste/ }).click();
       await page.waitForTimeout(1800);
       assert.equal(await page.locator("[data-active-section]").getAttribute("data-active-section"), "food", "mobile menu navigates");
     } else {
-      await page.getByRole("navigation", { name: "主要导航" }).getByRole("link", { name: "穿搭", exact: true }).click();
+      await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Style", exact: true }).click();
       await page.waitForTimeout(1800);
       assert.equal(await page.locator("[data-active-section]").getAttribute("data-active-section"), "style", "desktop anchor navigates");
     }

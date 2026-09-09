@@ -1,1 +1,10 @@
-{"id":"style-suit","name":"轻量西装","detail":"宽肩西装 + 素 T + 九分裤","category":"style","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. An elegant flat-lay arrangement of this EXACT outfit on warm ivory linen, all listed garments and shoes/accessories visible, correct listed colors and materials, no people, no food. Subject: 轻量西装. Required details: 宽肩西装 + 素 T + 九分裤. Asset ID: style-suit. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-d6ef9ce4-863f-4a80-8306-eaa2dfa88735.png","localPath":"public/entangled/choices-v4/style-suit.png","generator":"built-in image_gen"}
+{
+  "id": "style-suit",
+  "name": "Featherlight Suiting",
+  "detail": "Broad-shouldered blazer + plain tee + cropped trousers",
+  "category": "style",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: Featherlight Suiting. Required details: Broad-shouldered blazer + plain tee + cropped trousers. Asset ID: style-suit. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-d6ef9ce4-863f-4a80-8306-eaa2dfa88735.png",
+  "localPath": "public/entangled/choices-v4/style-suit.png",
+  "generator": "built-in image_gen"
+}

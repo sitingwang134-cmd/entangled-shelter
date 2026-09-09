@@ -8,8 +8,8 @@
 
 ## UI states
 
-- Loading: single receipt marked “正在整理记录”.
-- Empty: explanatory receipt plus “回到选择现场”.
+- Loading: a single receipt marked “Arranging the archive”.
+- Empty: an explanatory receipt plus “Return to the decision room”.
 - Populated: newest first; filters for all / food / style / travel.
 - Filter-empty: receipt explains that category has no record.
 
@@ -28,4 +28,3 @@
 - Pointer horizontal position creates subtle reel yaw.
 - Wheel and drag add direct movement.
 - Click on the stage pauses/resumes; interactive controls are excluded.
-

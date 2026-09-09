@@ -7,7 +7,7 @@ for (const id of ['food', 'style', 'travel']) {
 }
 assert.equal((html.match(/20 POSSIBILITIES/g) || []).length, 3);
 const text = html.replace(/<!--.*?-->/g, '');
-for (const category of ['美食', '穿搭', '旅行']) assert.ok(text.includes(`探索全部${category}灵感`));
+for (const category of ['TASTE', 'STYLE', 'WANDER']) assert.ok(text.includes(`EXPLORE ALL ${category} POSSIBILITIES`));
 const source = await readFile('src/components/entangled/EntangledShelter.tsx', 'utf8');
 const panel = source.slice(source.indexOf('<article className={styles.pickCard}'), source.indexOf('<div className={styles.chapterNote}'));
 assert.equal((panel.match(/open\(chapter.id\)/g) || []).length, 2);

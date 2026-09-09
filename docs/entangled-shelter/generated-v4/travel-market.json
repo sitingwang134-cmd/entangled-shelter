@@ -1,1 +1,10 @@
-{"id":"travel-market","name":"周末市集","detail":"淘一件旧物 · 尝小吃 · 听街头音乐","category":"travel","prompt":"Use case: stylized-concept. Create ONE standalone square finished illustration for an editorial lifestyle choice website, NOT a contact sheet, no text, no labels, no watermark, no border. Unified art direction for the entire series: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural window/daylight, restrained palette, elegant uncluttered composition. NOT photorealistic stock photography, NOT cartoon, NOT neon. Clearly identifiable main subject centered within the middle 75%, safe edges for thumbnail cropping. One coherent landscape/scene illustrating this EXACT travel activity, emphasizing the named place/activity; no collage or unrelated destination. Subject: 周末市集. Required details: 淘一件旧物 · 尝小吃 · 听街头音乐. Asset ID: travel-market. Render only this subject.","originalPath":"C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-f241d7dc-6049-41ca-b680-9648e01d6434.png","localPath":"public/entangled/choices-v4/travel-market.png","generator":"built-in image_gen"}
+{
+  "id": "travel-market",
+  "name": "The Weekend Market",
+  "detail": "One old treasure · street delicacies · music in the square",
+  "category": "travel",
+  "prompt": "Use case: stylized-concept. Create one standalone square finished illustration for an editorial lifestyle choice website. Unified art direction: refined contemporary oil painting with classical still-life sensibility, softly visible brushwork, warm ivory, subdued olive shadows, ochre highlights, warm natural light, a restrained palette, and an elegant uncluttered composition. Keep the main subject within the middle 75 percent for safe thumbnail cropping. Do not include text, labels, watermarks, borders, collages, stock-photo styling, cartoons, or neon. Subject: The Weekend Market. Required details: One old treasure · street delicacies · music in the square. Asset ID: travel-market. Render only this subject.",
+  "originalPath": "C:\\Users\\admin\\.codex\\generated_images\\01a07c43-6c58-7033-8324-908100b4e3b7\\exec-f241d7dc-6049-41ca-b680-9648e01d6434.png",
+  "localPath": "public/entangled/choices-v4/travel-market.png",
+  "generator": "built-in image_gen"
+}
