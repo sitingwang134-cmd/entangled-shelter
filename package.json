@@ -29,10 +29,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "node scripts/build-static.mjs",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "qa:site": "node scripts/qa-entangled-shelter.mjs",
+    "qa:site": "node scripts/qa-entangled-page.mjs",
+    "qa:reference": "node scripts/qa-www-shopify-com-a6fbc09c-editions-winter2026-e4a4040c.mjs",
     "check": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
@@ -41,6 +43,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
     "lucide-react": "^1.6.0",
     "next": "16.3.0",
     "react": "19.2.4",

@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-09-07T15:16:47.878Z",
+  "url": "http://127.0.0.1:3000",
+  "reducedMotion": true,
+  "results": [
+    {
+      "width": 640,
+      "height": 844,
+      "steps": [
+        {
+          "id": "intro",
+          "active": "intro",
+          "theme": "light",
+          "scrollWidth": 640,
+          "width": 640
+        },
+        {
+          "id": "food",
+          "active": "food",
+          "theme": "dark",
+          "scrollWidth": 640,
+          "width": 640
+        },
+        {
+          "id": "style",
+          "active": "style",
+          "theme": "dark",
+          "scrollWidth": 640,
+          "width": 640
+        },
+        {
+          "id": "travel",
+          "active": "travel",
+          "theme": "dark",
+          "scrollWidth": 640,
+          "width": 640
+        },
+        {
+          "id": "ritual",
+          "active": "ritual",
+          "theme": "light",
+          "scrollWidth": 640,
+          "width": 640
+        },
+        {
+          "id": "ending",
+          "active": "ending",
+          "theme": "dark",
+          "scrollWidth": 640,
+          "width": 640
+        }
+      ],
+      "localImages": [
+        {
+          "src": "/entangled/station.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/room.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/doorway.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/levitate.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/atelier.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/salt.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/car.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/angels.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/hands.webp",
+          "loaded": true
+        }
+      ],
+      "external": [],
+      "failed": [],
+      "errors": [],
+      "scrollAnimation": true
+    },
+    {
+      "width": 939,
+      "height": 900,
+      "steps": [
+        {
+          "id": "intro",
+          "active": "intro",
+          "theme": "light",
+          "scrollWidth": 939,
+          "width": 939
+        },
+        {
+          "id": "food",
+          "active": "food",
+          "theme": "dark",
+          "scrollWidth": 939,
+          "width": 939
+        },
+        {
+          "id": "style",
+          "active": "style",
+          "theme": "dark",
+          "scrollWidth": 939,
+          "width": 939
+        },
+        {
+          "id": "travel",
+          "active": "travel",
+          "theme": "dark",
+          "scrollWidth": 939,
+          "width": 939
+        },
+        {
+          "id": "ritual",
+          "active": "ritual",
+          "theme": "light",
+          "scrollWidth": 939,
+          "width": 939
+        },
+        {
+          "id": "ending",
+          "active": "ending",
+          "theme": "dark",
+          "scrollWidth": 939,
+          "width": 939
+        }
+      ],
+      "localImages": [
+        {
+          "src": "/entangled/station.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/room.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/doorway.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/levitate.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/atelier.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/salt.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/car.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/angels.webp",
+          "loaded": true
+        },
+        {
+          "src": "/entangled/hands.webp",
+          "loaded": true
+        }
+      ],
+      "external": [],
+      "failed": [],
+      "errors": [],
+      "scrollAnimation": true
+    }
+  ]
+}

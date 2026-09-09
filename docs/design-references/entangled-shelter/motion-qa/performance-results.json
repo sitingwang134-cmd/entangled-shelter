@@ -1,0 +1,1261 @@
+{
+  "generatedAt": "2026-09-07T15:39:02.431Z",
+  "baseUrl": "http://127.0.0.1:3000",
+  "browserVersion": "152.0.4191.66",
+  "buildId": "pIYMCoqBfkynAsKpPLVZH",
+  "sourceHashes": {
+    "src/components/entangled/EntangledShelter.tsx": "08fc4c1b44ed57f36ba7b9449e0e45282b30bc8ed187b96ea7002eceeb92a1ee",
+    "src/components/entangled/EntangledShelter.module.css": "80ddd8d06a01be960f8c10614fb894abe4889fb10d2099c81d8a1804989cf865",
+    "src/components/entangled/DepthScene.tsx": "d83e03797c14b3608dfe9aa204513a3c6a2e887035e265e9ed63d6c104346257",
+    "src/components/entangled/DepthScene.module.css": "b3458d83e4434a6471221704e1d9853c38c973b0caf6a7184dcaa3a1474cf131",
+    "public/entangled/media-manifest.json": "4a84914cf37d0aecf8124ddddcf0e1d370101cd58269b0d058cbf596a496ab4f",
+    "package.json": "a0e127ff8875f49cda261210fff8e63904dff3facf53225a42647ef984b206f2"
+  },
+  "methodology": "Unrecorded production-site samples. Native RAF and actual WebGL drawArrays dispatch timestamps are observed without changing the 60 Hz depth scheduler. Dispatch timing is not GPU completion or physical display presentation. Warm-up and chapter navigation are excluded, except the named transition sample. No CPU/network throttling and no forced software renderer.",
+  "limitations": "Headless Edge on this machine; mobile viewport is emulation, not a physical phone. Other workloads and desktop refresh configuration can affect results. Video is captured in a separate browser context after the benchmark and cannot establish 60 fps presentation.",
+  "target": "Depth layer target = 60 draws/second. below60HzTarget flags samples with at least 30 intervals and mean below 55 Hz or p95 above 25 ms. Numeric results remain authoritative; a passing functional test is not substituted for frame rate.",
+  "scenarios": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false
+      },
+      "rawSavedAt": "2026-09-07T15:33:57.495Z",
+      "name": "desktop-hero-idle",
+      "recordingEnabled": false,
+      "durationMs": 4086.5,
+      "nativeRaf": {
+        "count": 674,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.2,
+        "derivedMeanHz": 164.99,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 0,
+      "endY": 0,
+      "visibleBefore": null,
+      "visibleAfter": null,
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 245,
+          "drawIntervals": {
+            "count": 244,
+            "meanMs": 16.664,
+            "medianMs": 18.2,
+            "p95Ms": 18.3,
+            "p99Ms": 19.1,
+            "maximumMs": 19.4,
+            "derivedMeanHz": 60.01,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 245,
+            "meanMs": 0.006,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 163333.33,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false
+      },
+      "rawSavedAt": "2026-09-07T15:34:02.845Z",
+      "name": "desktop-hero-pointer",
+      "recordingEnabled": false,
+      "durationMs": 5015.8,
+      "nativeRaf": {
+        "count": 827,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.7,
+        "derivedMeanHz": 164.99,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 0,
+      "endY": 0,
+      "visibleBefore": null,
+      "visibleAfter": null,
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 301,
+          "drawIntervals": {
+            "count": 300,
+            "meanMs": 16.667,
+            "medianMs": 18.1,
+            "p95Ms": 18.3,
+            "p99Ms": 18.5,
+            "maximumMs": 19.1,
+            "derivedMeanHz": 60,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 301,
+            "meanMs": 0.007,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 136818.18,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false
+      },
+      "rawSavedAt": "2026-09-07T15:34:10.547Z",
+      "name": "desktop-food-scroll",
+      "recordingEnabled": false,
+      "durationMs": 5077.2,
+      "nativeRaf": {
+        "count": 833,
+        "meanMs": 6.09,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 30.3,
+        "derivedMeanHz": 164.21,
+        "intervalsOver25Ms": 1,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 2504,
+      "endY": 3029,
+      "visibleBefore": null,
+      "visibleAfter": null,
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 305,
+          "drawIntervals": {
+            "count": 304,
+            "meanMs": 16.667,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.5,
+            "maximumMs": 49.1,
+            "derivedMeanHz": 60,
+            "intervalsOver25Ms": 1,
+            "intervalsOver33Ms": 1,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 305,
+            "meanMs": 0.007,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 138636.36,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 2,
+          "source": "/entangled/room.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 305,
+          "drawIntervals": {
+            "count": 304,
+            "meanMs": 16.665,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.5,
+            "maximumMs": 49.1,
+            "derivedMeanHz": 60,
+            "intervalsOver25Ms": 1,
+            "intervalsOver33Ms": 1,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 305,
+            "meanMs": 0.001,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 1524999.98,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 3,
+          "source": "/entangled/doorway.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 297,
+          "drawIntervals": {
+            "count": 296,
+            "meanMs": 16.561,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.5,
+            "maximumMs": 22.3,
+            "derivedMeanHz": 60.38,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 297,
+            "meanMs": 0.002,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 495000,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false
+      },
+      "rawSavedAt": "2026-09-07T15:34:19.690Z",
+      "name": "desktop-style-multiscene",
+      "recordingEnabled": false,
+      "durationMs": 5024.7,
+      "nativeRaf": {
+        "count": 828,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.6,
+        "derivedMeanHz": 165,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 5354,
+      "endY": 5614,
+      "visibleBefore": null,
+      "visibleAfter": null,
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 301,
+          "drawIntervals": {
+            "count": 300,
+            "meanMs": 16.667,
+            "medianMs": 18.1,
+            "p95Ms": 18.3,
+            "p99Ms": 18.4,
+            "maximumMs": 18.9,
+            "derivedMeanHz": 60,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 301,
+            "meanMs": 0.008,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 125416.67,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 4,
+          "source": "/entangled/levitate.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 301,
+          "drawIntervals": {
+            "count": 300,
+            "meanMs": 16.664,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.4,
+            "maximumMs": 18.9,
+            "derivedMeanHz": 60.01,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 301,
+            "meanMs": 0.001,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 752500,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 5,
+          "source": "/entangled/atelier.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 301,
+          "drawIntervals": {
+            "count": 300,
+            "meanMs": 16.663,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.4,
+            "maximumMs": 18.9,
+            "derivedMeanHz": 60.01,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 301,
+            "meanMs": 0.001,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 752500,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false
+      },
+      "rawSavedAt": "2026-09-07T15:34:27.490Z",
+      "name": "desktop-travel-to-ritual",
+      "recordingEnabled": false,
+      "durationMs": 5051.2,
+      "nativeRaf": {
+        "count": 829,
+        "meanMs": 6.09,
+        "medianMs": 6.1,
+        "p95Ms": 6.2,
+        "p99Ms": 6.2,
+        "maximumMs": 24.3,
+        "derivedMeanHz": 164.2,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 7787,
+      "endY": 8917,
+      "visibleBefore": null,
+      "visibleAfter": null,
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 303,
+          "drawIntervals": {
+            "count": 302,
+            "meanMs": 16.697,
+            "medianMs": 18.2,
+            "p95Ms": 18.3,
+            "p99Ms": 18.8,
+            "maximumMs": 37.7,
+            "derivedMeanHz": 59.89,
+            "intervalsOver25Ms": 1,
+            "intervalsOver33Ms": 1,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 303,
+            "meanMs": 0.005,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 189375,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 6,
+          "source": "/entangled/salt.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 197,
+          "drawIntervals": {
+            "count": 196,
+            "meanMs": 16.663,
+            "medianMs": 18.2,
+            "p95Ms": 18.3,
+            "p99Ms": 18.7,
+            "maximumMs": 18.8,
+            "derivedMeanHz": 60.01,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 197,
+            "meanMs": 0.001,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 984999.99,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 7,
+          "source": "/entangled/car.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 20,
+          "drawIntervals": {
+            "count": 19,
+            "meanMs": 16.532,
+            "medianMs": 18.2,
+            "p95Ms": 18.7,
+            "p99Ms": 18.7,
+            "maximumMs": 18.7,
+            "derivedMeanHz": 60.49,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 20,
+            "meanMs": 0,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0,
+            "maximumMs": 0,
+            "derivedMeanHz": null,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": null
+        },
+        {
+          "id": 8,
+          "source": "/entangled/angels.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 57,
+          "drawIntervals": {
+            "count": 56,
+            "meanMs": 16.407,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.5,
+            "maximumMs": 18.5,
+            "derivedMeanHz": 60.95,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 57,
+            "meanMs": 0.005,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 190000,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "name": "mobile-hero-idle",
+      "recordingEnabled": false,
+      "durationMs": 4085.5,
+      "nativeRaf": {
+        "count": 673,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.2,
+        "derivedMeanHz": 165,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 0,
+      "endY": 0,
+      "visibleBefore": [
+        {
+          "source": "/entangled/station.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 140,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "visibleAfter": [
+        {
+          "source": "/entangled/station.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 380,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 245,
+          "drawIntervals": {
+            "count": 244,
+            "meanMs": 16.663,
+            "medianMs": 18.2,
+            "p95Ms": 18.3,
+            "p99Ms": 18.3,
+            "maximumMs": 18.3,
+            "derivedMeanHz": 60.01,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 245,
+            "meanMs": 0.008,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 128947.37,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "name": "mobile-hero-breathing",
+      "recordingEnabled": false,
+      "durationMs": 5083.4,
+      "nativeRaf": {
+        "count": 837,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.2,
+        "derivedMeanHz": 165,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 0,
+      "endY": 0,
+      "visibleBefore": [
+        {
+          "source": "/entangled/station.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 380,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "visibleAfter": [
+        {
+          "source": "/entangled/station.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 700,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "renderers": [
+        {
+          "id": 1,
+          "source": "/entangled/station.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 305,
+          "drawIntervals": {
+            "count": 304,
+            "meanMs": 16.667,
+            "medianMs": 18.2,
+            "p95Ms": 18.3,
+            "p99Ms": 18.3,
+            "maximumMs": 18.3,
+            "derivedMeanHz": 60,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 305,
+            "meanMs": 0.005,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 190625,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "name": "mobile-food-scroll",
+      "recordingEnabled": false,
+      "durationMs": 5006.6,
+      "nativeRaf": {
+        "count": 825,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.9,
+        "derivedMeanHz": 165,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 1944,
+      "endY": 2187,
+      "visibleBefore": [
+        {
+          "source": "/entangled/room.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 420,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/doorway.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 180,
+          "quality": "1.00",
+          "resolution": "543x450",
+          "visibleArea": 58694.90625,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "visibleAfter": [
+        {
+          "source": "/entangled/room.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 720,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/doorway.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 480,
+          "quality": "1.00",
+          "resolution": "543x450",
+          "visibleArea": 108600,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "renderers": [
+        {
+          "id": 2,
+          "source": "/entangled/room.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 301,
+          "drawIntervals": {
+            "count": 300,
+            "meanMs": 16.666,
+            "medianMs": 18.1,
+            "p95Ms": 18.3,
+            "p99Ms": 18.5,
+            "maximumMs": 18.5,
+            "derivedMeanHz": 60,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 301,
+            "meanMs": 0.008,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 125416.67,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 3,
+          "source": "/entangled/doorway.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 301,
+          "drawIntervals": {
+            "count": 300,
+            "meanMs": 16.664,
+            "medianMs": 18.1,
+            "p95Ms": 18.3,
+            "p99Ms": 18.5,
+            "maximumMs": 18.5,
+            "derivedMeanHz": 60.01,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 301,
+            "meanMs": 0.001,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 1504999.98,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "name": "mobile-style-multiscene",
+      "recordingEnabled": false,
+      "durationMs": 5004.7,
+      "nativeRaf": {
+        "count": 825,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.7,
+        "derivedMeanHz": 165,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 4802,
+      "endY": 4923,
+      "visibleBefore": [
+        {
+          "source": "/entangled/room.webp",
+          "ready": "false",
+          "mode": "poster",
+          "frames": 840,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 33706.007080078125,
+          "posterLoaded": true,
+          "canvas": false
+        },
+        {
+          "source": "/entangled/levitate.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 640,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/atelier.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 560,
+          "quality": "1.00",
+          "resolution": "543x450",
+          "visibleArea": 81834.625,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "visibleAfter": [
+        {
+          "source": "/entangled/levitate.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 940,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/atelier.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 860,
+          "quality": "1.00",
+          "resolution": "543x450",
+          "visibleArea": 38032.625,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "renderers": [
+        {
+          "id": 4,
+          "source": "/entangled/levitate.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 300,
+          "drawIntervals": {
+            "count": 299,
+            "meanMs": 16.66,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.4,
+            "maximumMs": 18.6,
+            "derivedMeanHz": 60.03,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 300,
+            "meanMs": 0.01,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 96774.19,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        },
+        {
+          "id": 5,
+          "source": "/entangled/atelier.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 300,
+          "drawIntervals": {
+            "count": 299,
+            "meanMs": 16.658,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.4,
+            "maximumMs": 18.6,
+            "derivedMeanHz": 60.03,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 300,
+            "meanMs": 0.002,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 599999.99,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      "name": "mobile-travel-to-ritual",
+      "recordingEnabled": false,
+      "durationMs": 5051.8,
+      "nativeRaf": {
+        "count": 833,
+        "meanMs": 6.061,
+        "medianMs": 6.1,
+        "p95Ms": 6.1,
+        "p99Ms": 6.2,
+        "maximumMs": 6.2,
+        "derivedMeanHz": 165,
+        "intervalsOver25Ms": 0,
+        "intervalsOver33Ms": 0,
+        "intervalsOver50Ms": 0
+      },
+      "startY": 7513,
+      "endY": 8044,
+      "visibleBefore": [
+        {
+          "source": "/entangled/salt.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 560,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "visibleAfter": [
+        {
+          "source": "/entangled/salt.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 860,
+          "quality": "1.00",
+          "resolution": "577x1248",
+          "visibleArea": 329160,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ],
+      "renderers": [
+        {
+          "id": 6,
+          "source": "/entangled/salt.webp",
+          "gpu": {
+            "vendor": "Google Inc. (NVIDIA)",
+            "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3070 (0x00002484) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+            "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)"
+          },
+          "actualDrawCalls": 303,
+          "drawIntervals": {
+            "count": 302,
+            "meanMs": 16.675,
+            "medianMs": 18.1,
+            "p95Ms": 18.4,
+            "p99Ms": 18.5,
+            "maximumMs": 18.5,
+            "derivedMeanHz": 59.97,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "dispatchCpuCost": {
+            "count": 303,
+            "meanMs": 0.008,
+            "medianMs": 0,
+            "p95Ms": 0.1,
+            "p99Ms": 0.1,
+            "maximumMs": 0.1,
+            "derivedMeanHz": 121200,
+            "intervalsOver25Ms": 0,
+            "intervalsOver33Ms": 0,
+            "intervalsOver50Ms": 0
+          },
+          "below60HzTarget": false
+        }
+      ],
+      "longTasks": []
+    }
+  ],
+  "errors": [],
+  "recoveredDesktop": "Five successful desktop samples from the same frozen production build were preserved when later mobile navigation failed. Legacy raw files contain actual RAF/draw timestamps and GPU identity, but not the DOM before/after snapshots; those fields are explicitly null. Source hashes in this aggregate are observed at aggregation time.",
+  "systemGpu": {
+    "devices": [
+      {
+        "vendorId": 4318,
+        "deviceId": 9348,
+        "subSysId": 342560990,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 3070",
+        "driverVendor": "NVIDIA",
+        "driverVersion": "32.0.15.6094"
+      },
+      {
+        "vendorId": 4318,
+        "deviceId": 9348,
+        "subSysId": 342560990,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 3070",
+        "driverVendor": "",
+        "driverVersion": "32.0.15.6094"
+      },
+      {
+        "vendorId": 4318,
+        "deviceId": 9348,
+        "subSysId": 342560990,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 3070",
+        "driverVendor": "",
+        "driverVersion": "32.0.15.6094"
+      },
+      {
+        "vendorId": 5140,
+        "deviceId": 140,
+        "subSysId": 0,
+        "revision": 0,
+        "vendorString": "",
+        "deviceString": "Microsoft Basic Render Driver",
+        "driverVendor": "",
+        "driverVersion": "10.0.19041.5794"
+      }
+    ],
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    },
+    "driverBugWorkarounds": [
+      "disable_d3d11_vp9_ksvc_decoding",
+      "disable_d3d12_av1_encoding",
+      "disable_d3d12_h264_encoding",
+      "disable_d3d12_video_encoder",
+      "disable_dcomp_texture",
+      "enable_webgl_timer_query_extensions",
+      "exit_on_context_lost",
+      "unpack_overlapping_rows_separately_unpack_buffer",
+      "disabled_extension_GL_KHR_blend_equation_advanced",
+      "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+    ]
+  },
+  "functionalErrorsAbsent": true,
+  "belowTargetSamples": [],
+  "softwareRendererObserved": false
+}

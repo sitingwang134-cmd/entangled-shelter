@@ -1,0 +1,119 @@
+[
+  {
+    "id": "station",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 4.2164,
+    "loopSeamMeanAbsolutePixelDifference": 0.7936,
+    "loopSeamToMotionRatio": 0.1882,
+    "passed": true
+  },
+  {
+    "id": "levitate",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 6.1745,
+    "loopSeamMeanAbsolutePixelDifference": 1.0279,
+    "loopSeamToMotionRatio": 0.1665,
+    "passed": true
+  },
+  {
+    "id": "salt",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 5.259,
+    "loopSeamMeanAbsolutePixelDifference": 1.0339,
+    "loopSeamToMotionRatio": 0.1966,
+    "passed": true
+  },
+  {
+    "id": "room",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 6.4571,
+    "loopSeamMeanAbsolutePixelDifference": 1.0909,
+    "loopSeamToMotionRatio": 0.1689,
+    "passed": true
+  },
+  {
+    "id": "doorway",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 3.93,
+    "loopSeamMeanAbsolutePixelDifference": 0.4551,
+    "loopSeamToMotionRatio": 0.1158,
+    "passed": true
+  },
+  {
+    "id": "angels",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 5.2304,
+    "loopSeamMeanAbsolutePixelDifference": 1.1909,
+    "loopSeamToMotionRatio": 0.2277,
+    "passed": true
+  },
+  {
+    "id": "hands",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 1.9024,
+    "loopSeamMeanAbsolutePixelDifference": 0.7394,
+    "loopSeamToMotionRatio": 0.3887,
+    "passed": true
+  },
+  {
+    "id": "atelier",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 5.5587,
+    "loopSeamMeanAbsolutePixelDifference": 0.804,
+    "loopSeamToMotionRatio": 0.1446,
+    "passed": true
+  },
+  {
+    "id": "car",
+    "selectedFrames": [
+      0,
+      60,
+      180,
+      239
+    ],
+    "motionMeanAbsolutePixelDifference": 4.0594,
+    "loopSeamMeanAbsolutePixelDifference": 0.6812,
+    "loopSeamToMotionRatio": 0.1678,
+    "passed": true
+  }
+]

@@ -6,6 +6,7 @@
 - Failed assets: 0
 - Downloaded bytes: 48362588
 - Extraction evidence: `desktop-1440-extraction.json`
+- Latest live-content scrape: `live-page-2026-09-07.md`
 - No generated substitute assets were used.
 
 Detailed URL-to-local-path mappings are in `ARTIFACT_MANIFEST.json`.

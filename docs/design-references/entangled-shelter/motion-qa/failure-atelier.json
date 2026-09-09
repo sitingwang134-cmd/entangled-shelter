@@ -1,0 +1,28 @@
+{
+  "source": "atelier",
+  "scrollY": 3038,
+  "visible": [
+    {
+      "source": "/entangled/room.webp",
+      "ready": "true",
+      "mode": "webgl",
+      "frames": 2220,
+      "quality": "1.00",
+      "resolution": "1549x968",
+      "visibleArea": 1296000,
+      "posterLoaded": true,
+      "canvas": true
+    },
+    {
+      "source": "/entangled/doorway.webp",
+      "ready": "true",
+      "mode": "webgl",
+      "frames": 2140,
+      "quality": "1.00",
+      "resolution": "591x370",
+      "visibleArea": 218485,
+      "posterLoaded": true,
+      "canvas": true
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "generatedAt": "2026-09-07T15:26:01.886Z",
+  "video": "C:\\Users\\admin\\Documents\\codex 2\\shopify-winter-2026-clone\\docs\\design-references\\entangled-shelter\\motion-qa\\motion-desktop.webm",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1440,
+        "height": 900,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "25.880000"
+    }
+  },
+  "timeline": [
+    {
+      "section": "top",
+      "elapsedMs": 2799,
+      "scrollY": 0,
+      "scenes": [
+        {
+          "source": "/entangled/station.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 160,
+          "quality": "1.00",
+          "resolution": "1440x900",
+          "visibleArea": 1296000,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ]
+    },
+    {
+      "section": "food",
+      "elapsedMs": 7254,
+      "scrollY": 2791,
+      "scenes": [
+        {
+          "source": "/entangled/room.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 100,
+          "quality": "1.00",
+          "resolution": "1549x968",
+          "visibleArea": 1296000,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/doorway.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 40,
+          "quality": "1.00",
+          "resolution": "591x370",
+          "visibleArea": 200865.18496704102,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ]
+    },
+    {
+      "section": "style",
+      "elapsedMs": 11679,
+      "scrollY": 4790,
+      "scenes": [
+        {
+          "source": "/entangled/room.webp",
+          "ready": "false",
+          "mode": "poster",
+          "frames": 300,
+          "quality": "1.00",
+          "resolution": "1549x968",
+          "visibleArea": 929160,
+          "posterLoaded": true,
+          "canvas": false
+        },
+        {
+          "source": "/entangled/levitate.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 120,
+          "quality": "1.00",
+          "resolution": "1549x968",
+          "visibleArea": 1296000,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/atelier.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 40,
+          "quality": "1.00",
+          "resolution": "591x370",
+          "visibleArea": 169295.81658935547,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ]
+    },
+    {
+      "section": "travel",
+      "elapsedMs": 16184,
+      "scrollY": 6845,
+      "scenes": [
+        {
+          "source": "/entangled/levitate.webp",
+          "ready": "false",
+          "mode": "poster",
+          "frames": 320,
+          "quality": "1.00",
+          "resolution": "1549x968",
+          "visibleArea": 920610,
+          "posterLoaded": true,
+          "canvas": false
+        },
+        {
+          "source": "/entangled/salt.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 120,
+          "quality": "1.00",
+          "resolution": "1549x968",
+          "visibleArea": 1296000,
+          "posterLoaded": true,
+          "canvas": true
+        },
+        {
+          "source": "/entangled/car.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 40,
+          "quality": "1.00",
+          "resolution": "591x370",
+          "visibleArea": 173703.30224609375,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ]
+    },
+    {
+      "section": "ritual",
+      "elapsedMs": 20684,
+      "scrollY": 8647,
+      "scenes": [
+        {
+          "source": "/entangled/salt.webp",
+          "ready": "false",
+          "mode": "poster",
+          "frames": 360,
+          "quality": "1.00",
+          "resolution": "1549x968",
+          "visibleArea": 1276380,
+          "posterLoaded": true,
+          "canvas": false
+        }
+      ]
+    },
+    {
+      "section": "ending",
+      "elapsedMs": 24777,
+      "scrollY": 9914,
+      "scenes": [
+        {
+          "source": "/entangled/hands.webp",
+          "ready": "true",
+          "mode": "webgl",
+          "frames": 120,
+          "quality": "1.00",
+          "resolution": "1080x675",
+          "visibleArea": 680400,
+          "posterLoaded": true,
+          "canvas": true
+        }
+      ]
+    }
+  ],
+  "blackEvents": [],
+  "errors": [],
+  "note": "Separate visual recording, not a performance sample. Blackdetect only flags nearly full-black frames, not all edge artifacts; screenshots/contact sheet require visual review. The recording frame rate is unrelated to the live 60 Hz shader target."
+}

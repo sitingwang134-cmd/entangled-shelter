@@ -1,0 +1,41 @@
+[
+  {
+    "viewport": "desktop-1440x900",
+    "original": "desktop-1440-hero.png",
+    "local": "qa/desktop-1440.png",
+    "width": 1440,
+    "height": 900,
+    "changedPixelThreshold": 12,
+    "changedPixels": 383,
+    "changedPercent": 0.029552,
+    "exactChangedPixels": 25276,
+    "exactChangedPercent": 1.950309,
+    "meanAbsoluteErrorRgb": 0.029983
+  },
+  {
+    "viewport": "tablet-768x1024",
+    "original": "tablet-768-hero.png",
+    "local": "qa/tablet-768.png",
+    "width": 768,
+    "height": 1024,
+    "changedPixelThreshold": 12,
+    "changedPixels": 810,
+    "changedPercent": 0.102997,
+    "exactChangedPixels": 22349,
+    "exactChangedPercent": 2.841822,
+    "meanAbsoluteErrorRgb": 0.084299
+  },
+  {
+    "viewport": "mobile-390x844",
+    "original": "mobile-390-hero.png",
+    "local": "qa/mobile-390.png",
+    "width": 390,
+    "height": 844,
+    "changedPixelThreshold": 12,
+    "changedPixels": 139,
+    "changedPercent": 0.042229,
+    "exactChangedPixels": 2974,
+    "exactChangedPercent": 0.903512,
+    "meanAbsoluteErrorRgb": 0.037427
+  }
+]

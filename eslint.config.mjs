@@ -11,6 +11,10 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    ".tools/**",
+    "public/entangled/paper-roll/*.min.js",
+    // Generated JavaScript used only by the code-only SSR smoke test.
+    "temp/choice-render-test/**",
     "next-env.d.ts",
   ]),
 ]);

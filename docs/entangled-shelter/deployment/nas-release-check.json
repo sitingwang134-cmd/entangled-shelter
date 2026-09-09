@@ -1,0 +1,662 @@
+{
+  "generatedAt": "2026-09-09T09:33:26.905Z",
+  "origin": "http://192.168.31.214:3090",
+  "passed": true,
+  "htmlSha256": "76589c069844b947af10908a84e7ec5897040fd63c4a24f8e00677295b493497",
+  "historyHtmlSha256": "2d1e07b8e9cb728ae81c008e2b8384d9487225b30a1f7b78bbc9f75c2e31b3b2",
+  "fullMotionMarkup": true,
+  "toggleAbsent": true,
+  "assets": [
+    {
+      "url": "/_next/static/media/hw_cigars-s.p.0-i5d2siu1v8t.woff2",
+      "bytes": 30440,
+      "sha256": "2d422f232ac308d9145692e1bcb2c2ce4001c94a0bcfc4f266429a75529971ba"
+    },
+    {
+      "url": "/_next/static/media/imperial_script-s.p.12_5e0bjj4ig9.woff2",
+      "bytes": 15572,
+      "sha256": "a134619d95955fb4e38d30bb2736374640bce55340a0d3c7b576c27ae212e6bc"
+    },
+    {
+      "url": "/_next/static/media/neue_montreal_bold-s.p.1l9_hd-vqioyk.woff2",
+      "bytes": 24792,
+      "sha256": "5904b1b055387fa028fb281ddb784bf5e3280b4f183b722518bc5b979ddbbd6c"
+    },
+    {
+      "url": "/_next/static/chunks/064l_yy_2k9_1.css",
+      "bytes": 49348,
+      "sha256": "96629347a95f04b1d4a4365c84c33b64bbc40aeb8157837e41fb02a627da4b43"
+    },
+    {
+      "url": "/_next/static/chunks/22_qxkyl9mqgp.css",
+      "bytes": 65086,
+      "sha256": "5041c07122fbf4f94da30fed62864e110362910a85ad6323e84e1dde3439ca5f"
+    },
+    {
+      "url": "/_next/static/chunks/12aruqaur5huj.js",
+      "bytes": 22139,
+      "sha256": "ad05b4fb5f01117dce527fd200cab7538866a9ee3d42b41aba80976260d16df1"
+    },
+    {
+      "url": "/_next/static/chunks/2jsd8749xplnp.js",
+      "bytes": 176017,
+      "sha256": "c25f54e62498c2b5304ab5ddb580a8f133ca07772ffb5c52d5d15aee5bf2785f"
+    },
+    {
+      "url": "/_next/static/chunks/4561u0v7ysn3r.js",
+      "bytes": 228844,
+      "sha256": "6f049a005b36ec4f79aefad2424ef751c28ed3aa310814e5ea2f1be0f9bda8cf"
+    },
+    {
+      "url": "/_next/static/chunks/turbopack-1omc-gjtd6q9h.js",
+      "bytes": 9619,
+      "sha256": "49c5bf662f07ed98f2b86bbf23ff0ad9b4930e3e9c37083ff63dd12319cbcfa8"
+    },
+    {
+      "url": "/_next/static/chunks/3fntmmi971322.js",
+      "bytes": 14377,
+      "sha256": "34ed6abf4c6d0d1bb3dc56d3f133d2a5dbc3a3c89c791deab314e27143ac14ce"
+    },
+    {
+      "url": "/_next/static/chunks/3wl64xi7rftwc.js",
+      "bytes": 228379,
+      "sha256": "02da4c8d5ac7c318003dfc53e99f68a7044103d44af3965842bf306b84bf06d0"
+    },
+    {
+      "url": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+    },
+    {
+      "url": "/entangled/angels-depth.png",
+      "bytes": 77334,
+      "sha256": "79078ebaf23528cfb79622cf522049c42b2a86a62de14bb99553a9018fafd341"
+    },
+    {
+      "url": "/entangled/angels.mp4",
+      "bytes": 524500,
+      "sha256": "40f980fde3e1e5085bf174d001e32a1db6370fac1d2ad9f3b7e6547033436bfa"
+    },
+    {
+      "url": "/entangled/angels.webp",
+      "bytes": 122288,
+      "sha256": "88ca9705d68459008898ddde80a12c24501b6dfc1965ac0bacad5e75979ee612"
+    },
+    {
+      "url": "/entangled/atelier-depth.png",
+      "bytes": 74605,
+      "sha256": "8bb077410afca1004e7e2d66d640377a01ebb04b21df82026f6a7df6dedebcbf"
+    },
+    {
+      "url": "/entangled/atelier.mp4",
+      "bytes": 745623,
+      "sha256": "6dbeb634f048bd2cd05e92b7449b2d3e77856f550ff51636cc9aa6aace47be9f"
+    },
+    {
+      "url": "/entangled/atelier.webp",
+      "bytes": 102580,
+      "sha256": "1a74424c4488a0ac436e777a9a81d911c5b55e2ee1d4d4c57a261c1dff03a012"
+    },
+    {
+      "url": "/entangled/car-depth.png",
+      "bytes": 104346,
+      "sha256": "af018c81c9b8744588fa78811fd009796ea794075cbea636b2c4201ae87b0bc9"
+    },
+    {
+      "url": "/entangled/car.mp4",
+      "bytes": 812905,
+      "sha256": "2288db5aa54d34aa01531442ce6897d5773aae7e0400738740416cf672e6325c"
+    },
+    {
+      "url": "/entangled/car.webp",
+      "bytes": 204874,
+      "sha256": "374a32f230c1b703555ec076f88f9ac95795f018d575bbe83c51007600147843"
+    },
+    {
+      "url": "/entangled/doorway-depth.png",
+      "bytes": 58870,
+      "sha256": "4dee38b58182c5b30e69b12379d3e982cd19038b0b28ec0071d5008bf391cc4f"
+    },
+    {
+      "url": "/entangled/doorway.mp4",
+      "bytes": 472542,
+      "sha256": "8b77c92df38ff01f337f247cc90fafbd632929e6d8804fcc72575c7e04df3fba"
+    },
+    {
+      "url": "/entangled/doorway.webp",
+      "bytes": 72864,
+      "sha256": "db0b6344d7b597c25c8acc011df33f7f39eaeae851a992f3731a83dc9e422c4b"
+    },
+    {
+      "url": "/entangled/food-film-v10.mp4",
+      "bytes": 17712213,
+      "sha256": "c9e6eb6e62da585fc2af2bdcf8f392fef3c363c25036374de0a344052043afeb"
+    },
+    {
+      "url": "/entangled/food-film-v10.webp",
+      "bytes": 109720,
+      "sha256": "665ecaad263861463617bd3daf6adb124cab4c1405f7537a48a1be9a4dda4113"
+    },
+    {
+      "url": "/entangled/food-film-v6.mp4",
+      "bytes": 20303815,
+      "sha256": "ed6b17c1b9dc698f5634791b470c0356907a3830d325d74e900a19ba6ac71da2"
+    },
+    {
+      "url": "/entangled/food-film-v6.webp",
+      "bytes": 65430,
+      "sha256": "4323047664fb0279a8582c36b3f5b7f019939c63aff6fdaa0fa819a5dc30026e"
+    },
+    {
+      "url": "/entangled/food-film-v7.mp4",
+      "bytes": 69644617,
+      "sha256": "c4f4dce3908e44d58155bb5aa38e5d6b18da5331e9f922bcba29ddbb68265090"
+    },
+    {
+      "url": "/entangled/food-film-v7.webp",
+      "bytes": 63434,
+      "sha256": "e1f56b0dbdeb3adbccde3adf0d0ec3e06bc68af7ad5ab007b8788c9384ac849c"
+    },
+    {
+      "url": "/entangled/food-film-v8.mp4",
+      "bytes": 17597516,
+      "sha256": "746f6105236c5f63bc67ef225dc42c735a62226b92e38e30fcdb15f33a925fa7"
+    },
+    {
+      "url": "/entangled/food-film-v9.mp4",
+      "bytes": 18340992,
+      "sha256": "6081af31fbc3c07f6a910264f3ecb5261dfbd3b6fbbbe86d415a2c2ada34fc4f"
+    },
+    {
+      "url": "/entangled/food-film-v9.webp",
+      "bytes": 59490,
+      "sha256": "cadbe44010eb2fd3362bcb55d9cef2c1ab2b36005b4c50517459a7020e947bc2"
+    },
+    {
+      "url": "/entangled/hands-depth.png",
+      "bytes": 41629,
+      "sha256": "b0c814d3793689904e67dc7178df78311b931364814538b75afcd7aeb4020530"
+    },
+    {
+      "url": "/entangled/hands.mp4",
+      "bytes": 131354,
+      "sha256": "ff393557aad7dc562be013fab83c810494924c6b0b5e7802123a110b1a732b32"
+    },
+    {
+      "url": "/entangled/hands.webp",
+      "bytes": 24732,
+      "sha256": "3e60e00b2b3ed76757faf72138da414692bae06038a68de0489ec1b35fcf2b69"
+    },
+    {
+      "url": "/entangled/history-press.webp",
+      "bytes": 289282,
+      "sha256": "4c87f46ecf2f7ae3f3b779af9dcb6c48b5beb5c889e2f500463305256aed2408"
+    },
+    {
+      "url": "/entangled/icon.svg",
+      "bytes": 210,
+      "sha256": "6d2f339d27bd9925f297dac6aad489352574b6867797000a4497b178f20c9671"
+    },
+    {
+      "url": "/entangled/levitate-depth.png",
+      "bytes": 102189,
+      "sha256": "7466e3a0d23e55b884c391494d79fde7236ab9841b9e8a5937465a6a49293c75"
+    },
+    {
+      "url": "/entangled/levitate.mp4",
+      "bytes": 1443599,
+      "sha256": "d818368f5e31994e7e68031e0f938654cbf8b8b9f07e2c9e638c353b435f2b8d"
+    },
+    {
+      "url": "/entangled/levitate.webp",
+      "bytes": 224392,
+      "sha256": "142410f44ce1f56d057107c98afbea3d7ccee527ba267f188aa4e4e8d9c39515"
+    },
+    {
+      "url": "/entangled/room-depth.png",
+      "bytes": 90411,
+      "sha256": "04c269f476da8b235869bb91b468e9b8674cf56dbaa05dfb93bc7871423a8afb"
+    },
+    {
+      "url": "/entangled/room.mp4",
+      "bytes": 1887652,
+      "sha256": "9a87cab91447f61b709dd9239286e6f757b1f51b77d4112ef0c2a151250db197"
+    },
+    {
+      "url": "/entangled/room.webp",
+      "bytes": 324828,
+      "sha256": "b7d71ffcf1d31705143506492c7796a0c71cad26d57e3ea0cb180ad4b34237ae"
+    },
+    {
+      "url": "/entangled/salt-depth.png",
+      "bytes": 64795,
+      "sha256": "7fdbd33dc36f27565d73465312efdab39308961efa08db2af6e64d89d7b43603"
+    },
+    {
+      "url": "/entangled/salt.mp4",
+      "bytes": 1512313,
+      "sha256": "516bcff2c9a512dca83d75d2895cb3d7f4cc54773a1bb7172f8d43507d732362"
+    },
+    {
+      "url": "/entangled/salt.webp",
+      "bytes": 297702,
+      "sha256": "e80bed1f3ecdbff31b6329af9d725ed1ab3224d4a03243d5c24dd51c239a5b21"
+    },
+    {
+      "url": "/entangled/station-depth.png",
+      "bytes": 73662,
+      "sha256": "1e88ccc82d5e77cac631e070a895a54dd3190a3fca94bf71b23ec956f14da138"
+    },
+    {
+      "url": "/entangled/station.mp4",
+      "bytes": 844492,
+      "sha256": "2a61de82a15a594534dd98d7831ceaf3b01a0fc2a5579d0ca9e04eea39444de0"
+    },
+    {
+      "url": "/entangled/station.webp",
+      "bytes": 160578,
+      "sha256": "194ca5cce6d2fc9a8d82637d639aa9ad02f8ea5414381050dff09d86868b52b1"
+    },
+    {
+      "url": "/entangled/choices/food-1.webp",
+      "bytes": 66520,
+      "sha256": "fd9d013b97971f238f2c772abc9ca9fc9b5849bc643ee6dc6665bd3b0a70341a"
+    },
+    {
+      "url": "/entangled/choices/food-2.webp",
+      "bytes": 108364,
+      "sha256": "a7f453682e0588efe15c0bc3b2241e227033783251670a3ed2f56398b98c2c95"
+    },
+    {
+      "url": "/entangled/choices/food-3.webp",
+      "bytes": 96332,
+      "sha256": "7782a014d80c4d5561853aaead0a62da27605ca31286103c1166621841b3598e"
+    },
+    {
+      "url": "/entangled/choices/food-4.webp",
+      "bytes": 113676,
+      "sha256": "dbeb74a2799092396cd0209c5d678a7a9ea67bc4137b003c869da64ec650344a"
+    },
+    {
+      "url": "/entangled/choices/food-5.webp",
+      "bytes": 163888,
+      "sha256": "388c3df0d46bb68a632d0ca178c03f1dd930be2aafa82d440e1d47f1e4c514f2"
+    },
+    {
+      "url": "/entangled/choices/sources.json",
+      "bytes": 8257,
+      "sha256": "f084a7c25c5879633da02927eecf805909061ea8b1001fcb0e64db61ed26b02f"
+    },
+    {
+      "url": "/entangled/choices/style-1.webp",
+      "bytes": 85618,
+      "sha256": "57507e5b8f622567be96a7786a0140eb511c3772391d2078ed8e1bcc0ad360dc"
+    },
+    {
+      "url": "/entangled/choices/style-2.webp",
+      "bytes": 28328,
+      "sha256": "f722950b75a6f50647a7b4877852efd617429d0c2662b7724f7d4b3f4e1a99e0"
+    },
+    {
+      "url": "/entangled/choices/style-3.webp",
+      "bytes": 45404,
+      "sha256": "459ff36ffb4fff71bfac9095a0297896efc83d5d9bd2cf10c0870ff97dc96e7a"
+    },
+    {
+      "url": "/entangled/choices/style-4.webp",
+      "bytes": 98082,
+      "sha256": "fc215316102b2774deec833e464dbec667fa9aa28b96395542b2474f95f969a2"
+    },
+    {
+      "url": "/entangled/choices/style-5.webp",
+      "bytes": 65044,
+      "sha256": "444356b734b5f17a473e1424835d8e8fdd05c54ac9dcd1dfb16d2024976b1d58"
+    },
+    {
+      "url": "/entangled/choices/travel-1.webp",
+      "bytes": 115316,
+      "sha256": "dcf4185e8ec378a63da48ffb43cc41f637e1f35c60ed5f04006cac895ed4d3cc"
+    },
+    {
+      "url": "/entangled/choices/travel-2.webp",
+      "bytes": 78272,
+      "sha256": "cb7353405fc590a0a18cbc94787b7baae4d0176f108b69f5fc985247027f18ac"
+    },
+    {
+      "url": "/entangled/choices/travel-3.webp",
+      "bytes": 18692,
+      "sha256": "370f0064828c43abcf6924f6d0d710446f57c9e6a365e125f2223f35cc38fad2"
+    },
+    {
+      "url": "/entangled/choices/travel-4.webp",
+      "bytes": 32354,
+      "sha256": "d5e87351334b920340a33fe1f3d49143651c3081a957a90838e5e276dd852bbf"
+    },
+    {
+      "url": "/entangled/choices/travel-5.webp",
+      "bytes": 102270,
+      "sha256": "9cb7c2aa893ef347b2898625160b4d8230fd784d8a1ceb476b8feb4738a91557"
+    },
+    {
+      "url": "/entangled/paper-roll/gsap.min.js",
+      "bytes": 72927,
+      "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+    },
+    {
+      "url": "/entangled/paper-roll/index.html",
+      "bytes": 42229,
+      "sha256": "a94fa3fd4ec04e2e5f8f61a9329e3a3c72cca6bf09dd0ebe8a64696336bc2b77"
+    },
+    {
+      "url": "/entangled/paper-roll/three-r128.min.js",
+      "bytes": 603445,
+      "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2"
+    },
+    {
+      "url": "/entangled/choices-v4/food-bbq.webp",
+      "bytes": 216080,
+      "sha256": "d57069a90eef7aa61fdbf2652642ee56d0137770eae9f23a6bdf1f7a9f187349"
+    },
+    {
+      "url": "/entangled/choices-v4/food-bistro.webp",
+      "bytes": 171354,
+      "sha256": "f45f679fc3254645ab029e7782499c8a1acb65b2300ae403bfaba59e4903e8ac"
+    },
+    {
+      "url": "/entangled/choices-v4/food-burger.webp",
+      "bytes": 159950,
+      "sha256": "b97df7d878da7d1bd6fad88ed8b496d4f4d71a5a68cbe3fdd244bc61bd1fde4c"
+    },
+    {
+      "url": "/entangled/choices-v4/food-chicken.webp",
+      "bytes": 182776,
+      "sha256": "926dea062a0b1a936e0b43ace1e74ea16093bfc9c2ec40e3dd5724cf7abfe04d"
+    },
+    {
+      "url": "/entangled/choices-v4/food-claypot.webp",
+      "bytes": 204398,
+      "sha256": "7dc28812325fe5f1aa66ed1ec72cc154347a72e2ab5aa08a13485be289e10dae"
+    },
+    {
+      "url": "/entangled/choices-v4/food-curry.webp",
+      "bytes": 165620,
+      "sha256": "bc2bee9ce26842318517d3c4e6af1edb9112177e8b6e4f09b28d8fdfe4effcdf"
+    },
+    {
+      "url": "/entangled/choices-v4/food-dessert.webp",
+      "bytes": 163050,
+      "sha256": "a5eb27ed91bc6b73f538925ef8567a36a9eb333fa98b30587f275d8283f57fec"
+    },
+    {
+      "url": "/entangled/choices-v4/food-dumplings.webp",
+      "bytes": 126936,
+      "sha256": "5470cebc97d135d0f72d66698da21e9204b2e16a6aeb83a45af2801e8ecb9ccc"
+    },
+    {
+      "url": "/entangled/choices-v4/food-hotpot.webp",
+      "bytes": 220238,
+      "sha256": "57e9a1fda25b412ef86df9b52d71a7f155bcb925daf3ebf9219c82c819096414"
+    },
+    {
+      "url": "/entangled/choices-v4/food-noodles.webp",
+      "bytes": 169122,
+      "sha256": "e3564796360ef009835cf9add40765e115a7c8cff68514d02b00f21ae5cfa952"
+    },
+    {
+      "url": "/entangled/choices-v4/food-pasta.webp",
+      "bytes": 182570,
+      "sha256": "4d6033a862ce572b1b6f870db9d6792f47fbdec9da22422a04b1f4b7c9b0c9dc"
+    },
+    {
+      "url": "/entangled/choices-v4/food-pizza.webp",
+      "bytes": 175910,
+      "sha256": "68ef11c35b959004b220f87c8344317e5cbaac956f43fba4d5da6f138789f495"
+    },
+    {
+      "url": "/entangled/choices-v4/food-poke.webp",
+      "bytes": 160132,
+      "sha256": "41d4cf66652c5a9903ad2a29f754a3298473ba2e10a68c2862addd72478f50b2"
+    },
+    {
+      "url": "/entangled/choices-v4/food-salad.webp",
+      "bytes": 178836,
+      "sha256": "479048653068ec6fcf58852e0a152d9cc5f35e624357c6286ec064ec5627ff5d"
+    },
+    {
+      "url": "/entangled/choices-v4/food-soba.webp",
+      "bytes": 169022,
+      "sha256": "11acbf06b3f3ca52279333d485debac59aacb0351537f6a0d17b822fb3a1c5df"
+    },
+    {
+      "url": "/entangled/choices-v4/food-sushi.webp",
+      "bytes": 150086,
+      "sha256": "f754984485e105826bd3e5b9b69be8950c96b92e2b78b5f4a2416be8c9107644"
+    },
+    {
+      "url": "/entangled/choices-v4/food-tapas.webp",
+      "bytes": 174500,
+      "sha256": "14603d1beddd79550b1667701378f38ac33f9c4d549a525b7609a1cdbe3e8672"
+    },
+    {
+      "url": "/entangled/choices-v4/food-thai.webp",
+      "bytes": 173836,
+      "sha256": "55c6dd9ae052583bf2815ba347de4162454dc509fce76f45506e6c84a2abed9f"
+    },
+    {
+      "url": "/entangled/choices-v4/food-wonton.webp",
+      "bytes": 182462,
+      "sha256": "0bc58a2fc8a9ba5619fd03b3b1475297d22bc56fb606c7167ea119c097ceaa83"
+    },
+    {
+      "url": "/entangled/choices-v4/food-wrap.webp",
+      "bytes": 176136,
+      "sha256": "ace52ce25573877830d224dc0d8dd550a1fdd9ae14531f20bc5c2935bebe34fc"
+    },
+    {
+      "url": "/entangled/choices-v4/sources.json",
+      "bytes": 30766,
+      "sha256": "8e759af6005395ebbbe8800b63833a95f654cf06319445f4d4a6ca6ecac54a8f"
+    },
+    {
+      "url": "/entangled/choices-v4/style-college.webp",
+      "bytes": 147976,
+      "sha256": "c9e841e7539dac245779a38ac534e796176b0267d9ed13e30024a73e019b2c58"
+    },
+    {
+      "url": "/entangled/choices-v4/style-color.webp",
+      "bytes": 137370,
+      "sha256": "7aae60a04c719e1c74973eef7bc8a431efc65893a65d80d0fc5400a617b87d06"
+    },
+    {
+      "url": "/entangled/choices-v4/style-date.webp",
+      "bytes": 117398,
+      "sha256": "517364bc7b9af9df280b17b66d94a07030eb997a54faf4e07517d0f5a2dac011"
+    },
+    {
+      "url": "/entangled/choices-v4/style-denim.webp",
+      "bytes": 165422,
+      "sha256": "8d41d84ab7b9ee6209167959bdce146b800f24f97ff10dd803a873282bcb47a1"
+    },
+    {
+      "url": "/entangled/choices-v4/style-film.webp",
+      "bytes": 178136,
+      "sha256": "574a70ab85dd3060efb14910ca165adf31ab72efd09a2094616a0a066ccdbb6e"
+    },
+    {
+      "url": "/entangled/choices-v4/style-floral.webp",
+      "bytes": 202160,
+      "sha256": "d141680eb0453d74fc735c65e4e2dc03cd5d7f5dff55107789af0c608666166c"
+    },
+    {
+      "url": "/entangled/choices-v4/style-linen.webp",
+      "bytes": 157812,
+      "sha256": "f2dcc220d5c925b9f5045a34f8d749ba6f0d4aeb751fa08d00af601b2ed9e378"
+    },
+    {
+      "url": "/entangled/choices-v4/style-minimal.webp",
+      "bytes": 91546,
+      "sha256": "853bd6baf0eab50f0d51defa34d9cae77fc0640e254a7a881a5ac2b75ea04857"
+    },
+    {
+      "url": "/entangled/choices-v4/style-monochrome.webp",
+      "bytes": 113950,
+      "sha256": "d00f955c0d88dfe7cd9f311d64ec51b889837aa078a4e472cd2606ee8318ab6a"
+    },
+    {
+      "url": "/entangled/choices-v4/style-navy.webp",
+      "bytes": 139330,
+      "sha256": "ffb88d3cd612c663296f691f461ecb66ec44286da29492d292dce51d07667c76"
+    },
+    {
+      "url": "/entangled/choices-v4/style-night.webp",
+      "bytes": 110046,
+      "sha256": "bc85e94d80155ec2e2a82f697a15f82d6aae8086867e90d686b2560f72649838"
+    },
+    {
+      "url": "/entangled/choices-v4/style-outdoor.webp",
+      "bytes": 170852,
+      "sha256": "e83544f392e2cd2c153e9f8ddf85340fd049f614c3f88e7649226da8c2114dcf"
+    },
+    {
+      "url": "/entangled/choices-v4/style-rain.webp",
+      "bytes": 125306,
+      "sha256": "a713519556feb31a98ef7f029a01745e28d29ec05b183d156abe65773d8c0fc6"
+    },
+    {
+      "url": "/entangled/choices-v4/style-romantic.webp",
+      "bytes": 140034,
+      "sha256": "a69ab8b8c31fb94047bc823e6b42c2ef7ccb777de19005d2373242bdea590d9f"
+    },
+    {
+      "url": "/entangled/choices-v4/style-satin.webp",
+      "bytes": 113532,
+      "sha256": "6cba7754bf948f5ecf0032788cd98abed47f78677ee88ea255ed9e7619fe394a"
+    },
+    {
+      "url": "/entangled/choices-v4/style-soft.webp",
+      "bytes": 128582,
+      "sha256": "b0564ce9b9abee337ba16a682455604de3e8999dc68ccf8889fde7042d6f5736"
+    },
+    {
+      "url": "/entangled/choices-v4/style-sport.webp",
+      "bytes": 136482,
+      "sha256": "c9cf60f2730904378db57d04823067d15723c83ff27a6e48d8b58a5bb663bd17"
+    },
+    {
+      "url": "/entangled/choices-v4/style-stripes.webp",
+      "bytes": 159296,
+      "sha256": "dfc93deb2bff5a668e32e21452bdbd6cca5c61784a6dcff774244cf359532e0a"
+    },
+    {
+      "url": "/entangled/choices-v4/style-suit.webp",
+      "bytes": 143524,
+      "sha256": "17e57072c3779a8434b56fda709b1bde7d2fbe94fc00091d03a31326d547b7a2"
+    },
+    {
+      "url": "/entangled/choices-v4/style-workwear.webp",
+      "bytes": 195852,
+      "sha256": "5ee8eeea83a0adedd47a1f6097ab84477640a965002cc24ef1f3890a44eb8080"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-architecture.webp",
+      "bytes": 224076,
+      "sha256": "dd334433304c9c45c0a8870bae91e3682f5bd5147011782c5039076fabdf2be9"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-art.webp",
+      "bytes": 113694,
+      "sha256": "696bda6a4906f005f92c955aaf52c5de014fbb251c78e36505f1b3136e575b10"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-camp.webp",
+      "bytes": 160718,
+      "sha256": "a4ee31d1ca4c02f596f04b377646e2db28a05fc5fcddda3dbe1b9fab743193fb"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-city.webp",
+      "bytes": 190246,
+      "sha256": "39c58f2ec26958ac2d8133d223888a49ff484dd2d3ea34889cb05ce69af715b8"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-country.webp",
+      "bytes": 216080,
+      "sha256": "6b88058a2cb8c209b507b317f32ea6d5c10d2f286e9a64cd485687d90fe3b7a3"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-forest.webp",
+      "bytes": 227708,
+      "sha256": "08a349b852d8f711dcce2347112ddfe00d62bd260daebcbcd0e065bc4b598c68"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-hotspring.webp",
+      "bytes": 147148,
+      "sha256": "f87f580f29f0b270fa2020d9afb8675ecd62e71ab49bd70a4d61a8c4927fd649"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-island.webp",
+      "bytes": 189084,
+      "sha256": "5c88497f0dfa778bbf0afba16c58258e1796b7ff20b6d255240496044aace62a"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-kayak.webp",
+      "bytes": 168266,
+      "sha256": "322a33f6a5f6b41b23a030bdddb3cdc302316f20cc78d0d0f2d2753f7557f594"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-lake.webp",
+      "bytes": 213002,
+      "sha256": "bf042abb49e897e78814e0825a99ffd02d8d8e292044741ad8cebd4f393f3a70"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-market.webp",
+      "bytes": 191846,
+      "sha256": "20793ad962214878d90d122dd83fc7e2f4054f2d0ec76bae694fb42c4fe242a3"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-mountain.webp",
+      "bytes": 190508,
+      "sha256": "2070727843cff155cdc43b4c61f4c460f6daed1cd332e2f1aac35d90290b6233"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-night.webp",
+      "bytes": 158918,
+      "sha256": "f9474965adcb1b504d58896459199813a1ee341f806c8a8a0237c52f8028e697"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-road.webp",
+      "bytes": 149342,
+      "sha256": "8f9f72c3d741cb86e7894084ce7a12abf6d5bdb01a3af7c915a715be32f80f63"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-sea.webp",
+      "bytes": 169558,
+      "sha256": "fb732060955105ecb782f6f67d67b436bc1bdae466c7a1dbe00cfcfb80942b29"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-sunrise.webp",
+      "bytes": 142168,
+      "sha256": "026e539fd6f8717ca3e1a810a05c8a517660dc12436c758940bf562fd823f58f"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-tea.webp",
+      "bytes": 143012,
+      "sha256": "fa6694b58d773455ad5dbee5174771420d8ef7e1cede0aee7c52f50105b26fa8"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-train.webp",
+      "bytes": 117794,
+      "sha256": "98df38470356950c122c9c4982006e189844901e1f299a7c00e4ff04c76cd0a2"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-village.webp",
+      "bytes": 209554,
+      "sha256": "9f190e2970eb046c4c7ffa270d14bc93db6dd64ea5767e3980a07e4771399e5a"
+    },
+    {
+      "url": "/entangled/choices-v4/travel-waterfall.webp",
+      "bytes": 229308,
+      "sha256": "bb0f8775f516301384819aedccf3c234f470025f44ac5ff0e791d040b9aa5b5d"
+    }
+  ],
+  "scope": "HTTP deployment and byte-level asset integrity, not visual animation acceptance."
+}

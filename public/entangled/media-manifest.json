@@ -1,0 +1,430 @@
+{
+  "generatedAt": "2026-09-07T14:58:27.593625+00:00",
+  "sourceDirectory": "C:\\Users\\admin\\Desktop\\11",
+  "depthMethod": "DepthFlow DepthAnythingV2 Small official estimator; normalized near-white; official Gaussian/max-filter postprocessing; bicubic resize to source dimensions",
+  "inferenceDevice": "cpu",
+  "versions": {
+    "depthflow": "1.0.1",
+    "shaderflow": "0.11.3",
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "transformers": "5.16.1",
+    "pillow": "12.3.0"
+  },
+  "assets": [
+    {
+      "id": "station",
+      "source": "c6ba27b965e132a79646e273d492aa50.png",
+      "sourceSha256": "7ef33c3d080113b4c1a531978dc5cf45bbee527f558fa1830df3d2de5356c134",
+      "width": 1683,
+      "height": 935,
+      "files": {
+        ".webp": {
+          "url": "/entangled/station.webp",
+          "bytes": 160578,
+          "sha256": "194ca5cce6d2fc9a8d82637d639aa9ad02f8ea5414381050dff09d86868b52b1",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/station-depth.png",
+          "bytes": 73662,
+          "sha256": "1e88ccc82d5e77cac631e070a895a54dd3190a3fca94bf71b23ec956f14da138",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 75.72
+        },
+        ".mp4": {
+          "url": "/entangled/station.mp4",
+          "bytes": 844492,
+          "sha256": "2a61de82a15a594534dd98d7831ceaf3b01a0fc2a5579d0ca9e04eea39444de0",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1600,
+                "height": 888,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "levitate",
+      "source": "b9bfda1946154fc5b34f69230e4fb4af.png",
+      "sourceSha256": "606ecb760796763fcf0de9be9d9d7f1e7b03d929a5f4b96bd29af419bc6ba2e7",
+      "width": 1672,
+      "height": 941,
+      "files": {
+        ".webp": {
+          "url": "/entangled/levitate.webp",
+          "bytes": 224392,
+          "sha256": "142410f44ce1f56d057107c98afbea3d7ccee527ba267f188aa4e4e8d9c39515",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/levitate-depth.png",
+          "bytes": 102189,
+          "sha256": "7466e3a0d23e55b884c391494d79fde7236ab9841b9e8a5937465a6a49293c75",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 77.631
+        },
+        ".mp4": {
+          "url": "/entangled/levitate.mp4",
+          "bytes": 1443599,
+          "sha256": "d818368f5e31994e7e68031e0f938654cbf8b8b9f07e2c9e638c353b435f2b8d",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1600,
+                "height": 900,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "salt",
+      "source": "ca5d52147c41a196f304c860c91b903d.png",
+      "sourceSha256": "659fa1ddc98e2b0bd1e72be8db42aeb560d77144bbd7df0c07d79e12b20c0754",
+      "width": 1672,
+      "height": 941,
+      "files": {
+        ".webp": {
+          "url": "/entangled/salt.webp",
+          "bytes": 297702,
+          "sha256": "e80bed1f3ecdbff31b6329af9d725ed1ab3224d4a03243d5c24dd51c239a5b21",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/salt-depth.png",
+          "bytes": 64795,
+          "sha256": "7fdbd33dc36f27565d73465312efdab39308961efa08db2af6e64d89d7b43603",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 88.127
+        },
+        ".mp4": {
+          "url": "/entangled/salt.mp4",
+          "bytes": 1512313,
+          "sha256": "516bcff2c9a512dca83d75d2895cb3d7f4cc54773a1bb7172f8d43507d732362",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1600,
+                "height": 900,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "room",
+      "source": "ab42ed12497adc3c3a94b6772f3b2ce1.jpg",
+      "sourceSha256": "b51d2f28be37e05d04acf6c59489a6a2d9a1ba04b0ea563f07652464237dd375",
+      "width": 1320,
+      "height": 862,
+      "files": {
+        ".webp": {
+          "url": "/entangled/room.webp",
+          "bytes": 324828,
+          "sha256": "b7d71ffcf1d31705143506492c7796a0c71cad26d57e3ea0cb180ad4b34237ae",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/room-depth.png",
+          "bytes": 90411,
+          "sha256": "04c269f476da8b235869bb91b468e9b8674cf56dbaa05dfb93bc7871423a8afb",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 66.277
+        },
+        ".mp4": {
+          "url": "/entangled/room.mp4",
+          "bytes": 1887652,
+          "sha256": "9a87cab91447f61b709dd9239286e6f757b1f51b77d4112ef0c2a151250db197",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1320,
+                "height": 862,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "doorway",
+      "source": "22e23f764e222536c4ee66b9dc5caec6.jpg",
+      "sourceSha256": "c20178b9e4b34b0da5d763b41bf4cea007d690229070a090fc0c295c1ae0ba74",
+      "width": 1320,
+      "height": 1035,
+      "files": {
+        ".webp": {
+          "url": "/entangled/doorway.webp",
+          "bytes": 72864,
+          "sha256": "db0b6344d7b597c25c8acc011df33f7f39eaeae851a992f3731a83dc9e422c4b",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/doorway-depth.png",
+          "bytes": 58870,
+          "sha256": "4dee38b58182c5b30e69b12379d3e982cd19038b0b28ec0071d5008bf391cc4f",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 65.726
+        },
+        ".mp4": {
+          "url": "/entangled/doorway.mp4",
+          "bytes": 472542,
+          "sha256": "8b77c92df38ff01f337f247cc90fafbd632929e6d8804fcc72575c7e04df3fba",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1320,
+                "height": 1034,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "angels",
+      "source": "c72c135981063fdc384fd4cd39ddb6fd.jpg",
+      "sourceSha256": "62723c056b590cd8adfba9ada305e5437a9badb72e1432502ba06a758d517722",
+      "width": 1095,
+      "height": 730,
+      "files": {
+        ".webp": {
+          "url": "/entangled/angels.webp",
+          "bytes": 122288,
+          "sha256": "88ca9705d68459008898ddde80a12c24501b6dfc1965ac0bacad5e75979ee612",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/angels-depth.png",
+          "bytes": 77334,
+          "sha256": "79078ebaf23528cfb79622cf522049c42b2a86a62de14bb99553a9018fafd341",
+          "mode": "L",
+          "min": 1,
+          "max": 255,
+          "std": 61.175
+        },
+        ".mp4": {
+          "url": "/entangled/angels.mp4",
+          "bytes": 524500,
+          "sha256": "40f980fde3e1e5085bf174d001e32a1db6370fac1d2ad9f3b7e6547033436bfa",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1094,
+                "height": 728,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hands",
+      "source": "d0f7e7755ca167e3c4bcd80ae78ee13d.jpg",
+      "sourceSha256": "cd085692bb001b630670673f0c97004d85d44f84d8bda99d741733ba9ccd09bf",
+      "width": 735,
+      "height": 490,
+      "files": {
+        ".webp": {
+          "url": "/entangled/hands.webp",
+          "bytes": 24732,
+          "sha256": "3e60e00b2b3ed76757faf72138da414692bae06038a68de0489ec1b35fcf2b69",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/hands-depth.png",
+          "bytes": 41629,
+          "sha256": "b0c814d3793689904e67dc7178df78311b931364814538b75afcd7aeb4020530",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 74.592
+        },
+        ".mp4": {
+          "url": "/entangled/hands.mp4",
+          "bytes": 131354,
+          "sha256": "ff393557aad7dc562be013fab83c810494924c6b0b5e7802123a110b1a732b32",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 734,
+                "height": 488,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "atelier",
+      "source": "dfd9a2a0cfae41d6e44b663f1f08e6bd.jpg",
+      "sourceSha256": "9ca95068f05647b8729a9d3d83c5bf06964cd806174fc92ab49026b16a8f6b93",
+      "width": 1276,
+      "height": 960,
+      "files": {
+        ".webp": {
+          "url": "/entangled/atelier.webp",
+          "bytes": 102580,
+          "sha256": "1a74424c4488a0ac436e777a9a81d911c5b55e2ee1d4d4c57a261c1dff03a012",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/atelier-depth.png",
+          "bytes": 74605,
+          "sha256": "8bb077410afca1004e7e2d66d640377a01ebb04b21df82026f6a7df6dedebcbf",
+          "mode": "L",
+          "min": 3,
+          "max": 255,
+          "std": 74.613
+        },
+        ".mp4": {
+          "url": "/entangled/atelier.mp4",
+          "bytes": 745623,
+          "sha256": "6dbeb634f048bd2cd05e92b7449b2d3e77856f550ff51636cc9aa6aace47be9f",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1276,
+                "height": 960,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "car",
+      "source": "ff20746e599470a2afead3774d31270d.jpg",
+      "sourceSha256": "cf298238187457d4bc73a013bf9a7f7de038ca06a93aa27a2317374b478aab02",
+      "width": 2316,
+      "height": 1291,
+      "files": {
+        ".webp": {
+          "url": "/entangled/car.webp",
+          "bytes": 204874,
+          "sha256": "374a32f230c1b703555ec076f88f9ac95795f018d575bbe83c51007600147843",
+          "mode": "RGB"
+        },
+        "-depth.png": {
+          "url": "/entangled/car-depth.png",
+          "bytes": 104346,
+          "sha256": "af018c81c9b8744588fa78811fd009796ea794075cbea636b2c4201ae87b0bc9",
+          "mode": "L",
+          "min": 0,
+          "max": 255,
+          "std": 65.648
+        },
+        ".mp4": {
+          "url": "/entangled/car.mp4",
+          "bytes": 812905,
+          "sha256": "2288db5aa54d34aa01531442ce6897d5773aae7e0400738740416cf672e6325c",
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 1600,
+                "height": 892,
+                "pix_fmt": "yuv420p",
+                "r_frame_rate": "30/1",
+                "nb_frames": "240"
+              }
+            ],
+            "format": {
+              "duration": "8.000000"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

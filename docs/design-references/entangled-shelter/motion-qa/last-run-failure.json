@@ -1,0 +1,6 @@
+{
+  "generatedAt": "2026-09-07T15:34:44.844Z",
+  "baseUrl": "http://127.0.0.1:3000",
+  "modes": [],
+  "error": "AssertionError [ERR_ASSERTION]: Wheel navigation missed #food: target 1959.1025, actual 1715\n    at moveTo (file:///C:/Users/admin/Documents/codex%202/shopify-winter-2026-clone/scripts/qa-motion-performance.mjs:103:10)\n    at async performancePass (file:///C:/Users/admin/Documents/codex%202/shopify-winter-2026-clone/scripts/qa-motion-performance.mjs:246:5)\n    at async file:///C:/Users/admin/Documents/codex%202/shopify-winter-2026-clone/scripts/qa-motion-performance.mjs:320:23"
+}

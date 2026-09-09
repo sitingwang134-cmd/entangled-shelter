@@ -1,0 +1,790 @@
+{
+  "baseUrl": "http://127.0.0.1:3011",
+  "generatedAt": "2026-09-07T15:01:26.223Z",
+  "scenarios": [
+    {
+      "viewport": "desktop",
+      "neutral": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 60,
+        "offset": "-0.00177,-0.00554",
+        "progress": "-0.2857",
+        "resolution": "1440x900",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          1440,
+          900
+        ],
+        "viewSize": [
+          1440,
+          900
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "pointer": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 160,
+        "offset": "0.02353,0.01055",
+        "progress": "-0.2857",
+        "resolution": "1440x900",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          1440,
+          900
+        ],
+        "viewSize": [
+          1440,
+          900
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "scrolled": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 260,
+        "offset": "0.02596,0.01518",
+        "progress": "-0.0952",
+        "resolution": "1440x900",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          1440,
+          900
+        ],
+        "viewSize": [
+          1440,
+          900
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "sweep": [
+        {
+          "index": 0,
+          "contexts": 1,
+          "source": "/entangled/station.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 280,
+          "offset": "0.02606,0.01516",
+          "progress": "-0.0952",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1683,
+            935
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "70% 50%"
+        },
+        {
+          "index": 1,
+          "contexts": 1,
+          "source": "/entangled/levitate.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01830,0.00754",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1672,
+            941
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 2,
+          "contexts": 1,
+          "source": "/entangled/salt.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01837,0.00736",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1672,
+            941
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 3,
+          "contexts": 1,
+          "source": "/entangled/room.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01835,0.00717",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1320,
+            862
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 4,
+          "contexts": 1,
+          "source": "/entangled/doorway.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01781,0.00681",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1320,
+            1035
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 5,
+          "contexts": 1,
+          "source": "/entangled/angels.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01769,0.00665",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1095,
+            730
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 6,
+          "contexts": 1,
+          "source": "/entangled/atelier.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01749,0.00646",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1276,
+            960
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 7,
+          "contexts": 1,
+          "source": "/entangled/car.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01808,0.00661",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            2316,
+            1291
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 8,
+          "contexts": 1,
+          "source": "/entangled/hands.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "0.01671,0.00605",
+          "progress": "-0.2857",
+          "resolution": "1440x900",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            735,
+            490
+          ],
+          "canvasSize": [
+            1440,
+            900
+          ],
+          "viewSize": [
+            1440,
+            900
+          ],
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "poolStress": 3,
+      "lost": {
+        "source": "/entangled/station.webp",
+        "mode": "fallback",
+        "ready": "false",
+        "frames": 40,
+        "offset": "0.02762,0.02696",
+        "progress": "0.5385",
+        "resolution": "1440x900",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": null,
+        "viewSize": [
+          1440,
+          900
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "recovered": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 1,
+        "offset": "0.00135,0.00050",
+        "progress": "-0.2857",
+        "resolution": "1440x900",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          1440,
+          900
+        ],
+        "viewSize": [
+          1440,
+          900
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "reduced": {
+        "source": "/entangled/station.webp",
+        "mode": "reduced-motion",
+        "ready": "false",
+        "frames": 1,
+        "offset": "0.00135,0.00050",
+        "progress": "-0.2857",
+        "resolution": "1440x900",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": null,
+        "viewSize": [
+          1440,
+          900
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "unmount": {
+        "canvases": 0,
+        "subsequentFrames": 0
+      }
+    },
+    {
+      "viewport": "mobile",
+      "neutral": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 60,
+        "offset": "-0.00182,-0.00554",
+        "progress": "-0.2857",
+        "resolution": "577x1248",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          577,
+          1248
+        ],
+        "viewSize": [
+          390,
+          844
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "pointer": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 160,
+        "offset": "-0.00100,-0.00584",
+        "progress": "-0.2857",
+        "resolution": "577x1248",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          577,
+          1248
+        ],
+        "viewSize": [
+          390,
+          844
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "scrolled": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 220,
+        "offset": "0.00100,-0.00116",
+        "progress": "-0.0826",
+        "resolution": "577x1248",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          577,
+          1248
+        ],
+        "viewSize": [
+          390,
+          844
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "sweep": [
+        {
+          "index": 0,
+          "contexts": 1,
+          "source": "/entangled/station.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 260,
+          "offset": "0.00125,-0.00112",
+          "progress": "-0.0826",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1683,
+            935
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "70% 50%"
+        },
+        {
+          "index": 1,
+          "contexts": 1,
+          "source": "/entangled/levitate.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00013,-0.00474",
+          "progress": "-0.2859",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1672,
+            941
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 2,
+          "contexts": 1,
+          "source": "/entangled/salt.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00007,-0.00497",
+          "progress": "-0.2860",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1672,
+            941
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 3,
+          "contexts": 1,
+          "source": "/entangled/room.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00008,-0.00511",
+          "progress": "-0.2853",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1320,
+            862
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 4,
+          "contexts": 1,
+          "source": "/entangled/doorway.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00016,-0.00518",
+          "progress": "-0.2855",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1320,
+            1035
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 5,
+          "contexts": 1,
+          "source": "/entangled/angels.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00028,-0.00528",
+          "progress": "-0.2857",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1095,
+            730
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 6,
+          "contexts": 1,
+          "source": "/entangled/atelier.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00048,-0.00551",
+          "progress": "-0.2858",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            1276,
+            960
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 7,
+          "contexts": 1,
+          "source": "/entangled/car.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00073,-0.00591",
+          "progress": "-0.2860",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            2316,
+            1291
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        },
+        {
+          "index": 8,
+          "contexts": 1,
+          "source": "/entangled/hands.webp",
+          "mode": "webgl",
+          "ready": "true",
+          "frames": 20,
+          "offset": "-0.00093,-0.00569",
+          "progress": "-0.2853",
+          "resolution": "577x1248",
+          "quality": "1.00",
+          "posterLoaded": true,
+          "imageSize": [
+            735,
+            490
+          ],
+          "canvasSize": [
+            577,
+            1248
+          ],
+          "viewSize": [
+            390,
+            844
+          ],
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "poolStress": 3,
+      "lost": {
+        "source": "/entangled/station.webp",
+        "mode": "fallback",
+        "ready": "false",
+        "frames": 40,
+        "offset": "0.00438,0.01148",
+        "progress": "0.5385",
+        "resolution": "577x1248",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": null,
+        "viewSize": [
+          390,
+          844
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "recovered": {
+        "source": "/entangled/station.webp",
+        "mode": "webgl",
+        "ready": "true",
+        "frames": 1,
+        "offset": "-0.00019,-0.00053",
+        "progress": "-0.2857",
+        "resolution": "577x1248",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": [
+          577,
+          1248
+        ],
+        "viewSize": [
+          390,
+          844
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "reduced": {
+        "source": "/entangled/station.webp",
+        "mode": "reduced-motion",
+        "ready": "false",
+        "frames": 1,
+        "offset": "-0.00019,-0.00053",
+        "progress": "-0.2857",
+        "resolution": "577x1248",
+        "quality": "1.00",
+        "posterLoaded": true,
+        "imageSize": [
+          1683,
+          935
+        ],
+        "canvasSize": null,
+        "viewSize": [
+          390,
+          844
+        ],
+        "objectPosition": "70% 50%"
+      },
+      "unmount": {
+        "canvases": 0,
+        "subsequentFrames": 0
+      }
+    },
+    {
+      "viewport": "fallback",
+      "source": "/entangled/station.webp",
+      "mode": "fallback",
+      "ready": "false",
+      "frames": 0,
+      "posterLoaded": true,
+      "imageSize": [
+        1683,
+        935
+      ],
+      "canvasSize": null,
+      "viewSize": [
+        1440,
+        900
+      ],
+      "objectPosition": "70% 50%"
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
