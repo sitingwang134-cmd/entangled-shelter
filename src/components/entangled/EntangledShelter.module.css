@@ -71,6 +71,12 @@
 .chapter { position: relative; isolation: isolate; overflow: clip; }
 .chapterBackdrop { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; z-index: -1; }
 .chapterImage { z-index: -3; }
+.tasteMaterial {position:absolute;inset:0;background:#090e12;overflow:hidden;}
+.tasteMaterial > div:first-child {inset:0;filter:brightness(.95) saturate(.9);}
+.tasteMaterial > div:first-child > div,.tasteMaterial > div:first-child > div > div {inset:0;animation:none;transform:none;}
+.tasteMaterial img {object-fit:cover!important;object-position:center 82%!important;}
+.tasteMaterial::after {content:"";position:absolute;inset:0;background:linear-gradient(90deg,#090e124d,transparent 75%);pointer-events:none;}
+.chapter[data-category="food"] .chapterGeometry {opacity:.1;}
 .chapterShade { z-index: -2; background: linear-gradient(0deg,#091714e0 0%,#12282320 80%),linear-gradient(90deg,#0d221e55,transparent 80%); }
 .chapterGeometry { position: absolute; z-index: -1; left: -25%; top: 10%; width: 100vw; height: 100vw; opacity: .28; }
 .chapterContent { width: 80%; margin-left: 20%; padding: 0 26px 120px 0; }
@@ -183,3 +189,73 @@
 .page[data-motion="reduced"] .heroScroll { height: 100svh; min-height: 620px; }
 .page[data-motion="reduced"] .hero { position: relative; }
 .page[data-motion="reduced"] .heroCards { display: none; }
+
+/* Private salon: felt green, brass, parchment and oxblood. */
+.page { --paper:#efe2ad;--ink:#102e26;--brass:#b99a59;--wine:#713a32;background:linear-gradient(155deg,#082d23 0%,#31523b 45%,#e6d79c 100%); }
+.heroShade {background:linear-gradient(90deg,#05251ee8 0%,#1033268a 40%,#122c2520 75%),linear-gradient(0deg,#0a291dcc,transparent 55%);}
+.hero::after {content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.12;background:url('/entangled/salon/paper-grain.svg');mix-blend-mode:soft-light;}
+.heroCopy,.heroCards,.heroBottom {z-index:1;}
+.heroGeometry,.heroGeometryMotion {opacity:.08;}
+.header {background:linear-gradient(#09261ee8,#09261e00);}
+.headerCta {background:#e5d39d;border:1px solid #baa36b;box-shadow:inset 0 0 0 3px #f6e9bf55;}
+.intro {background:linear-gradient(145deg,#264c38,#899262 58%,#eadca3);color:#fff4cb;}
+.intro h2 em {color:#fff1b2;}
+.introLabel,.introBottom a {border-color:#e8dba777;}
+.introBottom p {color:#fff3cf;}
+.storyCard,.pickCard {background-image:url('/entangled/salon/paper-grain.svg'),linear-gradient(120deg,#eee1b4,#d8c48d 65%,#f2e5ba);border:1px solid #a58b54;box-shadow:0 18px 50px #031f2166,inset 0 0 0 7px #f5e6b655,inset 0 0 0 8px #99804966;}
+.pickCard {padding:34px;}
+.storyCopy {background:transparent;}
+.roundCta {background:radial-gradient(circle at 35% 25%,#ead7a0,#bda068);border:1px solid #f4e1b3;color:#17362b;box-shadow:0 10px 28px #001d1a66,inset 0 0 0 5px #d0b276,inset 0 0 0 6px #69592e66;}
+.ritual {background:url('/entangled/salon/paper-grain.svg'),linear-gradient(145deg,#d9c58a,#f2e4b0);}
+.heroCards {pointer-events:auto;right:11%;bottom:19%;}
+.heroCard,.ritualCard {background-image:url('/entangled/salon/paper-grain.svg'),radial-gradient(ellipse at center,#f5e7bc,#c9ac70);border:2px solid #9e7b42;box-shadow:0 18px 35px #001a19aa,inset 0 0 0 5px #e7d3a2,inset 0 0 0 6px #9c7b4a;}
+.heroCard {cursor:pointer;transition:box-shadow .3s;color:#77352e;}
+.heroCard:hover {box-shadow:0 15px 50px #e9ce7c55,inset 0 0 0 5px #e7d3a2,inset 0 0 0 6px #9c7b4a;}
+.heroCard::before,.ritualCard::before {content:"❦";position:absolute;left:50%;top:17%;transform:translateX(-50%);font:27px Georgia,serif;color:#9a7845;}
+.heroCard b {border:1px solid #a2804f88;border-radius:50%;padding:10px 15px;font-size:58px;}
+.heroCard {background-color:#64212f;background-image:url('/entangled/salon/royal-card-filigree.svg'),url('/entangled/salon/paper-grain.svg'),radial-gradient(ellipse at 45% 35%,#923e49,#3d111e);background-size:100% 100%,auto,cover;color:#f4dfa0;border:1px solid #ebcd83;box-shadow:0 15px 30px #001a19aa,inset 0 0 0 3px #4c1521;}
+.heroCard:nth-child(2) {color:#f4dfa0;background-image:url('/entangled/salon/royal-card-filigree.svg'),url('/entangled/salon/paper-grain.svg'),radial-gradient(ellipse at 45% 35%,#35614c,#092d26);}
+.heroCard:nth-child(3) {background-image:url('/entangled/salon/royal-card-filigree.svg'),url('/entangled/salon/paper-grain.svg'),radial-gradient(ellipse at 45% 35%,#424e6d,#121b35);}
+.heroCard::before {content:none;}
+.heroCard b {display:grid;place-items:center;width:57px;height:68px;border:0;padding:0;border-radius:50%;font-size:43px;color:#f4dfa0;text-shadow:0 2px 1px #281608,0 -1px #fff5c9;background:radial-gradient(ellipse,#ebc97820,transparent 70%);}
+.heroCard small {top:13px;left:13px;font-size:13px;color:#f4dfa0;text-shadow:0 1px #301a0d;}
+.heroCard > span {bottom:13px;right:13px;font-size:10px;letter-spacing:1px;color:#f4dfa0;}
+.heroCard:hover {box-shadow:0 18px 45px #e9ce7c66,inset 0 0 0 3px #e7c775;}
+.ritualCard {position:relative;}
+.ritualCard::before {top:16%;font-size:42px;opacity:.5;}
+.cardPortal {display:none;position:fixed;inset:0;z-index:1000;place-items:center;pointer-events:none;background:#0a291d20;overflow:hidden;}
+.cardPortal > div {width:230px;height:340px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;border:12px double #c6a467;border-radius:12px;background:url('/entangled/salon/card-engraving.svg') center/cover,#133d2d;color:#ead9a4;box-shadow:0 25px 100px #0008;}
+.cardPortal b {font:100px Georgia,serif;}
+.cardPortal small,.cardPortal span {font:9px Georgia,serif;letter-spacing:2px;}
+.page :is(button,a):focus-visible {outline:3px solid #f0d281;outline-offset:5px;}
+@media(max-width:700px){.heroCards {right:10%;bottom:14%;transform:scale(.75);transform-origin:bottom right}.heroCopy {top:22%;width:84%}.pickCard {padding:28px 22px}}
+.pickCard {color:#173b2d;backdrop-filter:none;}
+.pickIntro,.pickEdition {color:#4f5c3c;}
+.styleLabels button {border-color:#7d764b55;}
+.chapterContent {position:relative;z-index:3;}
+
+/* Every incoming scene overlaps the actual outgoing scene. The alpha mask removes
+   its upper edge; no opaque coloured curtain is placed over the photographs. */
+.intro, .chapter, .ritual, .ending {
+  margin-top: -32svh;
+  -webkit-mask-image: var(--seam-mask, linear-gradient(transparent, #000)), linear-gradient(#000, #000);
+  mask-image: var(--seam-mask, linear-gradient(transparent, #000)), linear-gradient(#000, #000);
+  -webkit-mask-size: 100% 45svh, 100% calc(100% - 44svh);
+  mask-size: 100% 45svh, 100% calc(100% - 44svh);
+  -webkit-mask-position: top, bottom;
+  mask-position: top, bottom;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.intro {padding-top: 36svh; padding-bottom: 40svh;}
+.chapterContent {padding-bottom: 44svh;}
+.ritual {padding-top: 36svh; padding-bottom: 42svh;}
+.ending {padding-top: 36svh;}
+.chapters {z-index: 2;}
+.ritual {z-index: 3;}
+.ending {z-index: 4;}
+
+@media(max-width:700px){.tasteMaterial > div:first-child {inset:0;}.tasteMaterial img {object-fit:cover!important;}.tasteMaterial::after {background:linear-gradient(90deg,#090e12bb,transparent);}}
+
+/* Keep the hillside castle in view when its portrait photograph fills a wide screen. */
+.chapter[data-category="travel"] .chapterImage img { object-position: 50% 18% !important; }

@@ -89,3 +89,4 @@ console.log(JSON.stringify(results, null, 2));
 if (results.some((result) => !result.scrollMoved)) {
   throw new Error("Native mouse-wheel scrolling failed in one or more viewports.");
 }
+

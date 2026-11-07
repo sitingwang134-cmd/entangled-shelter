@@ -146,3 +146,4 @@ console.log(JSON.stringify({
   failed: result.failed,
   totalMiB: Number((result.totalBytes / 1024 / 1024).toFixed(2)),
 }));
+

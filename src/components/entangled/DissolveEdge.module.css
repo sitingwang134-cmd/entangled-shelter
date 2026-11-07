@@ -1,0 +1,2 @@
+.edge {position:absolute;top:0;left:0;width:100%;height:100svh;z-index:2;pointer-events:none;}
+.edge[data-reduced="true"] {display:none;}

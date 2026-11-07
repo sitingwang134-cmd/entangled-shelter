@@ -386,19 +386,19 @@
 .galleryEdition .modeTabs button:hover:not(:disabled) { transform: translateY(-3px); }
 .galleryEdition .modeTabs button[aria-pressed="true"] { color: #f2efe4; background: #243029; }
 .modeTabs svg { display: block; width: 32px; height: 32px; }
-.galleryEdition .table { min-height: 470px; padding: 52px 25px 35px; gap: 26px; border-radius: 0; border: 1px solid #a69672; background: linear-gradient(110deg, #1c292ed9, #243029f5), url('/entangled/angels.webp') center/cover; box-shadow: inset 0 0 0 7px #c0ab7430; }
+.galleryEdition .table { min-height: 470px; padding: 52px 25px 35px; gap: 26px; border-radius: 0; border: 1px solid #a69672; background: linear-gradient(110deg, #1c292ed9, #243029f5), url('/entangled/photos/angels.webp') center/cover; box-shadow: inset 0 0 0 7px #c0ab7430; }
 .galleryEdition .table::after { border-color: #d3c39255; border-radius: 0; }
 .galleryEdition .tableArt { height: 330px; isolation: isolate; }
 .tableOrbit { position: absolute; width: 130%; max-width: 400px; color: #d8c58c; opacity: .28; z-index: -1; pointer-events: none; animation: orbitTurn 90s linear infinite; }
 .galleryEdition .cardSpace, .galleryEdition .ghostCard { width: 180px; height: 264px; }
-.galleryEdition .cardBack { border: 7px solid #e8dfc7; background: linear-gradient(#14251c42, #14251c9c), url('/entangled/hands.webp') center/cover; outline-color: #b8a57e; }
+.galleryEdition .cardBack { border: 7px solid #e8dfc7; background: linear-gradient(#14251c42, #14251c9c), url('/entangled/photos/hands.webp') center/cover; outline-color: #b8a57e; }
 .cardOrbit { position: absolute; width: 190%; max-width: none; opacity: .45; pointer-events: none; }
 .galleryEdition .cardSeal { background: #25352ae6; color: #f0e4c2; border-color: #c9b783; width: 88px; height: 122px; }
 .galleryEdition .cardFront { background: radial-gradient(ellipse, #faf5e5, #e8ddc3); border: 7px solid #f5efdc; outline: 1px solid #aa9666; outline-offset: -11px; }
 .galleryEdition .cardFront::before { content: ""; position: absolute; inset: 26px 20px; border: 1px solid #aa966655; border-radius: 50%; pointer-events: none; }
 .galleryEdition .faceSymbol { position: relative; text-shadow: 0 2px 0 #fff7df; }
 .faceSymbol svg { width: 84px; height: 84px; }
-.galleryEdition .ghostCard { border-color: #d9cfb3; background: linear-gradient(#243029a8, #243029b8), url('/entangled/angels.webp') center/cover; }
+.galleryEdition .ghostCard { border-color: #d9cfb3; background: linear-gradient(#243029a8, #243029b8), url('/entangled/photos/angels.webp') center/cover; }
 .touchCard { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; color: #fff5d9; }
 .touchCard > span { position: absolute; left: 4px; right: 4px; bottom: 30px; font-size: 9px; letter-spacing: 1px; }
 .touchCard:disabled { cursor: default !important; }
@@ -479,3 +479,4 @@
   .batchBar small { margin-left: 5px; }
   .galleryEdition .bottomBar { gap: 10px; }
 }
+

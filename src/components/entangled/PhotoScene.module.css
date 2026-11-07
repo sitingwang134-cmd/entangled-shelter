@@ -1,0 +1,22 @@
+.scene { position:absolute; inset:0; overflow:hidden; pointer-events:none; contain:layout paint; }
+.drift { position:absolute; inset:-5%; animation:drift 18s ease-in-out infinite alternate; animation-play-state:paused; }
+.scene[data-visible="true"] .drift { animation-play-state:running; }
+.pointer { position:absolute; inset:-2%; transform:translate3d(var(--photo-x,0px),var(--photo-y,0px),0); transition:transform 1.2s ease-out; }
+.photo { object-fit:cover; user-select:none; }
+@keyframes drift { from { transform:scale(1.02) translate3d(-.6%,0,0); } to { transform:scale(1.08) translate3d(.6%,-.5%,0); } }
+.scene[data-motion="reduced"] .drift { animation:none; }
+.scene[data-motion="reduced"] .pointer { transform:none; transition:none; }
+/* The sky, water and atmosphere move at different rates; architecture stays rigid. */
+.scene { --light-x:68%; }
+.photo { filter:sepia(.24) saturate(.78) contrast(1.07); }
+.drift { inset:-8%; animation-duration:15s; }
+@keyframes drift { from {transform:scale(1.04) translate3d(-1%,0,0)} to {transform:scale(1.16) translate3d(1%,-1.4%,0)} }
+.water { position:absolute;inset:-8%;clip-path:inset(69% 0 0);opacity:.38;animation:waterShift 7s ease-in-out infinite alternate;animation-play-state:paused;mask-image:linear-gradient(transparent 66%,#000 80%); }
+.sun { position:absolute;left:var(--light-x);top:16%;width:26vw;height:26vw;border-radius:50%;background:radial-gradient(circle,#ffeab67a,transparent 68%);mix-blend-mode:screen;animation:lightShift 15s ease-in-out infinite alternate;animation-play-state:paused;pointer-events:none; }
+.reflection { position:absolute;left:calc(var(--light-x) - 8%);top:72%;width:24%;height:36%;background:repeating-linear-gradient(0deg,transparent 0 6px,#ffe4a71f 7px 9px);filter:blur(3px);mask-image:radial-gradient(ellipse,#000,transparent 65%);mix-blend-mode:screen;animation:lightShift 15s ease-in-out infinite alternate;animation-play-state:paused; }
+.mist {position:absolute;inset:35% -20% 15%;background:radial-gradient(ellipse at 40% 50%,#e8ddbb26,transparent 65%);filter:blur(18px);animation:mistShift 18s linear infinite alternate;animation-play-state:paused;}
+.scene[data-visible="true"] .water,.scene[data-visible="true"] .sun,.scene[data-visible="true"] .reflection,.scene[data-visible="true"] .mist {animation-play-state:running;}
+@keyframes waterShift {from {transform:scale(1.04) translateX(-.6%)}to {transform:scale(1.08) translateX(.6%)}}
+@keyframes lightShift {from {transform:translateX(-8%);opacity:.55}to {transform:translateX(18%);opacity:1}}
+@keyframes mistShift {to {transform:translateX(18%)}}
+.scene[data-motion="reduced"] .water,.scene[data-motion="reduced"] .sun,.scene[data-motion="reduced"] .reflection,.scene[data-motion="reduced"] .mist {animation:none;}

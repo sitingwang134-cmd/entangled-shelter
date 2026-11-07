@@ -15,3 +15,4 @@ assert.ok(!panel.includes('pickSuit'));
 assert.ok(!panel.includes('data-tilt'));
 assert.ok(panel.includes('chapter.subtitle'));
 console.log('Three editorial chapter entrances verified: category routing, unique headings, no oversized suit or tilt. Code-only checks.');
+

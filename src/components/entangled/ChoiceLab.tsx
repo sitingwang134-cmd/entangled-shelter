@@ -12,11 +12,23 @@ import {
 } from "./choice-data";
 import type { CardColor, CategoryId, ChoiceOption, Decision, GameMode, Gesture, RoundResult } from "./choice-data";
 import { useSiteMotion } from "./site-motion";
+import { draftKey, parseDraft, saveDraft, rememberTrace, parseTraces, traceKey, memoryEvent } from "./choice-memory";
 import styles from "./ChoiceRoomV4.module.css";
 
 export type { CategoryId } from "./choice-data";
 
 if (typeof window !== "undefined") gsap.registerPlugin(useGSAP);
+
+const selectionCountKey = "entangled-shelter:selection-counts:v1";
+function readSelectionCounts(): Record<string, number> {
+  const raw = localStorage.getItem(selectionCountKey);
+  if (raw !== null) {
+    try { const data = JSON.parse(raw); if (data && typeof data === "object" && !Array.isArray(data)) return Object.fromEntries(Object.entries(data).filter(([,n])=>typeof n === "number" && Number.isSafeInteger(n) && n >= 0).map(([id,n])=>[id,Number(n)])); } catch {}
+  }
+  const counts: Record<string,number> = {};
+  for (const t of parseTraces(localStorage.getItem(traceKey))) if ((t.action === "selected" || t.action === "custom") && t.optionId) {const key=t.categoryId+":"+t.optionId;counts[key]=(counts[key]??0)+1;}
+  return counts;
+}
 
 type Stage = "options" | "play" | "accepted";
 
@@ -24,6 +36,10 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   const motion = useSiteMotion();
   const reduced = motion === "reduced";
   const category = choiceCategories[categoryId];
+  const [initialMemory] = useState(() => {
+    try {return {draft:parseDraft(localStorage.getItem(draftKey),categoryId),history:parseDecisionHistory(localStorage.getItem(decisionHistoryKey)),available:true};}
+    catch {return {draft:null,history:[],available:false};}
+  });
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -32,15 +48,15 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   const acceptedRef = useRef(false);
   const previousStage = useRef<Stage>("options");
   const [stage, setStage] = useState<Stage>("options");
-  const [options, setOptions] = useState<ChoiceOption[]>(category.options);
-  const [selectedIds, setSelectedIds] = useState<string[]>(category.options.slice(0, 4).map((option) => option.id));
+  const [options, setOptions] = useState<ChoiceOption[]>([...category.options,...(initialMemory.draft?.custom ?? [])]);
+  const [selectedIds, setSelectedIds] = useState<string[]>(initialMemory.draft?.selectedIds ?? category.options.slice(0, 4).map((option) => option.id));
   const [filter, setFilter] = useState("All");
   const [batch, setBatch] = useState(0);
   const [roundCount, setRoundCount] = useState(0);
   const [countdown, setCountdown] = useState<number | null>(null);
   const [activeTicket, setActiveTicket] = useState<number | null>(null);
   const [custom, setCustom] = useState("");
-  const [mode, setMode] = useState<GameMode>("poker");
+  const [mode, setMode] = useState<GameMode>(initialMemory.draft?.mode ?? "poker");
   const [betId, setBetId] = useState<string | null>(null);
   const [color, setColor] = useState<CardColor | null>(null);
   const [gesture, setGesture] = useState<Gesture | null>(null);
@@ -48,8 +64,28 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   const [isRevealed, setIsRevealed] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [history, setHistory] = useState<Decision[]>([]);
+  const [history, setHistory] = useState<Decision[]>(initialMemory.history);
+  const [selectionCounts, setSelectionCounts] = useState<Record<string,number>>({});
+  useEffect(()=>{
+    const read=()=>{try{setSelectionCounts(readSelectionCounts());}catch{}};
+    read(); window.addEventListener("storage",read);window.addEventListener(memoryEvent,read);
+    return ()=>{window.removeEventListener("storage",read);window.removeEventListener(memoryEvent,read);};
+  },[]);
+  function countSelection(id:string) {
+    const key=categoryId+":"+id;
+    try {const counts=readSelectionCounts();counts[key]=(counts[key]??0)+1;localStorage.setItem(selectionCountKey,JSON.stringify(counts));setSelectionCounts(counts);}
+    catch {setMemoryAvailable(false);setSelectionCounts(previous=>({...previous,[key]:(previous[key]??0)+1}));}
+  }
   const [saved, setSaved] = useState(false);
+  const restored = !!initialMemory.draft;
+  const [memoryAvailable, setMemoryAvailable] = useState(initialMemory.available);
+  function trace(action: Parameters<typeof rememberTrace>[1], label: string, optionId?: string) {
+    setMemoryAvailable(rememberTrace(categoryId, action, label, optionId));
+  }
+  useEffect(() => {
+    saveDraft(categoryId,{selectedIds,custom:options.filter(o=>o.custom),mode});
+  }, [categoryId,selectedIds,options,mode]);
+  function closeRoom() {trace("closed","Left the room; the shortlist stays here.");onClose();}
   const selected = useMemo(() => options.filter((option) => selectedIds.includes(option.id)), [options, selectedIds]);
   const bet = selected.find((option) => option.id === betId);
   const visibleOptions = useMemo(() => getChoiceBatch(options, filter, batch), [options, filter, batch]);
@@ -124,11 +160,12 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
     });
   }, { scope: dialogRef, dependencies: [stage, batch, filter, options.length, reduced], revertOnUpdate: true });
 
-  function changeFilter(next: string) { setFilter(next); setBatch(0); }
+  function changeFilter(next: string) { trace("filter",next); setFilter(next); setBatch(0); }
 
   function changeMode(nextMode: GameMode) {
     if (busyRef.current) return;
     resetRound();
+    trace("mode",nextMode);
     setMode(nextMode);
     setColor(null);
     setGesture(null);
@@ -137,10 +174,13 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   function selectBet(id: string) {
     if (busyRef.current) return;
     resetRound();
+    trace("wager",options.find(o=>o.id===id)?.name ?? id,id);
     setBetId(id);
   }
 
   function toggleOption(id: string) {
+    if (!selectedIds.includes(id)) countSelection(id);
+    trace(selectedIds.includes(id) ? "removed" : "selected",options.find(o=>o.id===id)?.name ?? id,id);
     setSelectedIds((previous) => previous.includes(id) ? previous.filter((item) => item !== id) : [...previous, id]);
     setError("");
   }
@@ -156,6 +196,8 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
       setError("The table can hold eight personal possibilities. Let these answers play first."); return;
     }
     const option: ChoiceOption = { id: `custom-${createChoiceId()}`, name, detail: "A possibility written in your own hand", group: "My Possibilities", custom: true };
+    countSelection(option.id);
+    trace("custom",option.name,option.id);
     setOptions((previous) => [...previous, option]);
     setSelectedIds((previous) => [...previous, option.id]);
     setCustom("");
@@ -188,6 +230,7 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
       try {
         nextRound = playRound({ mode, options: selected, betId, color: color ?? undefined, gesture: gesture ?? undefined });
       } catch (cause) { setError(cause instanceof Error ? cause.message : "The card could not be dealt. Please try once more."); return; }
+      trace("round",`${mode}: ${nextRound.bet.name} — ${nextRound.outcome}`,nextRound.bet.id);
       busyRef.current = true;
       setBusy(true);
       setRoundCount((count) => count + 1);
@@ -244,11 +287,12 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
       const decision = createDecision(categoryId, round);
       let previous: Decision[] = [];
       try { previous = parseDecisionHistory(localStorage.getItem(decisionHistoryKey)); } catch { /* Storage may be disabled; the decision still works. */ }
-      const next = [decision, ...previous].slice(0, 24);
+      const next = [decision, ...previous].slice(0, 500);
       setHistory(next);
       try { localStorage.setItem(decisionHistoryKey, JSON.stringify(next)); setSaved(true); }
       catch { setSaved(false); }
       window.dispatchEvent(new CustomEvent("entangled:decision", { detail: decision }));
+      trace("accepted",decision.option.name,decision.option.id);
       setStage("accepted");
     } catch (cause) {
       acceptedRef.current = false;
@@ -259,25 +303,25 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
   const resultCopy = !completed ? "" : round.outcome === "win" ? "This time, chance stands beside you." : round.outcome === "draw" ? "A draw. Offer one more hand and let the answer emerge." : mode === "guess" ? `Chance drew “${round.drawn.name}”—a breath away from your hunch.` : mode === "rps" ? "Chance won this duel. Change your hand and challenge it once more." : "A missed call changes nothing: your desire remains.";
   const resultPanel = <>
     <div className={styles.roundStatus} role="status" aria-live="polite" aria-atomic="true">{completed && <><span className={styles.outcome}>{round.outcome === "win" ? mode === "rps" ? "YOU WON" : "IT’S A MATCH" : round.outcome === "draw" ? "ONE MORE" : "NOT THIS TIME"}</span><p>{resultCopy}</p>{mode === "rps" && <small>YOU: {gestures.find((item) => item.id === round.player)?.name} · CHANCE: {gestures.find((item) => item.id === round.opponent)?.name}</small>}</>}</div>
-    {completed && <div className={styles.roundActions}>{round.outcome === "win" && <button type="button" className={styles.drawButton} onClick={accept}>CHOOSE “{round.bet.name}” <span aria-hidden="true">↗</span></button>}<button type="button" className={styles.retry} onClick={resetRound}>{round.outcome === "win" ? "THINK AGAIN, PLAY ANOTHER" : "ANOTHER ROUND / CHANGE YOUR HUNCH"}<span aria-hidden="true">↺</span></button></div>}
+    {completed && <div className={styles.roundActions}>{round.outcome === "win" && <button type="button" className={styles.drawButton} onClick={accept}>CHOOSE “{round.bet.name}” <span aria-hidden="true">↗</span></button>}<button type="button" className={styles.retry} onClick={() => { trace("retry","The answer is not the end. Try again."); resetRound(); }}>{round.outcome === "win" ? "THINK AGAIN, PLAY ANOTHER" : "ANOTHER ROUND / CHANGE YOUR HUNCH"}<span aria-hidden="true">↺</span></button></div>}
     {completed && round.outcome === "win" && <div key={roundCount} className={styles.celebration} aria-hidden="true">{["✦", "✧", "✦", "✧"].map((symbol, index) => <span key={index}>{symbol}</span>)}</div>}
   </>;
 
   return (
-    <dialog ref={dialogRef} className={`${styles.dialog} ${styles.galleryEdition}`} data-choice-lab="true" data-category={categoryId} data-stage={stage} data-motion={motion} aria-labelledby="choice-lab-title" aria-describedby="choice-lab-description" onKeyDown={trapTab} onCancel={(event) => { event.preventDefault(); onClose(); }}>
+    <dialog ref={dialogRef} className={`${styles.dialog} ${styles.galleryEdition}`} data-choice-lab="true" data-category={categoryId} data-stage={stage} data-motion={motion} aria-labelledby="choice-lab-title" aria-describedby="choice-lab-description" onKeyDown={trapTab} onCancel={(event) => { event.preventDefault(); closeRoom(); }}>
       <div className={styles.sheet}>
         <header className={styles.header}>
           <span className={styles.wordmark}>Entangled <i>Shelter</i><span>THE CHOICE ROOM</span></span>
           <span className={styles.edition}>NO. {categoryId === "food" ? "01" : categoryId === "style" ? "02" : "03"} / {category.english}</span>
-          <button ref={closeRef} type="button" className={styles.close} onClick={onClose} aria-label="Close the choice room"><span aria-hidden="true">×</span></button>
+          <button ref={closeRef} type="button" className={styles.close} onClick={closeRoom} aria-label="Close the choice room"><span aria-hidden="true">×</span></button>
         </header>
 
         <div className={styles.body}>
           <aside className={styles.introduction}>
-            <div className={styles.introPainting} aria-hidden="true"><Image src={`/entangled/${scene}.webp`} alt="" fill sizes="(max-width: 760px) 100vw, 35vw" unoptimized /><ChoiceOrbit className={styles.introOrbit} /></div>
+            <div className={styles.introPainting} aria-hidden="true"><Image src={categoryId === "food" ? "/entangled/taste-editorial/pomegranate-table.webp" : categoryId === "style" ? "/entangled/style-objects/style-backdrop.webp" : `/entangled/photos/${scene}.webp`} alt="" fill sizes="(max-width: 760px) 100vw, 35vw" unoptimized /><ChoiceOrbit className={styles.introOrbit} /></div>
             <span className={styles.chapterWord} aria-hidden="true">{chapterTitle}</span>
             <p className={styles.eyebrow} data-lab-entrance>A LITTLE CHANCE, A LITTLE DESIRE / {category.label}</p>
-            <h2 id="choice-lab-title" data-lab-entrance>{stage === "accepted" ? <>Then it is<br /><i>decided.</i></> : <>Allow yourself<br /><i>one answer.</i></>}</h2>
+            <h2 id="choice-lab-title" data-lab-entrance>{stage === "accepted" ? <>Then it is <br /><i>decided.</i></> : <>Allow yourself <br /><i>one answer.</i></>}</h2>
             <p id="choice-lab-description" className={styles.description} data-lab-entrance>{stage === "accepted" ? "Choosing does not banish every regret. It simply allows this moment to begin." : category.intro}</p>
             <ol className={styles.steps} aria-label="Decision steps" data-lab-entrance>
               {["Bring possibilities to the table", "Name a hunch, then ask chance", "If instinct prevails, choose it"].map((label, index) => <li key={label} data-active={(stage === "options" ? 0 : stage === "play" ? 1 : 2) === index} aria-current={(stage === "options" ? 0 : stage === "play" ? 1 : 2) === index ? "step" : undefined}><span>0{index + 1}</span>{label}</li>)}
@@ -288,16 +332,17 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
           <main className={styles.workspace}>
             {stage === "options" && <section className={styles.optionsStage} aria-label="Choose possibilities">
               <div className={styles.sectionHeading} data-lab-entrance><div><p className={styles.eyebrow}>01 / MAKE ROOM FOR POSSIBILITY</p><h3 tabIndex={-1} data-stage-heading>{category.question}</h3></div><span className={styles.counter}>{selected.length}<small>CHOSEN</small></span></div>
+              <div className={styles.memoryNotice}><span>{!memoryAvailable ? "This browser cannot save your traces." : restored ? "Welcome back. Your shortlist is still on the table." : "Your shortlist and choices stay in this browser."}</span><a href="/history">OPEN YOUR MEMORY ↗</a></div>
               <p className={styles.help} data-lab-entrance>Choose at least two answers you would gladly accept—or write one of your own.</p>
               <div className={styles.filters} aria-label="Filter possibilities" data-lab-entrance>{["All", ...category.groups, ...(options.some((option) => option.custom) ? ["My Possibilities"] : [])].map((group) => <button type="button" key={group} aria-pressed={filter === group} onClick={() => changeFilter(group)}>{group}</button>)}</div>
-              <div className={styles.batchBar}><span role="status" aria-live="polite">{filteredCount} POSSIBILITIES · {visibleOptions.length} ON VIEW <small>{batch + 1} / {batchCount}</small></span><button type="button" className={styles.batchButton} disabled={batchCount < 2} onClick={() => setBatch((value) => (value + 1) % batchCount)}><span aria-hidden="true">↻</span> ANOTHER EDIT</button></div>
+              <div className={styles.batchBar}><span role="status" aria-live="polite">{filteredCount} POSSIBILITIES · {visibleOptions.length} ON VIEW <small>{batch + 1} / {batchCount}</small></span><button type="button" className={styles.batchButton} disabled={batchCount < 2} onClick={() => { trace("batch","Turned to another edit"); setBatch((value) => (value + 1) % batchCount); }}><span aria-hidden="true">↻</span> ANOTHER EDIT</button></div>
               <div className={styles.optionsGrid}>{visibleOptions.map((option) => <button type="button" key={option.id} className={styles.option} data-option-card aria-pressed={selectedIds.includes(option.id)} onClick={() => toggleOption(option.id)}>
-                <span className={styles.optionPhoto}>{option.image ? <Image src={option.image} alt={option.name} width={800} height={800} sizes="(max-width: 640px) 45vw, 20vw" unoptimized /> : <span className={styles.customArt}>✳<small>YOUR IDEA</small></span>}<span className={styles.photoCaption}>NO. {option.custom ? "YOUR IDEA" : String(category.options.findIndex((item) => item.id === option.id) + 1).padStart(2, "0")}</span></span>
-                <span className={styles.optionCopy}><span className={styles.optionTop}><small>{option.group}</small><span className={styles.check} aria-hidden="true">{selectedIds.includes(option.id) ? "✓" : "+"}</span></span><strong>{option.name}</strong><span className={styles.optionDetail}>{option.detail}</span></span>
+                <span className={styles.optionPhoto}>{option.image ? <Image src={option.image} alt={option.name} width={800} height={800} sizes="(max-width: 640px) 45vw, 20vw" unoptimized /> : <span className={styles.customArt}>✳<small>YOUR IDEA</small></span>}<span className={styles.photoCaption}>{categoryId === "style" ? "" : "NO. "}{option.custom ? "YOUR IDEA" : String(category.options.findIndex((item) => item.id === option.id) + 1).padStart(2, "0")}</span></span>
+                <span className={styles.optionCopy}><span className={styles.optionTop}><small>{option.group}</small><span className={styles.selectionBadge}><small className={styles.selectionCount}>{selectionCounts[categoryId+":"+option.id] ?? 0} selections</small><span className={styles.check} aria-hidden="true">{selectedIds.includes(option.id) ? "✓" : "+"}</span></span></span><strong>{option.name}</strong><span className={styles.optionDetail}>{option.detail}</span></span>
               </button>)}</div>
-              <div className={styles.selectedTray} aria-label="Chosen possibilities"><div><span>ON YOUR TABLE / {selected.length} CHOSEN</span><button type="button" disabled={!selected.length} onClick={() => setSelectedIds([])}>CLEAR</button></div>{selected.length ? <ul>{selected.map((option) => <li key={option.id}><button type="button" onClick={() => toggleOption(option.id)} aria-label={`Remove ${option.name}`}>{option.name}<span aria-hidden="true">×</span></button></li>)}</ul> : <p>Touch an image above to keep that possibility on the table.</p>}<small>Changing the edit preserves your choices · each preset has its own original illustration</small></div>
+              <div className={styles.selectedTray} aria-label="Chosen possibilities"><div><span>ON YOUR TABLE / {selected.length} CHOSEN</span><button type="button" disabled={!selected.length} onClick={() => {trace("cleared","Cleared the shortlist");setSelectedIds([]);}}>CLEAR</button></div>{selected.length ? <ul>{selected.map((option) => <li key={option.id}><button type="button" onClick={() => toggleOption(option.id)} aria-label={`Remove ${option.name}`}>{option.name}<span aria-hidden="true">×</span></button></li>)}</ul> : <p>Touch an image above to keep that possibility on the table.</p>}<small>Changing the edit preserves your choices · each preset is illustrated with a real photograph</small></div>
               <form onSubmit={addCustom} className={styles.customForm} data-lab-entrance><label htmlFor="choice-custom">Or write a possibility of your own</label><div><input id="choice-custom" value={custom} onChange={(event) => setCustom(event.target.value)} maxLength={36} placeholder={categoryId === "food" ? "Perhaps: wontons from the place downstairs" : categoryId === "style" ? "Perhaps: a blue shirt and new shoes" : "Perhaps: a weekend among old gardens"} /><button type="submit" aria-label="Add a personal possibility">PLACE ON TABLE <span aria-hidden="true">↗</span></button></div></form>
-              <div className={styles.bottomBar} data-lab-entrance><span>{selected.length < 2 ? "AT LEAST TWO POSSIBILITIES ARE NEEDED" : `${selected.length} POSSIBILITIES ARE READY`}</span><button type="button" className={styles.primary} disabled={selected.length < 2} onClick={() => { setError(""); setStage("play"); }}>PLAY THE ROUND <span aria-hidden="true">↗</span></button></div>
+              <div className={styles.bottomBar} data-lab-entrance><span>{selected.length < 2 ? "AT LEAST TWO POSSIBILITIES ARE NEEDED" : `${selected.length} POSSIBILITIES ARE READY`}</span><button type="button" className={styles.primary} disabled={selected.length < 2} onClick={() => { trace("stage","Brought the shortlist to the table"); setError(""); setStage("play"); }}>PLAY THE ROUND <span aria-hidden="true">↗</span></button></div>
             </section>}
 
             {stage === "play" && <section className={styles.playStage} aria-label="Wager and reveal">
@@ -307,8 +352,8 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
               <fieldset className={styles.betField} disabled={busy} data-lab-entrance><legend>Where will you place your wager? <span>Desire must speak before chance.</span></legend><div>{selected.map((option) => <button type="button" key={option.id} aria-pressed={betId === option.id} onClick={() => selectBet(option.id)}><span aria-hidden="true">{betId === option.id ? "●" : "○"}</span> {option.name}</button>)}</div></fieldset>
 
               <div className={styles.gameRoom} key={mode} data-lab-entrance>
-                {mode === "poker" && <PokerTable bet={bet} round={round} revealed={isRevealed} busy={busy} canDraw={canDraw} onDraw={draw} cardRef={cardRef} color={color} onColor={setColor}>{resultPanel}</PokerTable>}
-                {mode === "rps" && <RockPaperScissorsArena bet={bet} round={round} revealed={isRevealed} busy={busy} canDraw={canDraw} onDraw={draw} gesture={gesture} onGesture={setGesture} countdown={countdown}>{resultPanel}</RockPaperScissorsArena>}
+                {mode === "poker" && <PokerTable bet={bet} round={round} revealed={isRevealed} busy={busy} canDraw={canDraw} onDraw={draw} cardRef={cardRef} color={color} onColor={(value) => {trace("call",value);setColor(value);}}>{resultPanel}</PokerTable>}
+                {mode === "rps" && <RockPaperScissorsArena bet={bet} round={round} revealed={isRevealed} busy={busy} canDraw={canDraw} onDraw={draw} gesture={gesture} onGesture={(value) => {trace("call",value);setGesture(value);}} countdown={countdown}>{resultPanel}</RockPaperScissorsArena>}
                 {mode === "guess" && <DrawLotsRoom bet={bet} round={round} revealed={isRevealed} busy={busy} canDraw={canDraw} onDraw={draw} options={selected} activeIndex={activeTicket} onBet={selectBet}>{resultPanel}</DrawLotsRoom>}
               </div>
             </section>}
@@ -317,8 +362,8 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
               <p className={styles.eyebrow} data-lab-entrance>03 / THE POSSIBILITY BECOMES REAL</p>
               <div className={styles.answerPhoto} data-lab-entrance>{round.bet.image ? <Image src={round.bet.image} alt={round.bet.name} width={800} height={800} unoptimized /> : <div className={styles.customArt}>✳<small>YOUR IDEA</small></div>}<span>{chapterTitle} / DECIDED</span></div>
               <div className={styles.receipt} data-lab-entrance><span className={styles.receiptTop}>ENTANGLED SHELTER <span>♥</span></span><p>THE ANSWER FOR TODAY</p><h3 tabIndex={-1} data-stage-heading>{round.bet.name}</h3><p className={styles.receiptDetail}>{round.bet.detail}</p><div className={styles.receiptMeta}><span>{category.label} / {chosenMode.name}</span><span>YOU CHOSE. THAT’S ENOUGH.</span></div><div className={styles.receiptSeal} aria-hidden="true">DECIDED<br />✳</div></div>
-              <div className={styles.acceptedNote} role="status" data-lab-entrance><strong>Beautiful. Indecision may end here.</strong><p>{saved ? "This decision is preserved in this browser. Now go and make it a day worth remembering." : "The answer is settled. This browser could not preserve the record, but the decision is yours to carry."}</p></div>
-              <div className={styles.acceptedActions} data-lab-entrance><button type="button" className={styles.primary} onClick={onClose}>GO WITH THE ANSWER <span aria-hidden="true">↗</span></button><button type="button" className={styles.textButton} onClick={() => { resetRound(); setBetId(null); setStage("options"); }}>DECIDE ONE MORE SMALL THING</button></div>
+              <div className={styles.acceptedNote} role="status" data-lab-entrance><strong>The answer is not the end.</strong><p>{saved ? "This choice is in your memory. Add a note, notice what returns, or make another decision." : "The answer is settled. This browser could not preserve the record, but the decision is yours to carry."}</p></div>
+              <div className={styles.acceptedActions} data-lab-entrance><a className={styles.primary} href="/history">ANNOTATE YOUR MEMORY ↗</a><button type="button" className={styles.primary} onClick={closeRoom}>GO WITH THE ANSWER <span aria-hidden="true">↗</span></button><button type="button" className={styles.textButton} onClick={() => { resetRound(); setBetId(null); setStage("options"); }}>DECIDE ONE MORE SMALL THING</button></div>
               {history.length > 1 && <div className={styles.history} data-lab-entrance><p className={styles.eyebrow}>RECENT LITTLE DECISIONS</p>{history.slice(1, 4).map((item) => <div key={item.id}><span>{choiceCategories[item.categoryId].label}</span><strong>{item.option.name}</strong><time dateTime={item.decidedAt}>{new Date(item.decidedAt).toLocaleDateString("en-GB", { month: "short", day: "2-digit" })}</time></div>)}</div>}
             </section>}
             <p className={styles.error} role="alert">{error}</p>
@@ -329,3 +374,4 @@ export function ChoiceLab({ categoryId, onClose }: { categoryId: CategoryId; onC
     </dialog>
   );
 }
+

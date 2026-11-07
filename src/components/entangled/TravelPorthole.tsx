@@ -52,12 +52,12 @@ export function TravelPorthole({ onExplore }: { onExplore: () => void }) {
   return <div className={styles.stage} data-depth-section>
     <div className={styles.ambient} aria-hidden="true"><i /><i /><i /></div>
     <div className={styles.frame}>
-      <div className={styles.fur} aria-hidden="true" />
+
       <div className={styles.goldBezel}>
         <div
           className={`${styles.viewport} ${dragging ? styles.dragging : ""}`}
           role="slider"
-          aria-label="Royal window shade"
+          aria-label="Landscape window curtain"
           aria-valuemin={0}
           aria-valuemax={100}
           aria-orientation="vertical"
@@ -79,14 +79,15 @@ export function TravelPorthole({ onExplore }: { onExplore: () => void }) {
             <div className={styles.shadeRail}><span /></div>
           </div>
           <div className={styles.glass} aria-hidden="true" />
-          <span className={styles.dragHint} aria-hidden="true">DRAG THE SILK SHADE</span>
+          <span className={styles.dragHint} aria-hidden="true">DRAW THE VELVET CURTAIN</span>
         </div>
       </div>
     </div>
     <div className={styles.caption}>
-      <span>THE ROYAL PASSAGE · III</span>
+      <span>A WINDOW ELSEWHERE · III</span>
       <p>Draw the curtain. Let elsewhere in.</p>
       <button type="button" onClick={onExplore}>EXPLORE WANDER <span aria-hidden="true">↗</span></button>
     </div>
   </div>;
 }
+

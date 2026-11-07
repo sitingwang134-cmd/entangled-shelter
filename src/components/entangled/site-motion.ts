@@ -1,11 +1,11 @@
 "use client";
-
+import { useSyncExternalStore } from "react";
 export type SiteMotion = "full" | "reduced";
-
-// Full motion is the requested site-wide policy. There is no visitor switch.
-// Ignore legacy saved preferences so an old "reduced" value cannot leave the
-// site static after its control has been removed. No user data or OS settings
-// are modified by this policy.
+const subscribe = (notify: () => void) => {
+  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+  media.addEventListener("change", notify);
+  return () => media.removeEventListener("change", notify);
+};
 export function useSiteMotion(): SiteMotion {
-  return "full";
+  return useSyncExternalStore(subscribe, () => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "reduced" : "full", () => "full");
 }

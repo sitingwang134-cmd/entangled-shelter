@@ -399,3 +399,4 @@ await writeFile(
 );
 
 await browser.close();
+

@@ -5,7 +5,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { DepthScene } from "./DepthScene";
+import { rememberTrace } from "./choice-memory";
+import { DissolveEdge } from "./DissolveEdge";
+import { PhotoScene } from "./PhotoScene";
 import { ChoiceLab, type CategoryId } from "./ChoiceLab";
 import { TravelPorthole } from "./TravelPorthole";
 import { useSiteMotion } from "./site-motion";
@@ -29,12 +31,15 @@ function Geometry({ className = "" }: { className?: string }) {
 }
 
 function Art({ id, alt, focus = .5, priority = false }: { id: string; alt: string; focus?: number; priority?: boolean }) {
-  const strengths: Record<string, number> = { room: .5, atelier: .6, angels: .6, hands: .45, doorway: .75, car: .75 };
-  return <DepthScene image={`/entangled/${id}.webp`} depth={`/entangled/${id}-depth.png`} alt={alt} focusX={focus} strength={strengths[id] ?? 1} priority={priority} />;
+  if (id === "room") return <div className={styles.tasteMaterial}><PhotoScene image="/entangled/taste-editorial/pomegranate-table.webp" alt="Pomegranates, grapes and apples with copper cups on a dark table" focus={.5} /></div>;
+  return <PhotoScene image={id === "salt" ? "/entangled/salon/wander-mist-castle.webp" : id === "station" ? "/entangled/salon/castle.webp" : id === "levitate" ? "/entangled/salon/sculpture-duet.webp" : id === "atelier" ? "/entangled/salon/salon.webp" : `/entangled/photos/${id}.webp`} atmosphere={id === "station"} alt={alt} focus={focus} priority={priority} />;
 }
 
 export function EntangledShelter() {
   const root = useRef<HTMLDivElement>(null);
+  const portal = useRef<HTMLDivElement>(null);
+  const transitioning = useRef(false);
+  const transitionTimeline = useRef<gsap.core.Timeline | null>(null);
   const smooth = useRef<Lenis | null>(null);
   const [category, setCategory] = useState<CategoryId | null>(null);
   const [active, setActive] = useState("top");
@@ -73,16 +78,17 @@ export function EntangledShelter() {
     const mm = gsap.matchMedia();
     mm.add("all", () => {
       if (motion === "reduced") return;
+      gsap.set("[data-hero-card]", { rotationX: 0, rotationY: 0 });
       gsap.timeline({ defaults: { ease: "power3.out" } })
         .from("[data-entrance='header']", { y: -65, autoAlpha: 0, duration: .8 })
         .from("[data-entrance='title']", { yPercent: 110, rotation: 3, autoAlpha: 0, duration: 1.3, stagger: .12 }, .15)
         .from("[data-entrance='detail']", { y: 30, autoAlpha: 0, duration: .8, stagger: .12 }, .65)
-        .from("[data-hero-card]", { y: 100, rotationY: 100, autoAlpha: 0, duration: 1, stagger: .1 }, .6);
+        .from("[data-hero-card]", { y: 60, autoAlpha: 0, duration: 1, stagger: .1 }, .6);
       gsap.timeline({ defaults: { ease: "none" }, scrollTrigger: { trigger: "#top", start: "top top", end: "bottom bottom", scrub: .8 } })
         .to("[data-hero-image]", { scale: 1.17, yPercent: 4 }, 0)
         .to("[data-hero-title]", { yPercent: -45, scale: .83, autoAlpha: 0 }, 0)
         .to("[data-hero-note]", { y: -70, autoAlpha: 0 }, 0)
-        .to("[data-hero-card]", { yPercent: -180, x: (index) => (index - 1) * 130, rotation: (index) => (index - 1) * 48, scale: 1.3, stagger: .04 }, 0)
+        .to("[data-hero-card]", { yPercent: -180, x: (index) => (index - 1) * 130, rotation: (index) => (index - 1) * 24, rotationX: 0, rotationY: 0, scale: 1.3, stagger: .04 }, 0)
         .to("[data-hero-geometry]", { rotation: 45, scale: 1.7, autoAlpha: .1 }, 0);
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
         gsap.from(element, { y: 55, autoAlpha: 0, duration: 1.05, ease: "power3.out", scrollTrigger: { trigger: element, start: "top 90%", toggleActions: "play none none reverse" } });
@@ -95,7 +101,7 @@ export function EntangledShelter() {
           .fromTo(el.querySelector("[data-chapter-title]"), { y: 100, x: 20 }, { y: -140, x: -20 }, 0)
           .fromTo(el.querySelector("[data-chapter-geometry]"), { rotation: -25 }, { rotation: 60 }, 0)
           .fromTo(el.querySelector("[data-chapter-shade]"), { opacity: .6 }, { opacity: 1 }, .25);
-        gsap.fromTo(el.querySelector("[data-scene-mask]"), { clipPath: "inset(5% 3% round 3px)" }, { clipPath: "inset(0% 0% round 0px)", ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "top 15%", scrub: .7 } });
+
       });
       gsap.timeline({ defaults: { ease: "none" }, scrollTrigger: { trigger: "#ritual", start: "top 85%", end: "bottom 65%", scrub: .8 } })
         .from("[data-ritual-title]", { xPercent: -12 }, 0)
@@ -117,9 +123,26 @@ export function EntangledShelter() {
     return () => { alive = false; mm.revert(); };
   }, { scope: root, dependencies: [motion], revertOnUpdate: true });
 
-  function open(id: CategoryId) { setMenu(false); setCategory(id); }
+  useEffect(() => () => { transitionTimeline.current?.kill(); }, []);
+  function open(id: CategoryId) {
+    if(transitioning.current) return;
+    setMenu(false);
+    rememberTrace(id,"opened",`Entered the ${id} room`);
+    if(motion === "reduced" || !portal.current) {setCategory(id);return;}
+    transitioning.current=true;
+    const panel=portal.current;
+    panel.dataset.category=id;
+    transitionTimeline.current=gsap.timeline({onComplete:()=>{transitioning.current=false;transitionTimeline.current=null;}})
+      .set(panel,{display:"grid",opacity:1})
+      .fromTo(panel.querySelector("[data-portal-card]"),{scale:.2,rotation:-18,opacity:0},{scale:1,rotation:0,opacity:1,duration:.32,ease:"power2.out"})
+      .to(panel.querySelector("[data-portal-card]"),{scale:14,rotation:9,duration:.65,ease:"power3.inOut"})
+      .call(()=>setCategory(id))
+      .to(panel,{opacity:0,duration:.45},"+=.08")
+      .set(panel,{display:"none"});
+  }
 
   return <div className={styles.page} ref={root} data-theme="dark" data-active-section={active} data-motion={motion}>
+    <div className={styles.cardPortal} ref={portal} aria-hidden="true"><div data-portal-card><small>ES / THE PRIVATE SALON</small><b>♠</b><span>ONE MORE POSSIBILITY</span></div></div>
     <a className={styles.skip} href="#chapters">Skip to the decision rooms</a>
     <header className={styles.header} data-entrance="header">
       <a href="#top" className={styles.brand} aria-label="Entangled Shelter home"><span className={styles.brandSymbol}>✳</span> Entangled Shelter <span className={styles.edition}>THE INDECISION EDITION</span></a>
@@ -137,20 +160,21 @@ export function EntangledShelter() {
     <main>
       <section id="top" className={styles.heroScroll} data-nav-section data-depth-section data-theme="dark">
         <div className={styles.hero}>
-          <div className={styles.heroImage} data-hero-image><Art id="station" alt="Figures and a floating green console in a classical railway painting" focus={.67} priority /></div>
+          <div className={styles.heroImage} data-hero-image><Art id="station" alt="A medieval Scottish castle reflected in a misty lake" focus={.67} priority /></div>
           <div className={styles.heroShade} />
           <Geometry className={styles.heroGeometry} /><div className={styles.heroGeometryMotion} data-hero-geometry><Geometry /></div>
           <div className={styles.heroCopy} data-hero-title>
             <p className={styles.eyebrow} data-entrance="detail">A LITTLE CHANCE. A LITTLE COURAGE.</p>
             <h1><span className={styles.titleLine}><span data-entrance="title">Entangled</span></span><span className={styles.titleLine}><em data-entrance="title">Shelter</em></span></h1>
-            <div className={styles.heroDescription} data-entrance="detail"><span>A refuge for the<br />beautifully undecided.</span><p>You need not know every answer.<br />First wager, then draw. If instinct prevails, choose it.</p></div>
+            <div className={styles.heroDescription} data-entrance="detail"><span>A refuge for the<br />beautifully undecided.</span><p>You need not know every answer.<br />Choose, remember, begin again. The answer is not the end.</p></div>
             <a className={styles.heroLink} href="#chapters" data-entrance="detail">LET CHANCE BEGIN <span>↓</span></a>
           </div>
-          <div className={styles.heroCards} aria-hidden="true">{["♥", "♠", "♦"].map((suit, index) => <div className={styles.heroCard} key={suit} data-hero-card><small>{index === 1 ? "Q" : "A"}<br />{suit}</small><b>{suit}</b><span>ES</span></div>)}</div>
-          <div className={styles.heroBottom} data-hero-note data-entrance="detail"><span>VIBE CODING FOR THE BEAUTIFULLY UNDECIDED</span><span>SCROLL INTO ANOTHER POSSIBILITY <b>↓</b></span><span>01 — 04</span></div>
+          <div className={styles.heroCards}>{["♥", "♠", "♦"].map((suit, index) => <button className={styles.heroCard} key={suit} data-hero-card onClick={() => open(chapters[index].id)} aria-label={`Enter ${chapters[index].title} through the card`}><small>{index === 1 ? "Q" : "A"}<br />{suit}</small><b>{suit}</b><span>ES</span></button>)}</div>
+          <div className={styles.heroBottom} data-hero-note data-entrance="detail"><span>A PRIVATE SALON FOR BEAUTIFUL INDECISION</span><span>SCROLL INTO ANOTHER POSSIBILITY <b>↓</b></span><span>01 — 04</span></div>
         </div>
       </section>
       <section className={styles.intro} id="intro" data-nav-section data-theme="light">
+        <DissolveEdge />
         <div className={styles.introLabel} data-reveal><span>WELCOME TO THE SHELTER</span><span>There need not be a perfect answer.</span></div>
         <h2 data-reveal>Every possibility<br />deserves <em>a little chance.</em></h2>
         <div className={styles.introBottom} data-reveal><p>Supper, wardrobe, the next horizon.<br />Gather the choices that already feel right,<br />then let a small game end the long comparison.</p><a href="#chapters">THREE DOORS, ONE ANSWER <span>↘</span></a><span className={styles.introStar} aria-hidden="true">✳</span></div>
@@ -158,10 +182,11 @@ export function EntangledShelter() {
       <div id="chapters" className={styles.chapters}>
         {chapters.map((chapter) => <section id={chapter.id} className={styles.chapter} key={chapter.id} data-nav-section data-depth-section data-theme="dark" data-category={chapter.id}>
           <div className={styles.chapterBackdrop} data-scene-mask>
-            <div className={styles.chapterImage} data-chapter-image><Art id={chapter.image} alt={chapter.image === "room" ? "A blue room alive with flying papers" : chapter.image === "levitate" ? "A figure floating through an impossible sky" : "A family and kite beside a salt lake"} focus={chapter.focus} /></div>
+            <div className={styles.chapterImage} data-chapter-image><Art id={chapter.image} alt={chapter.image === "room" ? "Pomegranates, grapes and apples on a dark table" : chapter.image === "levitate" ? "Two classical marble portraits emerging from a dark gallery" : "A medieval stone castle surrounded by mist and deep green forest"} focus={chapter.focus} /></div>
             <div className={styles.chapterShade} data-chapter-shade />
             <div className={styles.chapterGeometry} data-chapter-geometry><Geometry /></div>
           </div>
+          <DissolveEdge />
           <div className={styles.chapterContent}>
             <div className={styles.chapterHeading}>
               <div className={styles.chapterOverline}><span>CHAPTER {chapter.number}</span><span>{chapter.note}</span></div>
@@ -170,7 +195,7 @@ export function EntangledShelter() {
             </div>
             <div className={styles.chapterDetails}>
               <article className={styles.storyCard} data-reveal>
-                {chapter.id === "food" ? <div className={styles.foodFilm}><video controls autoPlay muted loop playsInline preload="metadata" poster="/entangled/food-film-v10.webp" aria-label="Taste chapter film"><source src="/entangled/food-film-v10.mp4" type="video/mp4" />Your browser cannot play this film.</video></div> : chapter.id === "travel" ? <TravelPorthole onExplore={() => open("travel")} /> : <button className={styles.storyVisual} onClick={() => open(chapter.id)} aria-label={`Enter the ${chapter.name} edit`} data-depth-section><Art id={chapter.detail} alt="An ivory dress in a cream atelier" focus={.28} /><span>EXPLORE {chapter.title.toUpperCase()} ↗</span></button>}
+                {chapter.id === "food" ? <div className={styles.foodFilm}><video controls autoPlay muted loop playsInline preload="metadata" poster="/entangled/photos/food-pasta.webp" aria-label="Taste chapter film"><source src="/entangled/food-film-v10.mp4" type="video/mp4" />Your browser cannot play this film.</video></div> : chapter.id === "travel" ? <TravelPorthole onExplore={() => open("travel")} /> : <button className={styles.storyVisual} onClick={() => open(chapter.id)} aria-label={`Enter the ${chapter.name} edit`} data-depth-section><Art id={chapter.detail} alt="An ornate European salon with vaulted arches" focus={.28} /><span>EXPLORE {chapter.title.toUpperCase()} ↗</span></button>}
                 <div className={styles.storyCopy}><span className={styles.tinyLabel}>A DIFFERENT WAY TO DECIDE</span><h3>{chapter.detailTitle}</h3><p>{chapter.detailCopy}</p><button className={styles.textButton} onClick={() => open(chapter.id)}>ENTER THE {chapter.name.toUpperCase()} SELECTOR <span>↗</span></button></div>
               </article>
               <div className={styles.choiceColumn}>
@@ -189,6 +214,7 @@ export function EntangledShelter() {
         </section>)}
       </div>
       <section id="ritual" className={styles.ritual} data-nav-section data-theme="light">
+        <DissolveEdge />
         <div className={styles.ritualContent}>
           <p className={styles.tinyLabel} data-reveal>IV / THE ART OF LETTING GO</p>
           <h2 data-ritual-title>A little play,<br /><em>a little courage.</em></h2>
@@ -197,16 +223,18 @@ export function EntangledShelter() {
             {[{ n: "01", title: "The Fortune Deck", suit: "♥", copy: "Wager on a possibility, then call red or black. If the card agrees, the answer is yours." }, { n: "02", title: "A Fair Fight", suit: "✌︎", copy: "Choose the answer in your heart, then throw your hand. Win the duel and honour it." }, { n: "03", title: "Trust Your Hunch", suit: "?", copy: "Predict which answer chance will draw. A match settles it; a miss earns another turn." }].map((rule) => <button className={styles.ritualCard} key={rule.n} data-ritual-card onClick={() => open("food")}><span>{rule.n}<i>↗</i></span><b>{rule.suit}</b><h3>{rule.title}</h3><p>{rule.copy}</p></button>)}
           </div>
           <div className={styles.artInterlude} data-reveal>
-            <div className={styles.interludeImage} data-depth-section><Art id="angels" alt="A tender group of classical angels" /></div><div><p className={styles.tinyLabel}>A SOFTER PLACE TO LAND</p><h3>You need not make<br />the finest choice every time.</h3><p>Sometimes it is enough to choose what you love,<br />and live it beautifully.</p></div>
+            <div className={styles.interludeImage} data-depth-section><Art id="angels" alt="A picnic basket resting in a sunlit woodland" /></div><div><p className={styles.tinyLabel}>A SOFTER PLACE TO LAND</p><h3>You need not make<br />the finest choice every time.</h3><p>Sometimes it is enough to choose what you love,<br />and live it beautifully.</p></div>
           </div>
         </div>
       </section>
       <section id="ending" className={styles.ending} data-nav-section data-theme="dark" data-depth-section>
-        <div className={styles.endingArt}><Art id="hands" alt="Two hands nearing one another in a classical painting" /></div>
+        <DissolveEdge />
+        <div className={styles.endingArt}><Art id="hands" alt="Two people holding hands" /></div>
         <div className={styles.endingCopy} data-reveal><p className={styles.tinyLabel}>YOUR NEXT POSSIBILITY IS WAITING</p><h2>Enough thinking.<br /><em>Let&apos;s play.</em></h2><div className={styles.endingActions}>{chapters.map((item) => <button onClick={() => open(item.id)} key={item.id}>{item.name} <span>↗</span></button>)}<a className={styles.archiveAction} href="/history">OPEN THE DECISION ARCHIVE <span>↗</span></a></div></div>
-        <footer className={styles.footer}><a href="#top">Entangled Shelter ↑</a><span>BUILT FOR BEAUTIFUL INDECISION · 2026</span></footer>
+        <footer className={styles.footer}><a href="#top">Entangled Shelter ↑</a><a href="/photo-credits.html">PHOTOGRAPHY CREDITS ↗</a><span>BUILT FOR BEAUTIFUL INDECISION · 2026</span></footer>
       </section>
     </main>
     {category && <ChoiceLab key={category} categoryId={category} onClose={() => setCategory(null)} />}
   </div>;
 }
+

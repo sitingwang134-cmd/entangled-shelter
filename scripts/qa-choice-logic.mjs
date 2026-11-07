@@ -31,7 +31,7 @@ for (const category of Object.values(choiceCategories)) {
   check(() => assert.equal(getChoiceBatch(extended, 'My Possibilities', 0)[0].id, 'custom-test'));
   for (const option of category.options) {
     check(() => assert.ok(option.name.length > 0 && option.detail.length > 0));
-    check(() => assert.equal(option.image, `/entangled/choices-v4/${option.id}.webp`));
+    check(() => assert.equal(option.image, `/entangled/photos/${option.id}.webp`));
     const bytes = await readFile(new URL(`../public${option.image}`, import.meta.url));
     check(() => assert.equal(bytes.subarray(8, 12).toString(), 'WEBP'));
   }
@@ -100,3 +100,4 @@ try {
   else delete globalThis.crypto.randomUUID;
 }
 console.log(`Choice Lab logic passed: ${assertions} assertions. All 52 cards × 2 predictions; all 9 RPS outcomes; guesses, guards, and history validated.`);
+

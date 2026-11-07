@@ -38,3 +38,4 @@ npm run build
 ```
 
 The decision archive is browser-local: accepted answers are stored under `entangled-shelter:decisions:v1` in `localStorage`.
+

@@ -52,3 +52,4 @@ const report = {
 await fs.mkdir("docs/entangled-shelter/deployment", { recursive: true });
 await fs.writeFile("docs/entangled-shelter/deployment/nas-release-check.json", JSON.stringify(report, null, 2));
 console.log(`NAS release verified: HTML and ${checked.length} assets match; full motion, no toggle.`);
+

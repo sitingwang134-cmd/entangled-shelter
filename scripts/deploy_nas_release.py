@@ -81,3 +81,4 @@ try:
     print(f"archive={REMOTE_ARCHIVE}")
 finally:
     client.close()
+

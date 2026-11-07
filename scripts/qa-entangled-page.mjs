@@ -119,3 +119,4 @@ try {
   await reduced.close();
   await fs.writeFile(path.join(output,process.env.QA_RESULT_NAME || "results.json"),JSON.stringify({generatedAt:new Date().toISOString(),url,motionPolicy,results},null,2));
 } finally { await browser.close(); }
+

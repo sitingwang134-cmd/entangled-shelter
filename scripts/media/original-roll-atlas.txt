@@ -1,4 +1,6 @@
         var archiveRecords = [];
+        var archiveNotes = {};
+        var archiveFavourite = "";
         var archiveBank = 0;
         var archiveKey = 'entangled-shelter:decisions:v1';
         var labels = {food:'TASTE',style:'STYLE',travel:'WANDER'};
@@ -10,12 +12,57 @@
               return r && typeof r.id === 'string' && Object.hasOwn(labels,r.categoryId) &&
                 Object.hasOwn(modeLabels,r.mode) && r.option && typeof r.option.name === 'string' &&
                 typeof r.option.detail === 'string' && typeof r.decidedAt === 'string' && Number.isFinite(Date.parse(r.decidedAt));
-            }).slice(0,24) : [];
+            }).slice(0,500) : [];
           } catch (_) { archiveRecords = []; }
+          try { archiveNotes=JSON.parse(localStorage.getItem('entangled-shelter:notes:v1')||'{}'); if(!archiveNotes || typeof archiveNotes!=='object') archiveNotes={}; } catch (_) {archiveNotes={};}
+          var counts={}; archiveRecords.forEach(function(r){var key=r.categoryId+':'+r.option.id; if(!counts[key]) counts[key]={name:r.option.name,count:0};counts[key].count++;});
+          var ranked=Object.values(counts).sort(function(a,b){return b.count-a.count;});
+          archiveFavourite=ranked.length ? ranked[0].name+' / '+ranked[0].count+' TIMES' : 'YOUR STORY IS STILL TO COME';
           archiveBank = Math.min(archiveBank, Math.max(0, Math.ceil(archiveRecords.length / 8) - 1));
         }
         function fullTime(value) {
           return new Date(value).toLocaleString('en-GB', {year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
+        }
+        var photoCache = {};
+        var refreshPhotoAtlas = null;
+        var photoRefreshPending = false;
+        var folioPhotos = [
+          ['breakfast','TASTE / SLOW MORNINGS'],
+          ['coast','WANDER / COLOUR BY THE SEA'],
+          ['boutique','STYLE / THE DAILY EDIT'],
+          ['pasta','TASTE / BEFORE THE SUPPER'],
+          ['alps','WANDER / STILL WATERS'],
+          ['shoes','STYLE / STEP OUTSIDE'],
+          ['coffee','TASTE / A MOMENT TO PAUSE'],
+          ['station','WANDER / THE NEXT DEPARTURE']
+        ];
+        function photoFor(record, index) {
+          if (record) {
+            var choices = {food:['breakfast','pasta','coffee'],style:['boutique','shoes'],travel:['coast','alps','station']}[record.categoryId];
+            return choices[index % choices.length];
+          }
+          return folioPhotos[index % folioPhotos.length][0];
+        }
+        function photograph(id) {
+          if (!photoCache[id]) {
+            var img = new Image(); photoCache[id] = img;
+            img.onload = function() {
+              if (photoRefreshPending) return;
+              photoRefreshPending = true;
+              requestAnimationFrame(function() {
+                photoRefreshPending = false;
+                if (refreshPhotoAtlas) refreshPhotoAtlas();
+              });
+            };
+            img.src = '/entangled/roll-photos/' + id + '.webp';
+          }
+          return photoCache[id];
+        }
+        function coverPhoto(g, img, x, y, w, h) {
+          if (!img.complete || !img.naturalWidth) return;
+          var scale = Math.max(w/img.naturalWidth,h/img.naturalHeight);
+          var sw=w/scale, sh=h/scale;
+          g.drawImage(img,(img.naturalWidth-sw)/2,(img.naturalHeight-sh)/2,sw,sh,x,y,w,h);
         }
         readArchive();
         function buildAtlas() {
@@ -38,19 +85,22 @@
           }
           for(var c=0;c<ATLAS_N;c++) {
             var x=c*CELL; var r=bank.length ? bank[c % bank.length] : null;
-            g.strokeStyle='#243029'; g.lineWidth=2; g.strokeRect(x+26,26,460,460);
+            var id=photoFor(r,c);
+            // Full-width photographic panel makes the imagery readable on the curved paper.
+            g.fillStyle='#d8ded3'; g.fillRect(x+18,18,476,330);
+            coverPhoto(g,photograph(id),x+18,18,476,330);
+            var shade=g.createLinearGradient(0,220,0,348);
+            shade.addColorStop(0,'rgba(15,28,22,0)'); shade.addColorStop(1,'rgba(15,28,22,.78)');
+            g.fillStyle=shade;g.fillRect(x+18,220,476,128);
+            g.fillStyle='#fff9e9';
+            line('ES / '+(r ? labels[r.categoryId] : folioPhotos[c%folioPhotos.length][1].split(' / ')[0]),x+36,53,430,'19px Georgia, serif');
+            line(r ? r.option.name : folioPhotos[c%folioPhotos.length][1].split(' / ')[1],x+36,324,430,'32px Georgia, serif');
             g.fillStyle='#243029';
-            line('ES / ENTANGLED SHELTER',x+48,64,410,'17px Georgia, serif');
-            g.fillRect(x+48,83,416,2);
-            line(r ? labels[r.categoryId]+' / '+modeLabels[r.mode] : 'THE INDECISION EDITION',x+48,116,410,'17px Georgia, serif');
-            g.fillStyle=r && r.categoryId==='food' ? '#863b31' : '#334a39';
-            line(r ? {food:'♥',style:'♠',travel:'♦'}[r.categoryId] : '✳',x+50,215,90,'80px Georgia, serif');
-            g.fillStyle='#243029';
-            line(r ? r.option.name : 'RESERVED FOR YOUR NEXT DELIGHT',x+48,280,416,'44px Georgia, serif');
-            line(r ? r.option.detail : 'Make one choice, then let the answer leave its trace.',x+48,325,416,'18px Georgia, serif');
-            g.fillRect(x+48,370,416,1);
-            line(r ? fullTime(r.decidedAt) : 'NO DECISIONS PRESERVED YET',x+48,407,416,'19px Georgia, serif');
-            line(r ? 'DECISION '+String(archiveBank*8+c%bank.length+1).padStart(4,'0') : 'A LITTLE CHANCE. A LITTLE COURAGE.',x+48,455,416,'13px Georgia, serif');
+            line(r ? modeLabels[r.mode] : 'THE POSSIBILITY COLLECTION',x+30,382,452,'17px Georgia, serif');
+            line(r && typeof archiveNotes[r.id]==='string' && archiveNotes[r.id] ? archiveNotes[r.id] : r ? r.option.detail : typeof archiveNotes.reflection==='string' && archiveNotes.reflection ? archiveNotes.reflection : 'A little chance. A little courage.',x+30,415,452,'19px Georgia, serif');
+            g.fillRect(x+30,438,452,1);
+            line(r ? 'MOST RETURNED TO: '+archiveFavourite : archiveFavourite,x+30,464,452,'14px Georgia, serif');
+            line(r ? 'DECISION '+String(archiveBank*8+c%bank.length+1).padStart(4,'0') : 'FOLIO '+String(c+1).padStart(2,'0')+' / ENTANGLED SHELTER',x+30,490,452,'13px Georgia, serif');
           }
           var tex=new THREE.CanvasTexture(cv);
           tex.wrapS=THREE.RepeatWrapping;
@@ -83,13 +133,16 @@
               var time=document.createElement('time'); time.dateTime=r.decidedAt; time.textContent=fullTime(r.decidedAt);
               var view=document.createElement('button'); view.textContent='Print on the roll ↗';
               view.addEventListener('click',function(){archiveBank=Math.floor(index/8);refreshTexture();panel.hidden=true;toggle.setAttribute('aria-expanded','false');setPaused(false);toggle.focus();});
-              li.append(category,name,detail,time,view);list.append(li);
+              var note=document.createElement('p'); note.textContent=typeof archiveNotes[r.id]==='string' ? archiveNotes[r.id] : '';
+              li.append(category,name,detail,note,time,view);list.append(li);
             });
           }
           toggle.addEventListener('click',function(){panel.hidden=!panel.hidden;toggle.setAttribute('aria-expanded',String(!panel.hidden));setPaused(!panel.hidden);});
           next.addEventListener('click',function(){archiveBank=(archiveBank+1)%Math.max(1,Math.ceil(archiveRecords.length/8));refreshTexture();});
           window.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden){panel.hidden=true;toggle.setAttribute('aria-expanded','false');setPaused(false);toggle.focus();}else if(e.code==='Space' && e.target===document.body){e.preventDefault();setPaused(!paused);}});
-          window.addEventListener('storage',function(e){if(e.key===archiveKey||e.key===null){readArchive();refreshTexture();renderList();}});
+          window.addEventListener('storage',function(e){if(e.key===archiveKey||e.key==='entangled-shelter:notes:v1'||e.key===null){readArchive();refreshTexture();renderList();}});
           document.getElementById('stage').addEventListener('webglcontextlost',function(e){e.preventDefault();document.getElementById('hintText').textContent='The scene paused unexpectedly. Refresh to restore it; your decisions remain available.';});
+          refreshPhotoAtlas=refreshTexture;
           refreshTexture();renderList();
         }
+

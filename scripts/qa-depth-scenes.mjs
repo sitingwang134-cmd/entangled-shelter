@@ -195,3 +195,4 @@ try {
   console.log(JSON.stringify(result, null, 2));
   await browser.close();
 }
+

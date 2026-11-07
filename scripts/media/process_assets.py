@@ -178,3 +178,4 @@ if __name__ == "__main__":
         render(args.ids, args.seconds, args.fps, args.width)
     if args.stage in {"verify", "all"}:
         verify()
+

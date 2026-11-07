@@ -61,3 +61,4 @@ for (const [start, end] of [
 }
 await fs.writeFile('public/entangled/paper-roll/index.html', html);
 console.log('Original roll generated; geometry, solver, camera, pre-roll and UV mapping preserved verbatim.');
+

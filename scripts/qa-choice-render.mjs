@@ -45,3 +45,4 @@ for (const asset of manifest.assets) {
   assert.equal(asset.generator, 'built-in image_gen');
 }
 console.log('60 unique local paintings decode and match option IDs and manifest hashes. No visual QA performed.');
+

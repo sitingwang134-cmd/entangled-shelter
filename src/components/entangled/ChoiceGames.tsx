@@ -97,3 +97,4 @@ export function DrawLotsRoom({ bet, round, revealed, busy, canDraw, onDraw, chil
     <div className={styles.lotteryResult}>{children}</div>
   </div>;
 }
+

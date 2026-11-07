@@ -22,3 +22,4 @@ export function HandGlyph({ gesture, className }: { gesture: Gesture; className?
     </g>
   </svg>;
 }
+

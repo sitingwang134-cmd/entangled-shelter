@@ -25,3 +25,4 @@ for (const category of Object.values(choiceCategories)) {
 if (assets.length !== 60 || new Set(assets.map(a => a.sha256)).size !== 60) throw new Error('Expected 60 distinct paintings');
 await writeFile(path.join(output, 'sources.json'), JSON.stringify({ edition: 'choice-v4', generatedAt: new Date().toISOString(), artDirection: 'Warm ivory, muted olive and ochre editorial oil painting; one exact subject per option.', assets }, null, 2));
 console.log('Prepared 60 unique 800px WebP paintings:', assets.reduce((total, a) => total + a.bytes, 0), 'bytes. Originals preserved outside public.');
+

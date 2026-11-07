@@ -31,22 +31,22 @@ export const choiceCategories: Record<CategoryId, Category> = {
     options: [
       { id: "food-hotpot", name: "Crimson Hot Pot", detail: "Scarlet broth · lotus root · crisp tripe", group: "Steaming Comfort" },
       { id: "food-noodles", name: "Tonkotsu Ramen", detail: "Silken pork broth · jammy egg", group: "Steaming Comfort" },
-      { id: "food-salad", name: "Mediterranean Garden", detail: "Avocado · ancient grains · olive oil", group: "Light & Bright" },
-      { id: "food-sushi", name: "Sushi for One", detail: "Salmon nigiri · miso broth", group: "Light & Bright" },
-      { id: "food-pasta", name: "Candlelit Pasta", detail: "Tomato seafood linguine · sparkling water", group: "A Proper Date" },
-      { id: "food-bistro", name: "The Corner Bistro", detail: "Seared steak · pommes purée", group: "A Proper Date" },
+      { id: "food-salad", name: "Mediterranean Garden", detail: "Avocado · soft eggs · olives", group: "Light & Bright" },
+      { id: "food-sushi", name: "Sushi for One", detail: "Seared nigiri · dark ceramic · a quiet table", group: "Light & Bright" },
+      { id: "food-pasta", name: "Candlelit Pasta", detail: "Tomato pasta · herbs · sparkling water", group: "A Proper Date" },
+      { id: "food-bistro", name: "The Corner Bistro", detail: "Seared steak · rosemary · cast-iron warmth", group: "A Proper Date" },
       { id: "food-burger", name: "Midnight Double", detail: "Double cheese · sea-salted fries", group: "After-Hours Joy" },
       { id: "food-bbq", name: "Ember-Grilled Skewers", detail: "Charred skewers · ice-cold soda", group: "After-Hours Joy" },
       { id: "food-dumplings", name: "Bamboo-Basket Dumplings", detail: "Delicate wrappers · ginger vinegar · warm soy milk", group: "Steaming Comfort" },
-      { id: "food-claypot", name: "Cantonese Claypot Rice", detail: "Cured meats · golden rice crust · market greens", group: "Steaming Comfort" },
-      { id: "food-curry", name: "Japanese Curry", detail: "Root vegetables · onsen egg · fragrant curry", group: "Steaming Comfort" },
+      { id: "food-claypot", name: "Golden Rice Bowl", detail: "Golden fried rice · scallions · toasted grains", group: "Steaming Comfort" },
+      { id: "food-curry", name: "Japanese Curry", detail: "Crisp katsu · steamed rice · fragrant curry", group: "Steaming Comfort" },
       { id: "food-poke", name: "Summer Poke Bowl", detail: "Tuna · edamame · citrus dressing", group: "Light & Bright" },
       { id: "food-wrap", name: "Wholegrain Chicken Wrap", detail: "Grilled chicken · crisp leaves · yoghurt dressing", group: "Light & Bright" },
       { id: "food-soba", name: "Chilled Soba", detail: "Nori · wasabi · clear dipping broth", group: "Light & Bright" },
       { id: "food-pizza", name: "Wood-Fired Pizza", detail: "Buffalo mozzarella · basil · blistered crust", group: "A Proper Date" },
       { id: "food-thai", name: "A Thai Supper", detail: "Tom yum · green curry · mango sticky rice", group: "A Proper Date" },
       { id: "food-tapas", name: "The Spanish Table", detail: "Garlic prawns · tortilla · everything shared", group: "A Proper Date" },
-      { id: "food-chicken", name: "Korean Fried Chicken", detail: "Sweet chilli · honey mustard · pickled radish", group: "After-Hours Joy" },
+      { id: "food-chicken", name: "Crispy Chicken", detail: "Crisp golden coating · creamy dipping sauce", group: "After-Hours Joy" },
       { id: "food-wonton", name: "Laneway Wontons", detail: "Seaweed · shrimp · pork wontons in clear broth", group: "After-Hours Joy" },
       { id: "food-dessert", name: "A Sweet Finale", detail: "Basque cheesecake · vanilla ice cream · hot cocoa", group: "After-Hours Joy" },
     ],
@@ -107,11 +107,19 @@ export const choiceCategories: Record<CategoryId, Category> = {
   },
 };
 
-// One generated illustration per exact candidate; no cyclic stock-photo assignment.
+// Individually curated real photographs; sources and licences are listed in photo-credits.html.
 for (const category of Object.values(choiceCategories)) {
   category.options.forEach((option) => {
-    option.image = `/entangled/choices-v4/${option.id}.webp`;
+    option.image = `/entangled/photos/${option.id}.webp`;
   });
+}
+
+for (const option of choiceCategories.food.options) {
+  option.image = `/entangled/taste-editorial/${option.id}.webp`;
+}
+
+for (const option of choiceCategories.style.options) {
+  option.image = `/entangled/style-objects/${option.id}.webp`;
 }
 
 export const choiceBatchSize = 10;
@@ -239,6 +247,7 @@ export function parseDecisionHistory(raw: string | null): Decision[] {
         ["poker", "rps", "guess"].includes(value.mode ?? "") && typeof value.decidedAt === "string" &&
         Number.isFinite(Date.parse(value.decidedAt)) && !!value.option && typeof value.option.id === "string" &&
         typeof value.option.name === "string" && typeof value.option.detail === "string" && typeof value.option.group === "string";
-    }).slice(0, 24);
+    }).slice(0, 500);
   } catch { return []; }
 }
+

@@ -43,3 +43,4 @@ assert.ok(clone.painted.includes('Result 23'),'Last history bank appears on the 
 assert.ok(clone.elements.get('recordList').children[23].children.some(n=>n.dateTime==='2026-09-09T08:01:02Z'));
 createWorld(restored,[]);createWorld(restored,[],true);
 console.log('PASS: original vs restored geometry/UV, steering, idle camera, pause; 24 real records, last bank, timestamps, empty/blocked storage. GPU visuals left for user acceptance.');
+

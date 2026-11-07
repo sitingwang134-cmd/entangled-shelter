@@ -14,3 +14,4 @@ const outputPath = path.join(
 const source = await readFile(sourcePath, "utf8");
 await writeFile(outputPath, source);
 console.log(`Generated ${outputPath}`);
+

@@ -86,3 +86,4 @@ write_file "$REPO_ROOT/.amazonq/rules/project.md" "$RESOLVED_CONTENT"
 echo ""
 echo "Done. Generated files are committed to the repo but sourced from AGENTS.md."
 echo "Edit AGENTS.md, then re-run this script to update all agent configs."
+

@@ -31,3 +31,4 @@ for (const category of ['food', 'style', 'travel']) {
   }
 }
 await writeFile(new URL('sources.json', destination), JSON.stringify({ generatedAt: new Date().toISOString(), assets: manifest }, null, 2) + '\n');
+

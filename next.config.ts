@@ -4,6 +4,7 @@ const staticExport = process.env.ENTANGLED_STATIC_EXPORT === "1";
 
 const nextConfig: NextConfig = {
   output: staticExport ? "export" : undefined,
+  ...(staticExport ? { trailingSlash: true, images: { unoptimized: true } } : {}),
   allowedDevOrigins: ["127.0.0.1", "localhost"],
   turbopack: {
     root: process.cwd(),
@@ -24,3 +25,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

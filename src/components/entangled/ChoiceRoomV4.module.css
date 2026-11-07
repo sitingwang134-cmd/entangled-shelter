@@ -57,7 +57,7 @@
 .optionsGrid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:28px 20px; }
 .option { display:block; position:relative; min-width:0; padding:0; border:0; background:transparent; color:var(--ink); text-align:left; }
 .optionPhoto { position:relative; display:block; aspect-ratio:1; width:100%; overflow:hidden; background:#e7ddc6; outline:1px solid #29372e14; outline-offset:-1px; transition:outline .2s; }
-.optionPhoto img { display:block; width:100%; height:100%; object-fit:contain; transition:transform .75s cubic-bezier(.2,.7,.2,1); }
+.optionPhoto img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .75s cubic-bezier(.2,.7,.2,1); }
 .option:hover .optionPhoto img { transform:scale(1.035); }
 .option[aria-pressed="true"] .optionPhoto { outline:3px solid #344e3d; outline-offset:-3px; }
 .photoCaption { position:absolute; bottom:8px; left:10px; padding:3px 6px; background:#f3f0e7de; color:#354235; font-size:7px; letter-spacing:1.2px; }
@@ -120,7 +120,7 @@
 .cardSpace { position:relative; perspective:1200px; }
 .cardRotor { width:100%; height:100%; position:relative; transform-style:preserve-3d; }
 .cardBack,.cardFront { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; border:8px solid #eee5cc; border-radius:8px; backface-visibility:hidden; -webkit-backface-visibility:hidden; overflow:hidden; box-shadow:2px 15px 25px #061c2450; }
-.cardBack { color:#eee5c9; background:linear-gradient(#24302942,#243029a0),url('/entangled/hands.webp') center/cover; }
+.cardBack { color:#eee5c9; background:linear-gradient(#24302942,#243029a0),url('/entangled/photos/hands.webp') center/cover; }
 .cardBack::after { content:""; position:absolute; inset:7px; border:1px solid #ddc48eaa; pointer-events:none; }
 .cardOrbit { position:absolute; width:175%; max-width:none; opacity:.45; }
 .cardSeal { display:flex; align-items:center; justify-content:center; position:relative; width:108px; height:142px; border:1px solid #dcc695; border-radius:50%; background:#223b2de8; font:55px var(--font-hw-cigars),Georgia,serif; letter-spacing:-15px; padding-right:12px; }
@@ -137,7 +137,7 @@
 .cardCornerBottom { inset:auto 12px 12px auto; transform:rotate(180deg); }
 .faceSymbol { font:88px Georgia,serif; }
 .faceName { font-size:12px; font-weight:400; }
-.ghostCard { position:absolute; display:grid; place-items:center; border:7px solid #e5ddc6; border-radius:8px; background:linear-gradient(#2430299c,#243029cf),url('/entangled/angels.webp') center/cover; color:#ded1a5; font-size:54px; }
+.ghostCard { position:absolute; display:grid; place-items:center; border:7px solid #e5ddc6; border-radius:8px; background:linear-gradient(#2430299c,#243029cf),url('/entangled/photos/angels.webp') center/cover; color:#ded1a5; font-size:54px; }
 .ghostLeft { transform:translateX(-27px) rotate(-12deg); }
 .ghostRight { transform:translateX(27px) rotate(12deg); }
 .pokerControls { position:relative; display:flex; flex-direction:column; justify-content:center; min-width:0; padding:42px clamp(24px,4vw,60px); background:#e9e6d9; }
@@ -270,3 +270,170 @@
 }
 @media (max-width:380px) { .edition { display:none; } .close { margin-left:auto; } .steps li { font-size:7px; gap:4px; } .batchBar > span { font-size:9px; } }
 .dialog[data-motion="reduced"] *,.dialog[data-motion="reduced"] *::before,.dialog[data-motion="reduced"] *::after { animation:none !important; transition:none !important; }
+
+
+/* Full-height portrait crops preserve the silhouette in the Style edit. */
+.dialog[data-category="style"] .optionPhoto { aspect-ratio:4 / 5; }
+.dialog[data-category="style"] .optionPhoto img { object-position:center 35%; }
+/* A parchment folio on a green baize table. */
+.dialog {--paper:#e9dcae;--ink:#173c2e;--line:#6f683e50;--muted:#676545;background:url('/entangled/salon/paper-grain.svg'),linear-gradient(130deg,#1a4432,#64734b 40%,#e8dba2);padding:18px;}
+.sheet {background:url('/entangled/salon/paper-grain.svg'),linear-gradient(120deg,#f0e5c0,#e2cf98);border:1px solid #b49a60;box-shadow:inset 0 0 0 7px #dfcd99,inset 0 0 0 8px #af965e,0 15px 70px #001f21aa;}
+.header {background:#173c2ef5;color:#f2e3b7;border-bottom:3px double #bf9f62;}
+.close {color:#f3e5ba;border-color:#c9ae76;}
+.bottomBar {background:#173c2ef5;color:#e9d9a9;padding:16px 20px;border:1px solid #9f8858;}
+.bottomBar>span {color:#eddfb2;}
+.bottomBar .primary {background:#e1c98e;color:#173c2e;}
+.option {background:#f4e9c9;box-shadow:0 5px 10px #2a311d14;padding:7px;border:1px solid #b99d6355;}
+.optionCopy {padding:10px 5px;}
+.option strong {font-family:Georgia,serif;line-height:1.2;}
+.optionTop small,.optionDetail {color:#5d654b;}
+.optionPhoto img {filter:sepia(.12) saturate(.85);}
+.introPainting {filter:sepia(.22);}
+.cardBack,.ghostCard {background:#173d2f url('/entangled/salon/card-engraving.svg') center/100% 100%;color:#e9d3a0;border-color:#d9c494;}
+.cardFront {background-image:url('/entangled/salon/paper-grain.svg'),radial-gradient(ellipse,#fff0c8,#c7aa6b);border-color:#e4cea0;}
+.cardFront::after {border:3px double #96733f;inset:10px;border-radius:25px;}
+.cardFront::before {content:"❦";position:absolute;top:17%;color:#9a7645;font:45px Georgia,serif;}
+.pokerScene {background:url('/entangled/salon/paper-grain.svg'),radial-gradient(ellipse at 50% 20%,#3e6944,#0b3327 80%);}
+.pokerScene::after {border:3px double #bda26388;border-radius:44%;inset:20px;}
+.memoryNotice {padding:14px 18px;margin:12px 0 25px;border-block:1px solid #a88c4d77;display:flex;justify-content:space-between;gap:16px;color:#35513c;font-size:12px;}
+.memoryNotice a {color:inherit;font-size:10px;letter-spacing:1px;}
+.acceptedActions a {text-decoration:none;display:inline-flex;align-items:center;}
+.dialog[open] .sheet {animation:folioDissolve .55s ease both;}
+@keyframes folioDissolve {from {opacity:0;filter:blur(8px);transform:scale(1.04)}to {opacity:1;filter:blur(0);transform:scale(1)}}
+@media(max-width:700px){.dialog{padding:5px}.memoryNotice{flex-direction:column;gap:8px}.bottomBar{padding:12px}.option{padding:4px}}
+.dialog[data-motion="reduced"] .sheet {animation:none;}
+
+/* The Persona edit: an art-directed contact sheet, with a red editor's circle
+   marking the photographs the visitor has kept. Other rooms retain their layout. */
+.dialog[data-category="style"][data-stage="options"] {--paper:#e5dfce;--ink:#e5dfce;--line:#e5dfce40;--muted:#b5b9a9;background:#102c26;padding:0;color:#e5dfce;}
+.dialog[data-category="style"][data-stage="options"] .sheet {background:#102c26;border:0;box-shadow:none;}
+.dialog[data-category="style"][data-stage="options"] .header {background:#102c26f5;border-bottom:1px solid #a99d6f70;}
+.dialog[data-category="style"][data-stage="options"] .introduction {padding-block:42px;}
+.dialog[data-category="style"][data-stage="options"] .introPainting {display:none;}
+.dialog[data-category="style"][data-stage="options"] .chapterWord {font-size:clamp(100px,13vw,210px);font-style:italic;line-height:.85;letter-spacing:-.07em;}
+.dialog[data-category="style"][data-stage="options"] .description,
+.dialog[data-category="style"][data-stage="options"] .help,
+.dialog[data-category="style"][data-stage="options"] .steps li,
+.dialog[data-category="style"][data-stage="options"] .memoryNotice {color:#bfc5b5;}
+.dialog[data-category="style"][data-stage="options"] .steps li[data-active="true"] {color:#eee2b7;}
+.dialog[data-category="style"][data-stage="options"] .filters button {color:#bfc5b5;}
+.dialog[data-category="style"][data-stage="options"] .filters button[aria-pressed="true"] {color:#fff0bc;}
+.dialog[data-category="style"][data-stage="options"] .batchButton {color:#e5dfce;border-color:#e5dfce60;}
+.dialog[data-category="style"] .optionsGrid {grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:56px 25px;padding-top:28px;}
+.dialog[data-category="style"] .option {padding:0;border:0;background:none;box-shadow:none;overflow:visible;color:#e5dfce;}
+.dialog[data-category="style"] .option:nth-child(5n + 1) {grid-column:span 2;}
+.dialog[data-category="style"] .option:nth-child(5n + 3) {margin-top:70px;}
+.dialog[data-category="style"] .optionPhoto {aspect-ratio:3/4;outline:0;background:#bdb8a8;overflow:visible;}
+.dialog[data-category="style"] .option:nth-child(5n + 1) .optionPhoto {aspect-ratio:1.45;}
+.dialog[data-category="style"] .optionPhoto img {object-fit:cover;object-position:center 32%;filter:grayscale(1) contrast(1.17);transition:filter .4s;}
+.dialog[data-category="style"] .option:nth-child(4n + 2) .optionPhoto img {filter:saturate(.6) contrast(1.12);}
+.dialog[data-category="style"] .option:hover .optionPhoto img {transform:none;filter:grayscale(0) contrast(1.08);}
+.dialog[data-category="style"] .optionPhoto::after {content:"";position:absolute;inset:0;background:url('/entangled/salon/paper-grain.svg');opacity:.17;mix-blend-mode:multiply;pointer-events:none;}
+.dialog[data-category="style"] .option[aria-pressed="true"] .optionPhoto {outline:0;}
+.dialog[data-category="style"] .photoCaption {background:none;padding:0;left:-7px;bottom:-17px;font:italic clamp(48px,6vw,92px)/1 Georgia,serif;letter-spacing:-6px;color:#e8dfc8;text-shadow:1px 1px #152922;z-index:2;}
+.dialog[data-category="style"] .optionCopy {padding:28px 0 0;border-bottom:1px solid #e5dfce40;}
+.dialog[data-category="style"] .optionTop small {font-size:8px;text-transform:uppercase;letter-spacing:2px;color:#b2b8a7;}
+.dialog[data-category="style"] .option strong {font:italic clamp(23px,2.7vw,40px)/1.05 Georgia,serif;letter-spacing:-1.2px;margin-top:9px;}
+.dialog[data-category="style"] .optionDetail {color:#b2b8a7;padding-bottom:17px;max-width:280px;font-size:10px;}
+.dialog[data-category="style"] .check {top:-57px;right:12px;width:46px;height:46px;border:1px solid #e5dfce;border-radius:50%;background:#102c2699;color:#fff0c4;font-size:24px;}
+.dialog[data-category="style"] .option[aria-pressed="true"] .check {background:#8d292c;border:3px solid #e14f42;outline:1px solid #e14f42;outline-offset:5px;transform:rotate(-12deg);color:#fff0c4;animation:none;}
+.dialog[data-category="style"][data-stage="options"] .selectedTray li button {background:#29453b;color:#eee4cc;}
+.dialog[data-category="style"][data-stage="options"] .selectedTray small,
+.dialog[data-category="style"][data-stage="options"] .selectedTray > div button,
+.dialog[data-category="style"][data-stage="options"] .customForm label {color:#bfc5b5;}
+.dialog[data-category="style"][data-stage="options"] .bottomBar {background:#102c26f5;border-color:#a99d6f70;}
+@media(max-width:900px){
+ .dialog[data-category="style"] .optionsGrid {grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 18px;}
+ .dialog[data-category="style"] .option:nth-child(5n + 1) {grid-column:auto;}
+ .dialog[data-category="style"] .option:nth-child(5n + 1) .optionPhoto {aspect-ratio:3/4;}
+ .dialog[data-category="style"] .option:nth-child(5n + 3) {margin-top:0;}
+ .dialog[data-category="style"] .option:nth-child(even) {margin-top:45px;}
+ .dialog[data-category="style"] .photoCaption {font-size:58px;letter-spacing:-4px;}
+ .dialog[data-category="style"] .option strong {font-size:25px;}
+}
+@media(max-width:480px){
+ .dialog[data-category="style"] .optionsGrid {gap:28px 14px;}
+ .dialog[data-category="style"] .option strong {font-size:21px;}
+ .dialog[data-category="style"] .check {width:32px;height:32px;font-size:18px;top:-44px;right:8px;}
+}
+/* Material study: preserve the colour and surface of the real objects. */
+.dialog[data-category="style"] .optionPhoto img,
+.dialog[data-category="style"] .option:nth-child(4n + 2) .optionPhoto img,
+.dialog[data-category="style"] .option:hover .optionPhoto img {object-position:center;filter:saturate(.72) contrast(1.06);}
+.dialog[data-category="style"] .option strong {font-style:normal;font-size:clamp(22px,2.3vw,34px);letter-spacing:-.7px;}
+
+/* Extend the Style room's fabric vignette across the complete game folio. */
+.dialog[data-category="style"]:not([data-stage="options"]) {
+  background-color:#d8d0b5;
+  background-image:linear-gradient(100deg,rgba(244,234,196,.88),rgba(238,224,183,.52) 48%,rgba(226,215,184,.22)),url('/entangled/style-objects/style-backdrop.webp');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+.dialog[data-category="style"]:not([data-stage="options"]) .sheet {
+  background:transparent;
+  box-shadow:inset 0 0 0 7px #dfcd9930,inset 0 0 0 8px #af965e60;
+}
+.dialog[data-category="style"]:not([data-stage="options"]) .introPainting {display:none;}
+.dialog[data-category="style"]:not([data-stage="options"]) .description,
+.dialog[data-category="style"]:not([data-stage="options"]) .modeHint {color:#354638;}
+.dialog[data-category="style"]:not([data-stage="options"]) .modeTabs button {color:#263f32;background:#f4eac438;}
+.dialog[data-category="style"]:not([data-stage="options"]) .modeTabs button[aria-pressed="true"] {background:#eee7d5e8;}
+
+/* Taste: a quiet linen ground and generous photographic plates. */
+.dialog[data-category="food"][data-stage="options"] {background:#d7cfb5;--ink:#19382c;--muted:#62644f;}
+.dialog[data-category="food"][data-stage="options"] .sheet {background:linear-gradient(120deg,#ece5ce,#d6cdb0);box-shadow:none;}
+.dialog[data-category="food"] .optionsGrid {grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 24px;}
+.dialog[data-category="food"] .option {background:transparent;border:0;box-shadow:none;padding:0;}
+.dialog[data-category="food"] .optionPhoto {aspect-ratio:4/5;background:#23392e;outline:0;}
+.dialog[data-category="food"] .optionPhoto img {filter:saturate(.85) contrast(1.04);}
+.dialog[data-category="food"] .optionCopy {padding:15px 0 18px;border-bottom:1px solid #19382c38;}
+.dialog[data-category="food"] .option strong {font-size:clamp(20px,2vw,29px);font-weight:400;}
+.dialog[data-category="food"] .optionDetail {font-size:11px;}
+.dialog[data-category="food"] .photoCaption {background:#ede4cbe8;color:#19382c;}
+.dialog[data-category="food"] .introPainting {opacity:.7;filter:none;}
+@media(max-width:900px){.dialog[data-category="food"] .optionsGrid {grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px;}}
+@media(max-width:480px){.dialog[data-category="food"] .optionsGrid {gap:22px 12px;}.dialog[data-category="food"] .option strong {font-size:20px;}}
+
+/* Carry Taste's still-life fabric vignette across both selection and play. */
+.dialog[data-category="food"],
+.dialog[data-category="food"][data-stage="options"] {
+  background-color:#dfd1aa;
+  background-image:linear-gradient(105deg,#f1e5c7e8 0%,#eddfbdd4 38%,#e4d5b39c 75%,#dfcfac91),url('/entangled/taste-editorial/pomegranate-table.webp');
+  background-size:cover;
+  background-position:center,center 62%;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  --muted:#465345;
+}
+.dialog[data-category="food"] .sheet,
+.dialog[data-category="food"][data-stage="options"] .sheet {
+  background:transparent;
+  box-shadow:inset 0 0 0 7px #dfcd9930,inset 0 0 0 8px #af965e60;
+}
+.dialog[data-category="food"] .introPainting {display:none;}
+.dialog[data-category="food"] .description,
+.dialog[data-category="food"] .modeHint,
+.dialog[data-category="food"] .help {color:#354638;}
+.dialog[data-category="food"] .modeTabs button {color:#263f32;background:#f4eac44d;}
+.dialog[data-category="food"] .modeTabs button[aria-pressed="true"] {background:#eee7d5eb;}
+.dialog[data-category="food"] .memoryNotice {background:#efe3c580;}
+
+/* A continuous woodland photograph for every Wander step. */
+.dialog[data-category="travel"] {
+ background:#e4dac0;
+ background-image:linear-gradient(105deg,#f1e5c7e3,#eddfbdbf 45%,#e4d5b39e),url('/entangled/salon/wander-room-forest.webp');
+ background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;
+ --muted:#465345;
+}
+.dialog[data-category="travel"] .sheet {background:transparent;box-shadow:inset 0 0 0 7px #dfcd9930,inset 0 0 0 8px #af965e60;}
+.dialog[data-category="travel"] .introPainting {display:none;}
+.dialog[data-category="travel"] .description,
+.dialog[data-category="travel"] .modeHint,
+.dialog[data-category="travel"] .help {color:#354638;}
+.dialog[data-category="travel"] .modeTabs button {color:#263f32;background:#f4eac44d;}
+.dialog[data-category="travel"] .modeTabs button[aria-pressed="true"] {background:#eee7d5eb;}
+.dialog[data-category="travel"] .memoryNotice {background:#efe3c580;}
+
+.selectionBadge{position:absolute;right:10px;top:-38px;display:flex;align-items:center;gap:7px}.selectionBadge .check{position:static}.optionTop .selectionCount,.dialog[data-category="style"] .optionTop .selectionCount{padding:5px 8px;border:1px solid #dbc88f88;border-radius:20px;background:#173c30ed;color:#f5e7bb;font-size:10px;letter-spacing:.2px;text-transform:none;white-space:nowrap}.dialog[data-category="style"] .selectionBadge{top:-57px;right:12px}.dialog[data-category="style"] .selectionBadge .check{position:static}@media(max-width:640px){.dialog[data-category="style"] .selectionBadge{top:-44px;right:8px}}
